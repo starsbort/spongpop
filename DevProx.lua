@@ -66,7 +66,7 @@ while(true) do
 rm -fr ../.telegram-cli
 echo -e ""
 echo -e ""
-./tg -s ./FAEDER.lua $@ --bot=$token
+./tg -s ./DevProx.lua $@ --bot=$token
 done
 ]])  
 file:close()  
@@ -10681,7 +10681,7 @@ if not is_leader(msg) then
 faederdx(msg.chat_id_, msg.id_, 1, '📤┇ للمطور الاساسي فقط ', 1, 'md')
 else
 if not DevAbs:get(FAEDER..'lock:add'..msg.chat_id_) then
-sendDocument(bot_owner, 0, 0, 1, nil, './FAEDER.lua', dl_cb, nil)
+sendDocument(bot_owner, 0, 0, 1, nil, './DevProx.lua', dl_cb, nil)
 faederdx(msg.chat_id_, msg.id_, 1, '📤┇ عزيزي المطور تم ارسال نسخه الملف الى خاصك مع البوت ', 1, 'md')
 end end end
 -----------------------
@@ -11401,10 +11401,10 @@ end
 ---------------faeder
 if text == "تحديث السورس" and is_leader(msg) then 
 faederdx(msg.chat_id_, msg.id_, 1, '📤┇ جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
-os.execute('rm -rf FAEDER.lua') 
+os.execute('rm -rf DevProx.lua') 
 os.execute('wget https://raw.githubusercontent.com/iq0abs/DevProx/master/DevProx.lua') 
 faederdx(msg.chat_id_, msg.id_, 1, '📤┇ تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
-dofile('FAEDER.lua') 
+dofile('DevProx.lua') 
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
 io.popen("rm -rf ~/.telegram-cli/data/document/*")
 io.popen("rm -rf ~/.telegram-cli/data/photo/*")
@@ -11416,7 +11416,7 @@ io.popen("rm -rf ~/.telegram-cli/data/voice/*")
 io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*") 
 end 
 if text == 'تحديث' and is_leader(msg) then  
-dofile('FAEDER.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
+dofile('DevProx.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
 io.popen("rm -rf ~/.telegram-cli/data/document/*") 
 io.popen("rm -rf ~/.telegram-cli/data/photo/*") 
 io.popen("rm -rf ~/.telegram-cli/data/sticker/*") 
