@@ -68,7 +68,7 @@ echo -e ""
 done
 ]])  
 file:close()  
-file = io.open("abs", "w")  
+file = io.open("ABS", "w")  
 file:write([[
 killall screen
 while(true) do
@@ -77,7 +77,7 @@ screen ./runabs.sh
 done
 ]])  
 file:close() 
-os.execute('./abs')
+os.execute('./ABS')
 end 
 
 create_config_auto()
