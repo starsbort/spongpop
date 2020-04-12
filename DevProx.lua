@@ -11237,14 +11237,14 @@ if (data.ID == "UpdateChat") then
 chat = data.chat_
 chats[chat.id_] = chat
 end
-elseif (data.ID == "UpdateMessageEdited") then
+if (data.ID == "UpdateMessageEdited") then
 local msg = data
 function get_msg_contact(extra, result, success)
 local text = (result.content_.text_ or result.content_.caption_)
 if result.id_ and result.content_.text_ then
 DevAbs:set(DevProx..'bot:editid'..result.id_,result.content_.text_)
 end 
-
+end
 if not is_VipGroup(result.sender_user_id_, result.chat_id_) then
 check_filter_words(result, text)
 if DevAbs:get(DevProx..'editmsg'..msg.chat_id_) then
