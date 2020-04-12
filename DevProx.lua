@@ -6896,9 +6896,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, "md")
 end end
 ------------------------------------DevProx-----------------------------------------------------------
 
-if text:match("^رتبته @(.*)$") then
-local ap = {string.match(text, "^(رتبته) @(.*)$")}
-function id_by_username(extra, result, success)
+
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 if tonumber(result.id_) == tonumber(bot_owner) then
