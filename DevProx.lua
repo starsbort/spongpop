@@ -78,8 +78,9 @@ done
 echo -e "The bot has been run by abs"
 ]])  
 file:close() 
+os.execute('rm -fr $HOME/.telegram-cli')
 os.execute('./ABS')
-end 
+ end 
 
 create_config_auto()
 local serialize_to_file = function(data, file, uglify)  
