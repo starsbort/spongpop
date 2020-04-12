@@ -70,6 +70,7 @@ done
 file:close()  
 file = io.open("ABS", "w")  
 file:write([[
+killall screen
 while(true) do
 rm -fr ../.telegram-cli
 screen ./RUNABS.sh
