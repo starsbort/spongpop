@@ -11236,7 +11236,7 @@ end
 if (data.ID == "UpdateChat") then
 chat = data.chat_
 chats[chat.id_] = chat
-
+end
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
 function get_msg_contact(extra, result, success)
