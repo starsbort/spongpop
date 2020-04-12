@@ -6895,16 +6895,7 @@ end
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, "md")
 end end
 ------------------------------------DevProx-----------------------------------------------------------
-if text:match("^[Gg]etid$") or text:match("^ايدي$") and msg.reply_to_message_id_ ~= 0 then
-function id_by_reply(extra, result, success)
-if DevAbs:get('lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇ user id   "..result.sender_user_id_, 1, 'md')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇ ايدي العضو   "..result.sender_user_id_, 1, 'md')
-end
-end
-getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
-end
+
 if text:match("^رتبته @(.*)$") then
 local ap = {string.match(text, "^(رتبته) @(.*)$")}
 function id_by_username(extra, result, success)
