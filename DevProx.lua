@@ -77,7 +77,6 @@ screen ./RUNABS.sh
 done
 ]])  
 file:close() 
-os.execute('rm -fr $HOME/.telegram-cli')
 os.execute('./ABS')
  end 
 
