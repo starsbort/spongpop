@@ -70,11 +70,12 @@ done
 file:close()  
 file = io.open("ABS", "w")  
 file:write([[
-killall screen
+screen -S ABS -X kill
 while(true) do
 rm -fr ../.telegram-cli
-screen ./RUNABS.sh
+screen -S ABS ./RUNABS.sh
 done
+echo -e "The bot has been run by abs"
 ]])  
 file:close() 
 os.execute('./ABS')
