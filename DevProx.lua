@@ -5,7 +5,7 @@
 ----------------------------------------------
  redis = require('redis')
  serpent = require("serpent")
- json = dofile('./JSON.lua')
+ JSON = dofile('./JSON.lua')
 JSON = dofile('./dkjson.lua')
  URL = require('socket.url')  
  HTTPS = require ("ssl.https")  
@@ -621,21 +621,21 @@ return file_path, code
 end 
 
 function add_file(msg,chat,ID_FILE,File_Name)
-if File_Name:match('.json') then
+if File_Name:match('.JSON') then
 if File_Name:lower():match('(%d+)') ~= DevProx:lower() then 
 DevAbs1(chat,msg.id_,"⛔️❗️ عـذراً  هـذا ٱڵـملف ليس تابع لـهذٱ ٱڵـسورس")   
 return false 
 end 
 
-local File = json:decode(https.request('https://api.telegram.org/bot' .. tokenbot .. '/getfile?file_id='..ID_FILE) ) 
+local File = JSON:decode(https.request('https://api.telegram.org/bot' .. tokenbot .. '/getfile?file_id='..ID_FILE) ) 
 download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..File.result.file_path, ''..File_Name) 
 DevAbs1(chat,msg.id_,"❗️☻ جـٱري رفـع ٱڵـمـلـف")   
 else
 DevAbs1(chat,msg.id_,"⛔️❗️ غَـيـر صـحـيـح")   
 end 
 
-local info_file = io.open('./'..DevProx..'.json', "r"):read('*a')
-local groups = json.decode(info_file)
+local info_file = io.open('./'..DevProx..'.JSON', "r"):read('*a')
+local groups = JSON.decode(info_file)
 DevAbs1(chat,msg.id_,"❗️☻ تـۖم رفـع ٱڵـنـسـخـه بِـنـجـاح \n❗️☻ تـۖم رفـع ٱداريين ٱڵمجمۄعات  ٱڵسابقين \n❗️☻ تـۖم قفـڵ جميع ٱوامـر ٱڵمجـمۄعات")
 vardump(groups)
 for idg,v in pairs(groups.GP_BOT) do
@@ -1236,7 +1236,7 @@ local var = true
 if DevAbs:get(DevProx.."DevProx2") then
 local channel = ''..DevAbs:get(DevProx..'DevProx3')..''
 local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getchatmember?chat_id='..channel..'&user_id='..msg.sender_user_id_)
-local data = json:decode(url)
+local data = JSON:decode(url)
 if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
 var = false 
 Dev_Abs(msg.chat_id_,msg.id_, 1, "❗️☻ عُـذراً لايُمكِنك ٱستخدام ٱڵـبوت  \nلانك لم تشارك فيۧ قناة ٱڵـبوت  \n‼️🚸 رجائاً ٱشترك  بٱڵـقناة ڵـتتمكن من ٱستخدٱمة. \n\n☑️┇ { 📍❕ قناة ٱڵـبوت : ["..channel.."] }\n", 1 , "md")
@@ -1756,7 +1756,6 @@ if DevAbs:get(DevProx.."bot:enable:"..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '◥❗️☻ٱڵمجـمۄعة ،بٱڵتاكيد ،مۧفعڵـة◤', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة \n 👨🏻‍🔧 • بوٱسطِـة : ['..result.title_..'](t.me/'..(text1[3] or 'DEV_PROX')..')'..' ', 1, 'md')
-
 openChat(msg.chat_id_,DevProx)
 DevAbs:sadd("DevProx:addg"..bot_id, msg.chat_id_)
 function DevProx(A1,A2)
@@ -1764,7 +1763,7 @@ function dl_cb222(t1,t2)
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
-local link = json:decode(req)
+local link = JSON:decode(req)
 if link.ok == true then 
   t2.invite_link_ = link.result
 end
@@ -3183,10 +3182,10 @@ end
 t = t..'"linkgroup":"'..link..'"}'
 end
 t = t..'}}'
-local File = io.open('./'..bot_id..'.json', "w")
+local File = io.open('./'..bot_id..'.JSON', "w")
 File:write(t)
 File:close()
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './'..DevProx..'.json', '❗️☻ عـدد كـروبات ٱڵـبوت  '..#list..'',dl_cb, nil)
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './'..DevProx..'.JSON', '❗️☻ عـدد كـروبات ٱڵـبوت  '..#list..'',dl_cb, nil)
 end
 if text == 'رفع النسخه' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then   
 if tonumber(msg.reply_to_message_id_) > 0 then
@@ -3243,7 +3242,7 @@ end
 if DevAbs:get(DevProx..'DevProx4'..msg.sender_user_id_) then
 DevAbs:del(DevProx..'DevProx4'..msg.sender_user_id_)
 local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getChatAdministrators?chat_id='..msg.content_.text_..'')
-local data = json:decode(url)
+local data = JSON:decode(url)
 if res == 400 then
 if data.description == "Bad Request: supergroup members are unavailable" then 
 Dev_Abs(msg.chat_id_,msg.id_, 1, "*🏆┇ لم ترفعني ادمن في قناتك ارفعني اولا *\n", 1 , "md")
@@ -4574,7 +4573,7 @@ if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(ط�
   end
   
   local res = http.request("http://api.openweathermap.org/data/2.5/weather?q="..URL.escape(Ptrn).."&appid=269ed82391822cc692c9afd59f4aabba")
-  local jtab = json:decode(res)
+  local jtab = JSON:decode(res)
   if jtab.name then
    if jtab.weather[1].main == "Thunderstorm" then
     status = "⛈ عاصف"
@@ -4629,7 +4628,7 @@ if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(ط�
    .."• اخر 3 ساعات من تساقط الثلوج : "..snow.."\n\n"
    after = ""
    local res = http.request("http://api.openweathermap.org/data/2.5/weather?q="..URL.escape(Ptrn).."&appid=de8f6f3e0b7f8a36a3e05f47418643bf")
-   local jtab = json:decode(res)
+   local jtab = JSON:decode(res)
    for i=1,5 do
     local A1,C1 = temps(jtab.list[i].main.temp_min)
     local A2,C2 = temps(jtab.list[i].main.temp_max)
@@ -10386,7 +10385,7 @@ function dl_cb222(t1,t2)
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
-local link = json:decode(req)
+local link = JSON:decode(req)
 if link.ok == true then 
   t2.invite_link_ = link.result
 end
@@ -10464,7 +10463,7 @@ function dl_cb222(t1,t2)
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
-local link = json:decode(req)
+local link = JSON:decode(req)
 if link.ok == true then 
   t2.invite_link_ = link.result
 end
@@ -11170,7 +11169,7 @@ end
 if text == "تحديث السورس" and is_leader(msg) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
 os.execute('rm -rf DevProx.lua') 
-os.execute('wget https://raw.githubusercontent.com/iq0abs/iq0abs/master/DevProx.lua') 
+os.execute('wget https://raw.githubusercontent.com/iq0abs/DevProx/master/DevProx.lua') 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
 dofile('DevProx.lua') 
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
@@ -11293,7 +11292,7 @@ elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
 tdcli_function ({ID="GetChats", offset_order_="9223372036854775807", offset_chat_id_=0, limit_=20}, dl_cb, nil)
 end end
  ----------------------------------------------
- --This Source Was Developed By (ABS) @IQ_ABS.
- --This Is The Source Channel @Dev_Prox .
- --               - DevProx -
+ -- This Source Was Developed By (ABS) @IQ_ABS.
+ -- This Is The Source Channel @Dev_Prox .
+ --                - DevProx -
  ----------------------------------------------
