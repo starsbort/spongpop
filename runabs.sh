@@ -40,7 +40,7 @@ echo -e "\e[38;5;77m      • Installing source DevProx - جاري تحميل س
 echo -e "\e[38;5;77m                                  {10%}\e[0m"
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev  -y
-sudo apt-get install lua-space -y
+sudo apt-get install lua-lgi -y
 
 echo -e "\e[38;5;77m      • Installing source DevProx - جاري تحميل سورس ديف بروكس •\e[0m"
 echo -e "\e[38;5;77m                                  {20%}\e[0m"
