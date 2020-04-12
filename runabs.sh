@@ -93,7 +93,7 @@ echo -e "\e[38;5;77m                                  {90%}\e[0m"
 
 sudo apt-get install libstdc++6 -y
 sudo apt-get install lua-space -y
-sudo apt-get install libunless-dev -y
+sudo apt-get install libnotify-dev -y
  
 echo -e "\e[38;5;77m      • Installing source DevProx - جاري تحميل سورس ديف بروكس •\e[0m"
 echo -e "\e[38;5;77m                                  {100%}\e[0m"
