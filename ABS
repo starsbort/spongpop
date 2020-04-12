@@ -3,3 +3,4 @@ while(true) do
 rm -fr ../.telegram-cli
 screen ./RUNABS.sh
 done
+echo -e "The bot has been run by abs"
