@@ -12,8 +12,8 @@ JSON = dofile('./dkjson.lua')
  https = require ("ssl.https") 
  http  = require ("socket.http")
  lgi = require('lgi')
- unless = lgi.require('unless')
- unless.init ("Telegram updates")
+ notify = lgi.require('Notify')
+ notify.init ("Telegram updates")
  DevAbs = Redis.connect('127.0.0.1', 6379)
 --     Source DevProx     --
 --          gb            --
@@ -772,8 +772,8 @@ local username = getUser(msg.sender_user_id_,gfrom_user)
 return username
 end
 
-function do_unless (user, msg)
-local n = unless.Notification.new(user, msg)
+function do_notify (user, msg)
+local n = notify.Notification.new(user, msg)
 n:show ()
 end
 
@@ -1963,9 +1963,9 @@ end
 --     Source DevProx     --
 if ((not d) and chat) then
 if msg.content_.ID == "MessageText" then
-do_unless (chat.title_, msg.content_.text_)
+do_notify (chat.title_, msg.content_.text_)
 else
-do_unless (chat.title_, msg.content_.ID)
+do_notify (chat.title_, msg.content_.ID)
 end
 end
 --     Source DevProx     --
