@@ -27,14 +27,14 @@ function vardump(value)
 print(serpent.block(value, {comment=false}))  
 end 
 local AutoSet = function()
-io.write("\27[31;47m\n◼¦ ارسل ايدي مطور الاساسي  SEND ID FOR SIDO \27[0;34;49m\n")  
+io.write("\27[31;47m ↡ الان ارسل ايدي المطور |\n Now send your id : \27[0;34;49m\n")  
 local SUDO = tonumber(io.read())   
 if not tostring(SUDO):match('%d+') then  
 local SUDO = 218385683
 end
-io.write("\27[31;47m\n◼¦ ارسل معرف المطور الاساسي مع ال @ SEND ID FOR username \27[0;34;49m\n")  
+io.write("\27[31;47m ↡ الان ارسل معرف المطور مع الـ @ |\n Now send your username with @ : \27[0;34;49m\n")  
 local username = io.read()
-io.write("\27[31;47m\n◼¦ ارسل توكن البوت        TOKEN FOR YOU \27[0;34;49m\n")  
+io.write("\27[31;47m ↡ الان ارسل توكن البوت |\nNow send your token bot : \27[0;34;49m\n")  
 local token = io.read()  
 botid = token:match("(%d+)")
 
@@ -10608,15 +10608,15 @@ if text:match('^تعطيل$') and is_admin(msg.sender_user_id_, msg.chat_id_) th
 local txt = {string.match(text, "^(تعطيل)$")}
 if not DevAbs:get(DevProx.."bot:enable:"..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ Group Actually Rem ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group Actually Rem ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ المجموعه معطله سابقا ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵمجـمۄعة ،بٱڵتاكيد ،مۧعطڵـة', 1, 'md')
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ Group has been Rem ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ تم تعطيل المجموعه ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md')
 end
 DevAbs:del(DevProx.."bot:charge:"..msg.chat_id_)
 DevAbs:del(DevProx.."bot:enable:"..msg.chat_id_)
