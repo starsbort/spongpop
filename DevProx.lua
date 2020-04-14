@@ -11446,14 +11446,14 @@ end
 DevAbs:setex(DevProx.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end
 -------------------------------------------------ABS_PROX----------------------------------------------
-if text:match("^قرنابيط$") then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ قنوات السورس \n\n [@Dev_Prox] \n\n [@Dev_Prox] \n ['..os.date("%H:%M:%S")..']', 1, 'md')    
+if text:match("^القناة$") then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ قناة السورس \n\n [@Dev_Prox] \n ['..os.date("%H:%M:%S")..']', 1, 'md')    
 end end
 if tonumber(msg.sender_user_id_) == tonumber(bot_owner) then 
 if (msg.content_.text_ == 'stats server' or msg.content_.text_ == 'السيرفر') then 
-local ABS_PROX = '*مضى على تشغيل السيرفر*\n\n' 
+local ABS_PROX = '*مضى على تشغيل السيرفر*\n' 
   local DevAbs1 = DevAbs:info()
-  ABS_PROX = ABS_PROX..'*'..DevAbs1.server.uptime_in_days..' يوم \n'..DevAbs1.server.uptime_in_seconds..' ثانيه*\n'
+  ABS_PROX = ABS_PROX..'*'..DevAbs1.server.uptime_in_days..' يوم \n'..DevAbs1.server.uptime_in_seconds..' ثانيه* \n '
   Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
