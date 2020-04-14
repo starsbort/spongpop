@@ -1693,7 +1693,7 @@ getChannelMembers(msg.chat_id_, 0, 'Administrators', 200, promote_admin)
 if DevAbs:get(DevProx.."bot:enable:"..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ٱڵمجـمۄعة ،بٱڵتاكيد ،مۧفعڵـة', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة', 1, 'md')
 openChat(msg.chat_id_,ABS_PROX)
 DevAbs:sadd("ABS_PROX:addg"..bot_id, msg.chat_id_)
 function ABS_PROX(f1,f2)
@@ -1907,7 +1907,7 @@ photo_id = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 else
 photo_id = msg.content_.photo_.sizes_[0].photo_.persistent_id_
 end
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🎢❗️ تـۖم تغيير صـۄرة ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '🎢❗️ تـۖم تغيير صـۄرة ٱڵمجـمۄعة', 1, 'md') 
 DevAbs:del(DevProx..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_)
 setphoto(msg.chat_id_, photo_id)
 end end
@@ -1928,7 +1928,7 @@ if msg.content_.text_ then
 DevAbs:set(DevProx..'text_repgp'..content_text..''..msg.chat_id_..'', msg.content_.text_)
 end 
 DevAbs:sadd('rep_owner'..msg.chat_id_..'',content_text) 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ', 1, 'md') 
 DevAbs:del(DevProx..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
 return false 
 end 
@@ -1971,7 +1971,7 @@ if msg.content_.text_ then
 DevAbs:set(DevProx.."text_repall"..content_text, msg.content_.text_)
 end 
 DevAbs:sadd('rep_sudo',content_text)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ', 1, 'md') 
 DevAbs:del(DevProx.."addreply2:"..msg.sender_user_id_)
 return false end end
 if msg.content_.text_ and not DevAbs:get(DevProx..'lock_reeeep'..msg.chat_id_) then
@@ -10568,9 +10568,9 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The group is definitely activated',
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The bot was activated in a group\n❗️🚸 BY : ( '..username..' )', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The bot was activated in a group', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ( '..username..' )', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة', 1, 'md')
 end
 openChat(msg.chat_id_,ABS_PROX)
 DevAbs:sadd("ABS_PROX:addg"..bot_id, msg.chat_id_)
@@ -10610,13 +10610,13 @@ if not DevAbs:get(DevProx.."bot:enable:"..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ Group Actually Rem ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ المجموعه معطله سابقا ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵمجـمۄعة ،بٱڵتاكيد ،مۧعطڵـة', 1, 'md')
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ Group has been Rem ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🎖┇ تم تعطيل المجموعه ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة', 1, 'md')
 end
 DevAbs:del(DevProx.."bot:charge:"..msg.chat_id_)
 DevAbs:del(DevProx.."bot:enable:"..msg.chat_id_)
