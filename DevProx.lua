@@ -1928,7 +1928,7 @@ if msg.content_.text_ then
 DevAbs:set(DevProx..'text_repgp'..content_text..''..msg.chat_id_..'', msg.content_.text_)
 end 
 DevAbs:sadd('rep_owner'..msg.chat_id_..'',content_text) 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ تم حفظ الرد \n👨🏻‍🔧 • بوٱسطِـة : ( ['..result.title_..'](t.me/'..(text1[3] or 'DEV_PROX')..')'..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ  \n👨🏻‍🔧 • بوٱسطِـة : ( ['..result.title_..'](t.me/'..(text1[3] or 'DEV_PROX')..')'..' )', 1, 'md') 
 DevAbs:del(DevProx..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
 return false 
 end 
@@ -1971,7 +1971,7 @@ if msg.content_.text_ then
 DevAbs:set(DevProx.."text_repall"..content_text, msg.content_.text_)
 end 
 DevAbs:sadd('rep_sudo',content_text)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '📤┇ تم حفظ الرد \n👨🏻‍🔧 • بوٱسطِـة : ( ['..result.title_..'](t.me/'..(text1[3] or 'DEV_PROX')..')'..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 تـۖم حفـۨظ ٱڵـرد ٱڵـجـډيـډ  \n👨🏻‍🔧 • بوٱسطِـة : ( ['..result.title_..'](t.me/'..(text1[3] or 'DEV_PROX')..')'..' )', 1, 'md') 
 DevAbs:del(DevProx.."addreply2:"..msg.sender_user_id_)
 return false end end
 if msg.content_.text_ and not DevAbs:get(DevProx..'lock_reeeep'..msg.chat_id_) then
@@ -3206,16 +3206,16 @@ if DevAbs:get(DevProx.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) 
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
-Dev_Abs( msg.chat_id_, msg.id_, 1,"*📤┇ يوجد فقط { 6 } اختيارات ارسل اختيارك مره اخره*\n", 1, "md")    
+Dev_Abs( msg.chat_id_, msg.id_, 1,"*‼️🚸 يوجد فقط ( 6 ) ٱختيٱرٱت*\n*❗️☻ ٱرسـل ٱختيٱرك مـره ٱخرى*\n", 1, "md")    
 return false  end 
 local GETNUM = DevAbs:get(DevProx.."GAMES"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
 DevAbs:del(DevProx.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-Dev_Abs( msg.chat_id_, msg.id_, 1,'\n*📤┇ مبروك لقد ربحت  \n💍 ┇ المحيبس باليد رقم { '..NUM..' } \n🏆 ┇حصلت على {  5 } نقاط يمكن استبدالها برسائل  *', 1, "md") 
+Dev_Abs( msg.chat_id_, msg.id_, 1,'\n*❗️☻ ٱڵـمحيبس بـٱڵـيد رقـم : { '..NUM..' } \n‼️🚸 مـبـروك ڵـقد ربـحـت وحصلت على ( 5 ) نقٱط يمكنك ٱستبدٱڵـها بٱڵـرسٱئڵ *', 1, "md") 
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_,5)  
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
 DevAbs:del(DevProx.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-Dev_Abs( msg.chat_id_, msg.id_, 1,'\n*📤┇ للاسف لقد خسرت  \n💍 ┇ المحيبس باليد رقم { '..GETNUM..' } \n🏆 ┇ حاول مره اخرى للعثور على المحيبس  *', 1, "md")
+Dev_Abs( msg.chat_id_, msg.id_, 1,'\n*❗️☻ ٱڵـمحيبس بـٱڵـيد رقـم : { '..GETNUM..' } \n‼️🚸 ڵلٱسـف ڵـقد خـسـرت حـٱوڵ مره ٱخرى ڵڵـعثور على ٱڵـمحيبس *', 1, "md")
 end
 end
 end
@@ -3225,9 +3225,9 @@ local glink = msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or 
 local hash = "bot:supports:link"
 DevAbs:set(DevProx..hash, glink)
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇  *Support link has been Saved*  ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 *New Support link has been Saved*  ", 1, "md")
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇ تم حفض رابط كروب الدعم ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 تـۖم حفـۨظ رآبـط كروب ٱڵـډعم ٱڵـجـډيـډ ", 1, "md")
 end
 DevAbs:del(DevProx.."bot:support:link" .. msg.sender_user_id_)
 elseif msg.content_.text_:match("^@(.*)[Bb][Oo][Tt]$") or msg.content_.text_:match("^@(.*)_[Bb][Oo][Tt]$") then
@@ -3235,9 +3235,9 @@ local bID = msg.content_.text_:match("@(.*)")
 local hash = "bot:supports:link"
 DevAbs:set(DevProx..hash, bID)
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇ *Support Bot ID* has been *Saved* ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 *New Support Bot ID* has been *Saved* ", 1, "md")
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📤┇ تم حفض معرف الدعم ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 تـۖم حفـۨظ مـعرف ٱڵـډعم ٱڵـجـډيـډ ", 1, "md")
 end
 DevAbs:del(DevProx.."bot:support:link" .. msg.sender_user_id_)
 end
@@ -3248,19 +3248,19 @@ local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getC
 local data = json:decode(url)
 if res == 400 then
 if data.description == "Bad Request: supergroup members are unavailable" then 
-Dev_Abs(msg.chat_id_,msg.id_, 1, "*🏆┇ لم ترفعني ادمن في قناتك ارفعني اولا *\n", 1 , "md")
+Dev_Abs(msg.chat_id_,msg.id_, 1, "*‼️🚸 لم ترفعني ادمن في قناتك ارفعني اولا *\n", 1 , "md")
 return false 
 elseif data.description == "Bad Request: chat not found" then 
-Dev_Abs(msg.chat_id_,msg.id_, 1, "*🏆┇ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
+Dev_Abs(msg.chat_id_,msg.id_, 1, "*‼️🚸 هذا المعرف ليس تابع لقناة *\n", 1 , "md")
 return false
 end end 
 if not msg.content_.text_ then
-Dev_Abs(msg.chat_id_,msg.id_, 1, "*🏆┇ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
+Dev_Abs(msg.chat_id_,msg.id_, 1, "*‼️🚸 هذا المعرف ليس تابع لقناة *\n", 1 , "md")
 return false
 end
 local CH_BOT = msg.content_.text_:match("(.*)")
 DevAbs:set(DevProx..'DevAbs3',CH_BOT)
-Dev_Abs(msg.chat_id_,msg.id_, 1, "🏆┇ تم حفظ القناة \n☑️┇ قم بتفعيل الاشتراك الاجباري الان \n", 1 , "html")
+Dev_Abs(msg.chat_id_,msg.id_, 1, "❗️☻ تم حفظ القناة \n‼️🚸 قم بتفعيل الاشتراك الاجباري الان \n", 1 , "html")
 return false
 end
 if DevAbs:get(DevProx.."zr:wordd" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
@@ -4046,7 +4046,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '📤 ┇ الالعاب معطله \n🏟 ┇
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1,[[*
 🏷┇ اهلا بك في قائمه الالعاب ↓↓
-➖➖➖➖➖➖➖
+➖➖➖➖➖➖➖ 
 🏆┇ الالعاب المتوفره بالبوت ↓↓
 ➖➖➖➖➖➖➖
 📤┇ ارسل امر { ترتيب } لبدء لعبه 
@@ -11521,7 +11521,7 @@ end
 -----------------------------------------ABS_PROX------------------------------------------------------ 
 end 
 ----------------------------------------------
--- This Source Was Developed By (ABS) @IQ_ABS.
+-- This Source Was Developed By (abs) @IQ_ABS.
 --   This Is The Source Channel @Dev_Prox .
 --                - DevProx -
 ----------------------------------------------
