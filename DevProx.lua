@@ -27,44 +27,16 @@ function vardump(value)
 print(serpent.block(value, {comment=false}))  
 end 
 local AutoSet = function()
-if not "token" then
-io.write('\27[1;31m ↡ ارسل لي توكن البوت الان |\nSEND TOKEN FOR BOT : \27[0;39;49m')
-local token = io.read()
-if token ~= '' then
-local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
-if res ~= 200 then
-print('\27[1;34m التوكن غير صحيح تاكد منه ثم ارسله |')
-else
-io.write('\27[1;34m تم حفظ التوكن بنجاح |\n27[0;39;49m')
-"token"
-end 
-else
-print('\27[1;34m لم يتم حفظ التوكن ارسل لي التوكن الان |')
-end 
-os.execute('lua DevProx.lua')
+io.write("\27[31;47m æ- • الان ارسل ايدي المطور •\næ-  • Now send your id • \27[0;34;49m\n")  
+local SUDO = tonumber(io.read())   
+if not tostring(SUDO):match('%d+') then  
+local SUDO = 218385683
 end
-if not "SUDO" then
-io.write('\27[1;31m ↡ ارسل ايدي مطور الاساسي |\n SEND ID FOR SIDO : \27[0;39;49m')
-local SUDO = io.read()
-if SUDO ~= '' then
-io.write('\n\27[1;34m تم حفظ ايدي المطور |\n\27[0;39;49m')
-"SUDO"
-else
-print('\n\27[1;34m لم يتم حفظ ايدي المطور |')
-end 
-os.execute('lua DevProx.lua')
-end
-if not "username" then
-io.write('\27[1;31m ↡ ارسل معرف المطور الاساسي |\n SEND ID FOR SIDO : \27[0;39;49m')
-local username = io.read():gsub('@','')
-if username ~= '' then
-io.write('\n\27[1;34m تم حفظ معرف المطور |\n\27[0;39;49m')
-"username"
-else
-print('\n\27[1;34m لم يتم حفظ معرف المطور |')
-end 
-os.execute('lua DevProx.lua')
-end
+io.write("\27[31;47m æ- • الان ارسل معرف المطور مع الـ @ •\næ- •Now send your username with @ • \27[0;34;49m\n")  
+local username = io.read()
+io.write("\27[31;47m æ- • الان ارسل توكن البوت •\næ- • Now send your bots token • \27[0;34;49m\n")  
+local token = io.read()  
+botid = token:match("(%d+)")
 
 local create = function(data, file, uglify)  
 file = io.open(file, "w+")   
