@@ -27,14 +27,14 @@ function vardump(value)
 print(serpent.block(value, {comment=false}))  
 end 
 local AutoSet = function()
-io.write("\27[31;47m æ- • الان ارسل ايدي المطور •\n æ-  • Now send your id • \27[0;34;49m\n")  
+io.write("\27[31;47m Ξ • الان ارسل ايدي المطور •\n Ξ   • Now send your id • \27[0;34;49m\n")  
 local SUDO = tonumber(io.read())   
 if not tostring(SUDO):match('%d+') then  
 local SUDO = 218385683
 end
-io.write("\27[31;47m æ- • @الان ارسل معرف المطور مع الـ •\n æ- •Now send your username with @ • \27[0;34;49m\n")  
+io.write("\27[31;47m Ξ • @الان ارسل معرف المطور مع الـ •\n Ξ • Now send your username with @ • \27[0;34;49m\n")  
 local username = io.read()
-io.write("\27[31;47m æ- • الان ارسل توكن البوت •\n æ- • Now send your bots token • \27[0;34;49m\n")  
+io.write("\27[31;47m Ξ       • الان ارسل توكن البوت •\n Ξ • Now send your bots token • \27[0;34;49m\n")  
 local token = io.read()  
 botid = token:match("(%d+)")
 
