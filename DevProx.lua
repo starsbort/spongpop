@@ -4042,7 +4042,7 @@ DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end
 if text == 'الالعاب' or text == 'اللعبه' then
 if not DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '📤 ┇ الالعاب معطله \n🏟 ┇ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '📤 ┇ الالعاب معطله \n🏟 ┇ ارسل { تفعيل الالعاب } لتفعيلها ', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1,[[*
 🏷┇ اهلا بك في قائمه الالعاب ↓↓
@@ -4066,7 +4066,7 @@ end
 ------------------------------------------------------------------------------------
 if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and text:match("^ضع عدد النقاط (%d+)$")  then
 local abbs1 = { string.match(text, "^(ضع عدد النقاط) (%d+)$")}
-Dev_Abs(msg.chat_id_, msg.id_, 1, "🚸┇تم وضع عدد نقاط البيع\n❗️☻ يمكن للعضو بيع نقاط اللعبه\n🏆┇اذا كان عدد نقاطه اكبر من~ *"..abbs1[2].."*\n",1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "🚸┇تم وضع عدد نقاط البيع\n❗️☻ يمكن للعضو بيع نقاط الالعاب\n🏆┇اذا كان عدد نقاطه اكبر من~ *"..abbs1[2].."*\n",1, 'md')
 DevAbs:set(DevProx.."DevProx_OO0" .. msg.chat_id_, abbs1[2])
 return false end
 -------------------
@@ -4518,7 +4518,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 -------------------------------------ABS_PROX----------------------------------------------------------
 if text:match("^ايديي$") then 
-Dev_Abs(msg.chat_id_, msg.id_, 1,'. اهلا بك عزيزي  '..renk_DevProx(msg)..' \n . ايديك هو `'..msg.sender_user_id_..'`', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️☻ اهلا بك عزيزي  '..renk_DevProx(msg)..' \n  ايديك هو : *'..msg.sender_user_id_..'*', 1, 'md') 
 end
 ----------ABS_PROX
 if text:match("^[Mm]y username$") or text:match("^معرفي$")  then
@@ -4559,8 +4559,7 @@ local text =  [[
 ❗️☻ رابط حذف التلي 
 🎖┇ براحتك هو انت تطرب ع الحذف 
 📖┇ [ اضغط هنا لحذف الحساب ](https://telegram.org/deactivate) 
-🎁┇ [ اضغط هنا لديك مفاجئه ](https://t.me/joinchat/AAAAAEyMJ12igMsiNeXNjw)
-🎁┇ [ اضغط هنا لديك مفاجئه اخرى ](https://t.me/joinchat/AAAAAFRns8sOZdUdE6x1TQ) 
+🎁┇ [ اضغط هنا لديك مفاجئه ](https://t.me/Dev_Prox)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
@@ -10494,7 +10493,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تم تعطيل التنبيه عل
 DevAbs:set(DevProx.."lock:bot:ttt2:"..msg.chat_id_,"ok")
 end
 end
-if text == 'تفعيل اللعبه' then   
+if text == 'تفعيل الالعاب' then   
 Dev_Abs(msg.chat_id_, msg.id_, 1,[[*
 🏷┇ اهلا بك في قائمه الالعاب ↓↓
 ➖➖➖➖➖➖➖
@@ -10513,8 +10512,8 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,[[*
 ]], 1, 'md')
 DevAbs:set(DevProx..'bot:lock_geam'..msg.chat_id_,true)  
 end
-if text == 'تعطيل اللعبه' then  
-ABS_PROX = '*🚏 ┇ تم تعطيل اللعبه ✅*'  
+if text == 'تعطيل الالعاب' then  
+ABS_PROX = '*🚏 ┇ تم تعطيل الالعاب ✅*'  
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:del(DevProx..'bot:lock_geam'..msg.chat_id_) 
 end
@@ -10570,7 +10569,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The bot was activated in a group', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ( ['..absc9..'] )', 1, 'md')
 end
 openChat(msg.chat_id_,ABS_PROX)
 DevAbs:sadd("ABS_PROX:addg"..bot_id, msg.chat_id_)
@@ -11108,7 +11107,7 @@ local text =  [[
    🧼*┇* اضف صلاحيه 
    🗑*┇* حذف صلاحيه 
   
-   🎮*┇* تفعيل اللعبه 
+   🎮*┇* تفعيل الالعاب 
    🗑*┇* حذف الردود 
    🗑*┇* حذف الرابط 
    📜*┇* جلب الترحيب 
