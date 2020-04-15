@@ -10569,7 +10569,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The bot was activated in a group', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n🚸┇ معرف الضافني ~ @'..msg.sender_user_id_..'', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵبـۄت فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 end
 openChat(msg.chat_id_,ABS_PROX)
 DevAbs:sadd("ABS_PROX:addg"..bot_id, msg.chat_id_)
