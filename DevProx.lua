@@ -65,7 +65,6 @@ print('\n\27[1;34m لم يتم حفظ معرف المطور |')
 end 
 os.execute('lua DevProx.lua')
 end
-botid = token:match("(%d+)")
 
 local create = function(data, file, uglify)  
 file = io.open(file, "w+")   
