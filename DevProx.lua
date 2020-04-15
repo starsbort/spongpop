@@ -7780,21 +7780,21 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Ll]ock (.*)$") or text:match("^قفل (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 local lockpt = {string.match(text, "^([Ll]ock) (.*)$")}
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local lockptf = {string.match(text, "^(قفل) (.*)$")}
 if lockpt[2] == "edit" or lockptf[2] == "التعديل" then
@@ -8443,21 +8443,21 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Uu]nlock (.*)$") or text:match("^فتح (.*)$") then
 local unlockpt = {string.match(text, "^([Uu]nlock) (.*)$")}
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local unlockpts = {string.match(text, "^(فتح) (.*)$")}
 if unlockpt[2] == "edit" or unlockpts[2] == "التعديل" then
@@ -8615,21 +8615,21 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Ll]ock (.*)$") or text:match("^قفل (.*)$") then
 local mutept = {string.match(text, "^([Ll]ock) (.*)$")}
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local mutepts = {string.match(text, "^(قفل) (.*)$")}
 if mutept[2] == "all" or  mutepts[2] == "الكل" then 
@@ -8715,7 +8715,7 @@ if not DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Has been lock photo ☑️', 1, 'md')
 else
-local ABS_PROX = '❗️☻ تـۖم قفـڵ ٱڵـصـۄر فيۧ ٱڵمجـمۄعة\n❗️🚸 بوٱسـۧطـة : '..tar..' \n❗️📮 ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
+local ABS_PROX = '❗️☻ تـۖم قفـڵ ٱڵـصـۄر فيۧ ٱڵمجـمۄعة \n❗️🚸 بوٱسـۧطـة : '..tar..' \n❗️📮 ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 56, string.len(msg.sender_user_id_))
 end
 DevAbs:set(DevProx..'bot:photo:mute'..msg.chat_id_,true)
@@ -9054,21 +9054,21 @@ end
 end
 if text == 'قفل الفشار' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🗑┇ تم قفل »  الفشار  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 57, string.len(msg.sender_user_id_))
@@ -9076,21 +9076,21 @@ DevAbs:del(DevProx.."fshar"..msg.chat_id_)
 end
 if text == 'فتح الفشار' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🏆┇ تم فتح »   الفشار  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
@@ -9098,21 +9098,21 @@ DevAbs:set(DevProx.."fshar"..msg.chat_id_, true)
 end
 if text == 'قفل الطائفيه' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🗑┇ تم قفل »  الطائفيه  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 59, string.len(msg.sender_user_id_))
@@ -9120,21 +9120,21 @@ DevAbs:del(DevProx.."taf"..msg.chat_id_)
 end
 if text == 'فتح الطائفيه' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🏆┇ تم فتح »   الطائفيه  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 60, string.len(msg.sender_user_id_))
@@ -9142,21 +9142,21 @@ DevAbs:set(DevProx.."taf"..msg.chat_id_, true)
 end
 if text == 'قفل الكفران' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🗑┇ تم قفل »  الكفران  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
@@ -9164,21 +9164,21 @@ DevAbs:del(DevProx.."kaf"..msg.chat_id_)
 end
 if text == 'فتح الكفران' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local ABS_PROX = '❗️☻ رتبتك : '..tar..' \n🏆┇ تم فتح »   الكفران  \n🚸┇بواسطة ('..msg.sender_user_id_..') '
 faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 59, string.len(msg.sender_user_id_))
@@ -9189,21 +9189,21 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Uu]nlock (.*)$") or text:match("^فتح (.*)$") then
 local unmutept = {string.match(text, "^([Uu]nlock) (.*)$")}
 if is_leaderid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_sudoid(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_admin(msg.sender_user_id_) then
-tar = 'المطور 🌟'
+tar = 'ٱڵـۧمـۧطۄر'
 elseif is_onall(msg.sender_user_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_moall(msg.sender_user_id_) then
-tar = 'الادمن 🥈'
+tar = 'ٱلٱدمـۧن'
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المنشئ 🎖'
+tar = 'ٱڵـۧمـۧنشئ'
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-tar = 'المدير 🥇'
+tar = 'ٱڵـۧمـۧدير'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-tar = 'الادمن 🥈'          
+tar = 'ٱلٱدمـۧن'          
 end
 local unmutepts = {string.match(text, "^(فتح) (.*)$")}
 if unmutept[2] == "all" or unmutepts[2] == "الكل" or unmutepts[2] == "الكل بالساعات" then
