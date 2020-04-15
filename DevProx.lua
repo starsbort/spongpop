@@ -10565,6 +10565,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵمجـمۄعة ،بٱڵتاكي
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The group is definitely activated', 1, 'md')
 end
+       local absc9 = user_info_
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The bot was activated in a group', 1, 'md')
