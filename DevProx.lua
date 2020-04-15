@@ -34,7 +34,7 @@ local SUDO = 218385683
 end
 io.write("\27[31;47m Ξ • @الان ارسل معرف المطور مع الـ •\n Ξ • Now send your username with @ • \27[0;34;49m\n")  
 local username = io.read()
-io.write("\27[31;47m Ξ       • الان ارسل توكن البوت •\n Ξ • Now send your bots token • \27[0;34;49m\n")  
+io.write("\27[31;47m Ξ   • الان ارسل توكن البوت •\n Ξ • Now send your bots token • \27[0;34;49m\n")  
 local token = io.read()  
 botid = token:match("(%d+)")
 
