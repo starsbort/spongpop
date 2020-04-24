@@ -6301,7 +6301,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المدير* ( ['..absc9..'] )\n❗
 end end end end
 --     Source DevProx     --
 if is_sudo(msg) and msg.reply_to_message_id_ ~= 0 then
-if text:match("^رفع مطور رتبه ثالثه$") then
+if text:match("^رفع مطور$") then
 function addadmin_by_reply(extra, result, success)
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
 local absc9 = user_info_
@@ -6323,8 +6323,8 @@ end end end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,addadmin_by_reply)
 end
 --     Source DevProx     --
-if text:match("^رفع مطور رتبه ثالثه @(.*)$")  and is_sudo(msg) then 
-local ap = {string.match(text, "^(رفع مطور رتبه ثالثه) @(.*)$")}
+if text:match("^رفع مطور @(.*)$")  and is_sudo(msg) then 
+local ap = {string.match(text, "^(رفع مطور) @(.*)$")}
 function addadmin_by_username(extra, result, success)
 local abs = 'bot:admins:'
 if result.id_ then 
@@ -6343,8 +6343,8 @@ end
 resolve_username(ap[2],addadmin_by_username)
 end
 --     Source DevProx     --
-if text:match("^رفع مطور رتبه ثالثه (%d+)$") then
-local ap = {string.match(text, "^(رفع مطور رتبه ثالثه) (%d+)$")}
+if text:match("^رفع مطور (%d+)$") then
+local ap = {string.match(text, "^(رفع مطور) (%d+)$")}
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
@@ -6358,7 +6358,7 @@ end
 end
 --     Source DevProx     --
 if msg.reply_to_message_id_ ~= 0 then
-if text:match("^تنزيل مطور رتبه ثالثه$") then
+if text:match("^تنزيل مطور$") then
 function deadmin_by_reply(extra, result, success)
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
 local absc9 = user_info_
@@ -6384,7 +6384,7 @@ getMessage(msg.chat_id_, msg.reply_to_message_id_,deadmin_by_reply)
 end
 end
 --     Source DevProx     --
-if text:match("^تنزيل مطور رتبه ثالثه @(.*)$") then
+if text:match("^تنزيل مطور @(.*)$") then
 local abs = 'bot:admins:'
 local ap = {string.match(text, "^([Rr]emdev3) @(.*)$")}
 function remadmin_by_username(extra, result, success)
@@ -6411,7 +6411,7 @@ end
 resolve_username(ap[2],remadmin_by_username)
 end
 --     Source DevProx     --
-if text:match("^تنزيل مطور رتبه ثالثه (%d+)$") then
+if text:match("^تنزيل مطور (%d+)$") then
 local abs = 'bot:admins:'
 local ap = {string.match(text, "^([Rr]emdev3) (%d+)$")}
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
@@ -11279,7 +11279,7 @@ Source DevProx 𝆺𝅥𝅯
     🏆*┇* رفع « » تنزيل مدير عام 
     🏆*┇* رفع « » تنزيل ادمن عام  
     🏆*┇* رفع « » تنزيل مميز عام 
-    🏆*┇* رفع « » تنزيل مطور رتبه ثالثه 
+    🏆*┇* رفع « » تنزيل مطور 
   
     🎤*┇* رد الخاص تفعيل « » تعطيل 
     🗃*┇* المغادره التلقائيه تفعيل « » تعطيل 
