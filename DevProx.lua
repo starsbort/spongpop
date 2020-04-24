@@ -4438,12 +4438,14 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 if text:match("^/start$") then 
 local text =  [[
-📮¦ اهلا بك عزيزي ]]..result.first_name_..[[
+📮¦ اهلا بك عزيزي
 ⭐¦ اختصاصي حماية كروبات المتفاعله
 🔖¦ لتفعيل البوت اتبع مايلي
 ⚀¦ اضف البوت الى المجموعه
 ⚁¦ ارفع البوت ادمن في المجموعه
 ⚂¦ سيتم تفعيل البوت ورفع مشرفي الكروب
+-------------
+مطور البوت : ]]..SUDOUSERNAME..[[
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
@@ -8125,11 +8127,10 @@ end
 end
 --     Source DevProx     --
 local text = msg.content_.text_:gsub('رد الخاص','Clerk')
-if text:match("^[Cc]lerk (.*)$") or text:match("^رد الخاص$")  then
+if text:match("^[Cc]lerk (.*)$") then
 local status = {string.match(text, "^([Cc]lerk) (.*)$")}
 if status[2] == "تفعيل" or status[2] == "on" then
 if DevAbs:get(DevProx..'clerk') == "On" then
-if DevAbs:get(DevProx..'رد الخاص') == "تفعيل" then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Clerk is now active ', 1, 'md')
 else
