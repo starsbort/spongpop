@@ -7365,7 +7365,7 @@ end
 if not DevAbs:get('DevProx:id:mute'..msg.chat_id_) then 
 if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then 
 if not DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_) then 
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,"\n❗️🚸 ⌯ مۘعرفک : ( "..username.." )\n❗️🧬 ⌯ ٱيـۧډيک : ( "..msg.sender_user_id_.." )\n❗️🗽 ⌯ صورک : ( "..result.total_count_.." )\n❗️💎 ⌯ رتـبتک : ( "..t.." )\n❗️🔎 ⌯ رسٱئڵک : ( "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." )\n❗️🔮 ⌯ تفٱعڵک : ( "..formsgg(msguser).." )\n❗️🏮 ⌯ نقاطک : ( "..user_nkt.." )\n❗️🦠 ⌯ جـهٱتک : ( "..cont.." )\n❗️🧩 ⌯ مڵصقٱتک : ( "..sticker.." )\n〰️➖〰️➖〰️➖〰️➖〰️\n",msg.id_,msg.id_.."")
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,"\n❗️🚸 ⌯ مۘعرفک : ( "..username.." )\n❗️🧬 ⌯ ٱيـۧډيک : ( "..msg.sender_user_id_.." )\n❗️🗽 ⌯ صورک : ( "..result.total_count_.." )\n❗️💎 ⌯ رتـبتک : ( "..t.." )\n❗️🔎 ⌯ رسٱئڵک : ( "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." )\n❗️🔮 ⌯ تفٱعڵک : ( "..formsgg(msguser).." )\n❗️🏮 ⌯ نقاطک : ( "..user_nkt.." )\n❗️🦠 ⌯ جـهٱتک : ( "..cont.." )\n〰️➖〰️➖〰️➖〰️➖〰️\n",msg.id_,msg.id_.."")
 else 
 local new_id = DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('username',(username or 'لا يوجد'))
