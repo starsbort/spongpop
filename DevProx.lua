@@ -6512,7 +6512,7 @@ local id = msg.id_
 local msgs = {[0] = id}
 pin(msg.chat_id_,msg.reply_to_message_id_,1)
 DevAbs:set(DevProx..'pinnedmsg'..msg.chat_id_,msg.reply_to_message_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ تـۖم تثبيت ٱڵـرسٱڵة بنجٱح \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ تـۖم تثبيت ٱڵـرسٱڵة بنجٱح \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..'), 1, 'md')', 1, 'md')
 end
 end
 --     Source DevProx     --
