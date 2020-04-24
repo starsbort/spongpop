@@ -8125,7 +8125,7 @@ end
 end
 --     Source DevProx     --
 local text = msg.content_.text_:gsub('رد الخاص','Clerk')
-if text:match("^[Cc]lerk (.*)$") then
+if text:match("^[Cc]lerk (.*)$") or text:match("^رد الخاص$")  then
 local status = {string.match(text, "^([Cc]lerk) (.*)$")}
 if status[2] == "تفعيل" or status[2] == "on" then
 if DevAbs:get(DevProx..'clerk') == "On" then
