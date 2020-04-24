@@ -8129,6 +8129,7 @@ if text:match("^[Cc]lerk (.*)$") or text:match("^رد الخاص$")  then
 local status = {string.match(text, "^([Cc]lerk) (.*)$")}
 if status[2] == "تفعيل" or status[2] == "on" then
 if DevAbs:get(DevProx..'clerk') == "On" then
+if DevAbs:get(DevProx..'رد الخاص') == "تفعيل" then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Clerk is now active ', 1, 'md')
 else
