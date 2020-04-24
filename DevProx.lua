@@ -4436,19 +4436,6 @@ local text =  [[
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
-if text:match("^/start$") then 
-local text =  [[
-📮¦ اهلا بك عزيزي
-⭐¦ اختصاصي حماية كروبات المتفاعله
-🔖¦ لتفعيل البوت اتبع مايلي
-⚀¦ اضف البوت الى المجموعه
-⚁¦ ارفع البوت ادمن في المجموعه
-⚂¦ سيتم تفعيل البوت ورفع مشرفي الكروب
--------------
-مطور البوت : ]]..SUDOUSERNAME..[[
-]]
-Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
-end
 --     Source DevProx     --
 if text:match("^[Gg][Rr][Oo][Uu][Pp][Ss]$") and is_admin(msg.sender_user_id_, msg.chat_id_) or text:match("^الكروبات$") and is_admin(msg.sender_user_id_, msg.chat_id_) then
 local ABS_PROX = DevAbs:scard(DevProx.."bot:groups")
