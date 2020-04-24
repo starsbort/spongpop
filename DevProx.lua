@@ -3917,8 +3917,7 @@ DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end 
 if text == 'المختلف' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
-DevAbs2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧜‍♂','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕒','🕤','⌛️','📅',
-};
+DevAbs2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧜‍♂','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕒','🕤','⌛️','📅',};
 name = DevAbs2[math.random(#DevAbs2)]
 DevAbs:set(DevProx..'bot:bkbk4'..msg.chat_id_,name)
 name = string.gsub(name,'😸','😹😹😹😹😹😹😹😹😸😹😹😹😹')
@@ -3959,9 +3958,7 @@ end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end  
 if text == 'امثله' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
-DevAbs2 = {
-'جوز','ضراطه','الحبل','الحافي','شقره','بيدك','سلايه','النخله','الخيل','حداد','المبلل','يركص','قرد','العنب','العمه','الخبز','بالحصاد','شهر','شكه','يكحله',
-};
+DevAbs2 = {'جوز','ضراطه','الحبل','الحافي','شقره','بيدك','سلايه','النخله','الخيل','حداد','المبلل','يركص','قرد','العنب','العمه','الخبز','بالحصاد','شهر','شكه','يكحله',};
 name = DevAbs2[math.random(#DevAbs2)]
 DevAbs:set(DevProx..'bot:bkbk5'..msg.chat_id_,name)
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
@@ -4426,16 +4423,15 @@ end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},tall,nil)
 end
 end
-if text:match("^source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") then 
+if text:match("^source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") or text:match("^ياسورس$") then 
 local text =  [[
-  ❗️☻  سورس ديف بروكس
-  🏆┇  Source DevProx
-  〰️➖〰️➖〰️➖〰️➖〰️
-  〰️➖〰️➖〰️➖〰️➖〰️
-  🏷┇ [مطور السورس ](t.me/IQ_ABS)
-  🚸┇ [تواصل المحظورين ](t.me/IQA_bot)
-  🔊┇ [قناة السورس ](t.me/Dev_Prox)
-  🏆┇ [اضغط هنا لتنصيب السورس ](https://t.me/Dev_Prox)
+❗️🎒 ⌯ سورس ديف بروكس 
+❗️🎒 ⌯ Source DevProx
+〰️➖〰️➖〰️➖〰️➖〰️
+❗️🚸 ⌯ [مطور السورس ](t.me/IQ_ABS)
+❗️🧬 ⌯ [تواصل المحظورين ](t.me/IQA_bot)
+❗️🧩 ⌯ [قناة السورس ](t.me/Dev_Prox)
+❗️🔑 ⌯ [اضغط هنا لتنصيب السورس ](https://t.me/Dev_Prox)
   〰️➖〰️➖〰️➖〰️➖〰️
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
