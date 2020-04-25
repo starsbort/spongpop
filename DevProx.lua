@@ -1152,11 +1152,11 @@ return ABS_PROX
 end
 local renk_DevProx = function(msg)
 if is_leaderid(msg.sender_user_id_) then
-ABS_PROX  = "المطور الاساسي"
+ABS_PROX  = "ٱڵـۧمـۧطۄر ٱلٱسٱسي"
 elseif is_sudoid(msg.sender_user_id_) then
-ABS_PROX = "المطور الثانوي"
+ABS_PROX = "ٱڵـۧمـۧطۄر ٱڵثٱنوي"
 elseif is_admin(msg.sender_user_id_) then
-ABS_PROX = "المطور الثالث"
+ABS_PROX = "ٱڵـۧمـۧطۄر ٱلثٱڵث"
 elseif is_onall(msg.sender_user_id_) then
 ABS_PROX = "المدير العام"
 elseif is_moall(msg.sender_user_id_) then
@@ -4129,7 +4129,7 @@ elseif is_sudoid(result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 t = 'sudo 2'
 else
-t = 'ٱڵـۧمـۧطۄر ٱلثٱنوي'
+t = 'ٱڵـۧمـۧطۄر ٱڵثٱنوي'
 end
 elseif is_admin(result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -5418,14 +5418,14 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
 local absc9 = user_info_
 if user_info_ then
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ لا تستطيع كتمي ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ لٱ تستطيع كتمي', 1, 'md')
 return false 
 end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *لا تستطيع كتم* ( ['..absc9..'] )\n❗️☻ *لانه يمتلك احدى الرتب ↓↓*\n*🚸┇ ( مميز - ادمن - مدير - منشئ - مطور )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️⚠️ ⌯ لٱ تستطيع كتم ( ['..absc9..'] )\n❗️🚸 ⌯ لٱنه يمتڵك ٱحدى ٱڵـرتب : \n{ مميز • ادمن • مدير • منشئ • مطور }', 1, 'md')
 else 
 DevAbs:sadd(DevProx..'bot:muted:'..msg.chat_id_, result.sender_user_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم  (كتمه ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم كتمة في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5438,13 +5438,13 @@ function mute_by_username(extra, result, success)
 local abs = 'bot:muted:'..msg.chat_id_
 if result.id_ then 
 if is_momod(result.id_, msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ لا تستطيع كتم الرتب ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️⚠️ ⌯ لٱ تستطيع كتم ( ['..absc9..'] )\n❗️🚸 ⌯ لٱنه يمتڵك ٱحدى ٱڵـرتب : \n{ مميز • ادمن • مدير • منشئ • مطور }', 1, 'md')
 else
 if DevAbs:sismember(DevProx..abs, result.id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( كتمه ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ مكتوم في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 else
 DevAbs:sadd(DevProx..abs, result.id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( كتمه ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم كتمة في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5459,16 +5459,16 @@ local absc9 = user_info_
 if user_info_ then
 if DevAbs:sismember(DevProx..'bot:muted:'..msg.chat_id_, ap[2]) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ is already muted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ is already muted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم  (كتمه ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ مكتوم في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:sadd(DevProx..'bot:muted:'..msg.chat_id_, ap[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' ، ??\n🚸┇ has been muted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been muted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم  (كتمه ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم كتمة في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5483,16 +5483,16 @@ if user_info_ then
 local abs = 'bot:muted:'..msg.chat_id_
 if not DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ not muted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ not muted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم ( كتمه ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس مكتوم ڵيتم كتمة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..abs, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ has been unmuted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unmuted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المكتوم* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم  ( الغاء كتمه ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المكتوم* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء كتمة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5509,16 +5509,16 @@ if user_info_ then
 if result.id_ then
 if not DevAbs:sismember(DevProx..'bot:muted:'..msg.chat_id_, result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ not muted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ not muted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '??┇ *العضو* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم ( كتمه ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس مكتوم ڵيتم كتمة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..'bot:muted:'..msg.chat_id_, result.id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ has been unmuted \n '
+text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unmuted \n '
 else
-text = '🏆┇ المكتوم ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️☻ بواسطه ( '..renk_DevProx(msg)..' )\n☑️┇ تم ( الغاء كتمه ) بنجاح'
+text = '❗️🎗 ⌯ ٱڵـمكتوم : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء كتمة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 end
 end
@@ -5541,16 +5541,16 @@ local absc9 = user_info_
 if user_info_ then
 if not DevAbs:sismember(DevProx..'bot:muted:'..msg.chat_id_, ap[2]) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ not muted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ not muted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم ( كتمه ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس مكتوم ڵيتم كتمة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..'bot:muted:'..msg.chat_id_, ap[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ has been unmuted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been unmuted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المكتوم* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم  ( الغاء كتمه ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـمكتوم : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء كتمة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
