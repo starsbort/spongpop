@@ -6049,7 +6049,7 @@ end
 DevAbs:sadd(DevProx..'bot:vpall:', ap[2])
 end
 --     Source DevProx     --
-local text = msg.content_.text_:gsub('تنزيل مميز عام','demdonky')
+local text = msg.content_.text_:gsub('تنزيل مميز عام','demvipall')
 if text:match("^[Dd]emvipall$") and msg.reply_to_message_id_ ~= 0 then
 function demoteall_by_reply(extra, result, success)
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
@@ -6109,9 +6109,9 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️☻ The vip all ؛ '..ap[2]..' ، ⏱\n🚸┇ was removed from VIP member all✅ \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The vip all : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ was removed from VIP member all \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المميز ٱڵعٱم* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله ( عضو اعتيادي ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـمميـۧز ٱڵعٱم : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱڵمميزين ٱڵعٱم  \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 DevAbs:srem(DevProx..abs, ap[2])
 end
