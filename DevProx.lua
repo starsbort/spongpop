@@ -4748,7 +4748,7 @@ end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end 
-if text:match("^رفع بكل الصلاحيات$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
+if text:match("^رفع بكل الصلاحيات$") or text:match("^رفع بكل صلاحيات$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
 local absc9 = user_info_
@@ -10927,7 +10927,7 @@ DevAbs:set(DevProx..'bot:help1', text)
 Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
-if text:match("^م1$") or  text:match("^م١$") then
+if text:match("^م1$") or  text:match("^م١$") or text:match("^اوامر1$") or text:match("^اوامر١$") then
 local help = DevAbs:get(DevProx..'bot:help1')
 local text =  [[
   🚸❗️ #اوامر_حماية_المجموعة 📮
@@ -10989,7 +10989,7 @@ DevAbs:set(DevProx..'bot:help2', text)
 Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
-if text:match("^م2$") or text:match("^م٢$") then
+if text:match("^م2$") or text:match("^م٢$") or text:match("^اوامر2$") or text:match("^اوامر٢$") then
 local help = DevAbs:get(DevProx..'bot:help2')
 local text =  [[
   Source DevProx 𝆺𝅥𝅯
@@ -11080,7 +11080,7 @@ DevAbs:set(DevProx..'bot:help3', text)
 Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
-if text:match("^م3$") or text:match("^م٣$") then
+if text:match("^م3$") or text:match("^م٣$") or text:match("^اوامر3$") or text:match("^اوامر٣$") then
 local help = DevAbs:get(DevProx..'bot:help3')
 local text =  [[
   Source DevProx 𝆺𝅥𝅯
@@ -11154,7 +11154,7 @@ DevAbs:set(DevProx..'bot:help4', text)
 Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
-if text:match("^م٤$") or text:match("^م4$") then
+if text:match("^م٤$") or text:match("^م4$") or text:match("^اوامر4$") or text:match("^اوامر٤$") then
 local help = DevAbs:get(DevProx..'bot:help4')
 local text =  [[
   Source DevProx 𝆺𝅥𝅯
@@ -11209,7 +11209,7 @@ DevAbs:set(DevProx..'bot:help5', text)
 Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
-if text:match("^م٥$") or text:match("^م5$") then
+if text:match("^م٥$") or text:match("^م5$") or text:match("^اوامر5$") or text:match("^اوامر٥$") then
 local help = DevAbs:get(DevProx..'bot:help5')
 local text =  [[
 Source DevProx 𝆺𝅥𝅯
