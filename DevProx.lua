@@ -6783,7 +6783,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 end
 --     Source DevProx     --
-if is_sudo(msg) and (text:match("^[Ss]etsupport$") or text:match("^ضع دعم$")) or text:match("^وضع دعم$")) then
+if is_sudo(msg) and (text:match("^[Ss]etsupport$") or text:match("^ضع دعم$")) then
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ Please Send your *Support link* Or *Support Bot ID* now ", 1, "md")
 else
@@ -10290,8 +10290,8 @@ end
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end
 --     Source DevProx     --
-if text:match('^كشف (%d+)') then
-local chattid = text:match('كشف (%d+)') 
+if text:match('^كشف (-%d+)') then
+local chattid = text:match('كشف (-%d+)') 
 if not is_admin(msg.sender_user_id_, msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطورين فقط ', 1, 'md')
 else
@@ -10336,9 +10336,9 @@ getChannelFull(chattid, abs_c9, nil)
 end 
 end
 --     Source DevProx     --
-if text:match("^غادر (%d+)$")  then
+if text:match("^غادر (-%d+)$")  then
 if not DevAbs:get(DevProx..'lock:add'..msg.chat_id_) then
-local txt = { string.match(text, "^(غادر) (%d+)$")}
+local txt = { string.match(text, "^(غادر) (-%d+)$")}
 if not is_sudo(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطورين فقط ', 1, 'md')
 else 
