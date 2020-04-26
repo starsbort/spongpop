@@ -4791,15 +4791,15 @@ if user_info_ then
 local abs = 'bot:momod:'..msg.chat_id_
 if DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n🚸┇ is now a moderator \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is now a moderator \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( ادمن ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ ٱدمن في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n🚸┇ has been promote \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been promote \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( ادمن ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 DevAbs:sadd(DevProx..abs, result.sender_user_id_)
 end
@@ -4816,9 +4816,9 @@ local absc9 = user_info_
 if user_info_ then
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ promoted to moderator \n '
+texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ promoted to moderator \n '
 else
-texts = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( ادمن ) بنجاح*'
+texts = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 DevAbs:sadd(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
 else
@@ -4840,9 +4840,9 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n🚸┇ has been promote \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been promote \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( ادمن ) بنجاح*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:sadd(DevProx..'bot:momod:'..msg.chat_id_, ap[2])
@@ -4857,16 +4857,16 @@ if user_info_ then
 local abs = 'bot:momod:'..msg.chat_id_
 if not DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*🌟┇ User ؛ '..result.sender_user_id_..' )\n🚸┇ is not promote \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is not promote \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم رفعه ( ادمن ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس مميز ڵيتم تنزيڵه \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..abs, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n🚸┇ was removed from promoted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ was removed from promoted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *الادمن* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه الادمنيه )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱلٱدمـن : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -4883,9 +4883,9 @@ local absc9 = user_info_
 if user_info_ then
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ was demoted \n '
+texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ was demoted \n '
 else
-texts = '🏆┇ *الادمن* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه الادمنيه )*'
+texts = '❗️🎗 ⌯ ٱلٱدمـن : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 DevAbs:srem(DevProx..abs, result.id_)
 else
@@ -4908,9 +4908,9 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n🚸┇ was demoted \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ was demoted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *الادمن* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه الادمنيه )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱلٱدمـن : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱلٱدمنية \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:srem(DevProx..abs, ap[2])
@@ -4926,15 +4926,15 @@ if user_info_ then
 local abs = 'bot:vipmem:'..msg.chat_id_
 if DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n🚸┇ is now a VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is now a VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( عضو مميز ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ مميز في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n', 1, 'md')
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n🌟┇ has been a VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been a VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( عضو مميز )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 DevAbs:sadd(DevProx..abs, result.sender_user_id_)
 end
@@ -4951,9 +4951,9 @@ local absc9 = user_info_
 if user_info_ then
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ promoted to VIP member \n '
+texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ promoted to VIP member \n '
 else
-texts = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( عضو مميز )*'
+texts = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 DevAbs:sadd(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
 else
@@ -4975,9 +4975,9 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n🚸┇ has been a VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been a VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم رفعه ( عضو مميز )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم رفعه فيۧ قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:sadd(DevProx..'bot:vipmem:'..msg.chat_id_, ap[2])
@@ -4992,16 +4992,16 @@ if user_info_ then
 local abs = 'bot:vipmem:'..msg.chat_id_
 if not DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ is not a VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is not a VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم رفعه ( مميز ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس مميز ڵيتم تنزيڵه \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..abs, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*🚸┇ The vip ؛ '..result.sender_user_id_..' )\n🚸┇ was removed from VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The vip : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ was removed from VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المميز* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه التمييز )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵمميز : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5018,16 +5018,16 @@ local absc9 = user_info_
 if user_info_ then
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ was demoted from VIP member \n '
+texts = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ was demoted from VIP member \n '
 else
-texts = '🏆┇ *المميز* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه التمييز )*'
+texts = '❗️🎗 ⌯ ٱڵمميز : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 DevAbs:srem(DevProx..abs, result.id_)
 else
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 texts = '*❗️📛 ⌯ Username is not correct *'
 else
-texts = '*❗️☻ المعرف غير صحيح *'
+texts = '*❗️📛 ⌯ ٱڵمعرف غير صحيح*'
 end
 end
 end
@@ -5043,9 +5043,9 @@ local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
 local absc9 = user_info_
 if user_info_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*🚸┇ The vip ؛ '..ap[2]..' )\n🚸┇ was removed from VIP member \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The vip : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ was removed from VIP member \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المميز* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم تنزيله من ( قائمه التمييز )*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵمميز : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم تنزيڵه من قٱئمة ٱڵمميزين \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:srem(DevProx..abs, ap[2])
@@ -5058,22 +5058,22 @@ local id = msg.id_
 local msgs = {[0] = id}
 delete_msg(msg.chat_id_,{[0] = msg.reply_to_message_id_})
 delete_msg(msg.chat_id_,msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تم حذف الرساله مع رساله الامر ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حـذف ٱڵرسٱڵة مع رسٱڵة ٱلٱمـر ', 1, 'md')
 end
 if is_monsh(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^تفعيل الحظر$") or text:match("^تفعيل الطرد$") then
 DevAbs:del("ABS_PROX:lock:ban"..bot_id..msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تم تفعيل الحظر ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵـطرد وٱڵـحظر\n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') \n ', 1, 'md')
 end
 if text:match("^تعطيل الحظر$") or text:match("^تعطيل الطرد$") and is_monsh(msg.sender_user_id_, msg.chat_id_) then
 DevAbs:set("ABS_PROX:lock:ban"..bot_id..msg.chat_id_,"ABS_PROX")
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تم تعطيل الحظر ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱڵـطرد وٱڵـحظر\n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') \n ', 1, 'md')
 end
 end
 --     Source DevProx     --
 if text:match("^حظر$") and msg.reply_to_message_id_ ~= 0 then
 if not is_monsh(msg.sender_user_id_, msg.chat_id_) and DevAbs:get("ABS_PROX:lock:ban"..bot_id..msg.chat_id_) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ لا تستطيع الحظر او الطرد \n🏆┇ لانه معطل من قبل المنشئ ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ لٱ تستطيع ٱڵـطرد ٱو ٱڵـحظر \n❗️⚠️ ⌯ لٱنة معطل من قبل ٱڵمنشئ ', 1, 'md')
 return "ABS_PROX"
 end
 function ban_by_reply(extra, result, success)
@@ -5084,17 +5084,17 @@ local abs = 'bot:banned:'..msg.chat_id_
 if not is_momod(result.sender_user_id_, result.chat_id_) then
 if DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ is already banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is already banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حظره ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ محظور في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 chat_kick(result.chat_id_, result.sender_user_id_)
 else
 DevAbs:sadd(DevProx..abs, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️☻ has been banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حظره ) من المجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 chat_kick(result.chat_id_, result.sender_user_id_)
 end
@@ -5110,13 +5110,13 @@ function ban_by_username(extra, result, success)
 local abs = 'bot:banned:'..msg.chat_id_
 if result.id_ then 
 if is_momod(result.id_, msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ لا تستطيع حظر او طرد الادمنيه ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️⚠️ ⌯ لٱ تستطيع حظر ( ['..absc9..'] )\n❗️🚸 ⌯ لٱنه يمتڵك ٱحدى ٱڵـرتب : \n{ مميز • ادمن • مدير • منشئ • مطور } ', 1, 'md')
 else
 if DevAbs:sismember(DevProx..abs, result.id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حظره ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ بٱڵفعڵ محظور في ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 else
 DevAbs:sadd(DevProx..abs, result.id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حظره ) من المجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( [@'..ap[2]..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 chat_kick(msg.chat_id_, result.id_)
 end
 end
@@ -5128,7 +5128,7 @@ end
 if text:match("^[Bb]an (%d+)$") then
 local ap = {string.match(text, "^([Bb]an) (%d+)$")}
 if not is_monsh(msg.sender_user_id_, msg.chat_id_) and DevAbs:get("ABS_PROX:lock:ban"..bot_id..msg.chat_id_) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ لا تستطيع الحظر او الطرد \n🏆┇ لانه معطل من قبل المنشئ ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ لٱ تستطيع ٱڵـطرد ٱو ٱڵـحظر \n❗️⚠️ ⌯ لٱنة معطل من قبل ٱڵمنشئ ', 1, 'md')
 return "ABS_PROX"
 end
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. ap[2])
@@ -5138,9 +5138,9 @@ if not is_momod(ap[2], msg.chat_id_) then
 DevAbs:sadd(DevProx..'bot:banned:'..msg.chat_id_, ap[2])
 chat_kick(msg.chat_id_, ap[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ has been banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حظره ) من المجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5165,9 +5165,9 @@ return false
 else
 del_all_msgs(msg.chat_id_, ass[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, ' All messages from User : '..ass[2]..' has been deleted ', 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ All messages from User : ( '..ass[2]..' ) \n❗️📛 ⌯ has been deleted ', 1, 'html')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '✺❘ كل رسائل العضو : '..ass[2]..'\n ✺❘ تم حذفها ✅', 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ رسٱئڵ ٱڵـعضو : ( '..ass[2]..' )\n❗️📛 ⌯ تـۖم حذفهٱ جميعٱ ', 1, 'html')
 end
 end
 end
@@ -5181,15 +5181,15 @@ if user_info_ then
 if result.id_ then
 del_all_msgs(msg.chat_id_, result.id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '*🚸┇ All messages from User ؛ '..result.id_..' )\n🚸┇ has been deleted \n '
+text = '*❗️🚸 ⌯ All messages from User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ has been deleted \n '
 else
-text = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( حذف كل رسائله ) *'
+text = '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حـذف كڵ رسٱڵة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = '*❗️📛 ⌯ Username is not correct *'
 else
-text = '❗️📛 ⌯ ٱڵمعرف غير صحيح*'
+text = '*❗️📛 ⌯ ٱڵمعرف غير صحيح*'
 end
 end
 end
@@ -5208,17 +5208,17 @@ if user_info_ then
 local abs = 'bot:banned:'..msg.chat_id_
 if not DevAbs:sismember(DevProx..abs, result.sender_user_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ is not banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ is not banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم ( حظره ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس محظور ڵيتم حظرة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..abs, result.sender_user_id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ has been unbanned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المحظور* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( الغاء حظره ) من المجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـمحظور : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5237,16 +5237,16 @@ if user_info_ then
 if result.id_ then
 if not DevAbs:sismember(DevProx..'bot:banned:'..msg.chat_id_, result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.id_..' ، 📤\n🚸┇ is not banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ is not banned \n ', 1, 'md')
 else
-text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️☻ بواسطه ( '..renk_DevProx(msg)..' )\n☑️┇ لم يتم ( حظره ) سابقا'
+text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس محظور ڵيتم حظرة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 else
 DevAbs:srem(DevProx..'bot:banned:'..msg.chat_id_, result.id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ has been unbanned \n '
+text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned \n '
 else
-text = '🏆┇ المحظور ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️☻ بواسطه ( '..renk_DevProx(msg)..' )\n☑️┇ تم ( الغاء حظره ) من المجموعه'
+text = '❗️🎗 ⌯ ٱڵـمحظور : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 end
 else
@@ -5269,16 +5269,16 @@ local absc9 = user_info_
 if user_info_ then
 if not DevAbs:sismember(DevProx..'bot:banned:'..msg.chat_id_, ap[2]) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️☻ The User ؛ '..ap[2]..' )\n🚸┇ has been unbanned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *لم يتم ( حظره ) سابقا*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ هوَ ڵيس محظور ڵيتم حظرة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 else
 DevAbs:srem(DevProx..'bot:banned:'..msg.chat_id_, ap[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ has been unbanned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المحظور* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم ( الغاء حظره ) من المجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـمحظور : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5295,9 +5295,9 @@ local abs = 'bot:gban:'
 DevAbs:sadd(DevProx..abs, result.sender_user_id_)
 chat_kick(result.chat_id_, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ has been globaly banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been globaly banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم حظره من ( '..gps..' ) مجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5314,9 +5314,9 @@ if user_info_ then
 local abs = 'bot:gban:'
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ has been globaly banned \n '
+text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ has been globaly banned \n '
 else
-text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️☻ بواسطه ( '..renk_DevProx(msg)..' )\n☑️┇ تم حظره من ( '..gps..' ) مجموعه'
+text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 DevAbs:sadd(DevProx..abs, result.id_)
 else
@@ -5340,9 +5340,9 @@ local absc9 = user_info_
 if user_info_ then
 local abs = 'bot:gban:'
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n🚸┇ has been globaly banned \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been globaly banned \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم حظره من ( '..gps..' ) مجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:set(DevProx..'bot:gban:'..ap[2],true)
@@ -5358,9 +5358,9 @@ local absc9 = user_info_
 if user_info_ then
 local abs = 'bot:gban:'
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n🚸┇ has been unbanned (Gban) \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned (Gban) \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم الغاء حظره من ( '..gps..' ) مجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 DevAbs:srem(DevProx..abs, result.sender_user_id_)
@@ -5378,9 +5378,9 @@ if user_info_ then
 local abs = 'bot:gban:'
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n🚸┇ has been unbanned (Gban) \n '
+text = '*❗️🚸 ⌯ The User : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned (Gban) \n '
 else
-text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️☻ بواسطه ( '..renk_DevProx(msg)..' )\n☑️┇ تم الغاء حظره من ( '..gps..' ) مجموعه'
+text = '❗️🎗 ⌯ ٱڵـعضو : ( '..absc9..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n '
 end
 end
 DevAbs:srem(DevProx..abs, result.id_)
@@ -5405,9 +5405,9 @@ if user_info_ then
 local abs = 'bot:gban:'
 DevAbs:srem(DevProx..abs, ap[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' ، 🚸\n❗️☻ has been unbanned (Gban) \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..ap[2]..' )\n❗️🏌🏻‍♂️ ⌯ has been unbanned (Gban) \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' )*\n☑️┇ *تم الغاء حظره من ( '..gps..' ) مجموعه*', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـعضو : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..ap[2]..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء حظرة من ( '..gps..' ) مجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -5492,7 +5492,7 @@ DevAbs:srem(DevProx..abs, result.sender_user_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ The User : ( '..result.sender_user_id_..' )\n❗️🏌🏻‍♂️ ⌯ has been unmuted \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '🏆┇ *المكتوم* ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء كتمة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎗 ⌯ ٱڵـمكتوم : ( ['..absc9..'] )\n❗️📮 ⌯ ٱيـۧديـۧه : ( *'..result.sender_user_id_..'* )\n❗️🏌🏻‍♂️ ⌯ تـۖم ٱڵغٱء كتمة من ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..renk_DevProx(msg)..' \n ', 1, 'md')
 end
 end
 end
@@ -6508,7 +6508,7 @@ local id = msg.id_
 local msgs = {[0] = id}
 pin(msg.chat_id_,msg.reply_to_message_id_,1)
 DevAbs:set(DevProx..'pinnedmsg'..msg.chat_id_,msg.reply_to_message_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ تـۖم تثبيت ٱڵـرسٱڵة بنجٱح \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️☻ تـۖم تثبيت ٱڵـرسٱڵة بنجٱح \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 end
 end
 --     Source DevProx     --
@@ -6566,7 +6566,7 @@ end
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 --     Source DevProx     --
-if text:match("^[Vv]iplist$") or text:match("^الاعضاء المميزين$") then
+if text:match("^[Vv]iplist$") or text:match("^المميزين$") or text:match("^مميزين$") then
 local abs =  'bot:vipmem:'..msg.chat_id_
 local list = DevAbs:smembers(DevProx..abs)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -6620,7 +6620,7 @@ end
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 --     Source DevProx     --
-if text:match("^[Vv]ipalllist$") or text:match("^المميزين عام$") or text:match("^الاعضاء المميزين عام$") then
+if text:match("^[Vv]ipalllist$") or text:match("^المميزين عام$") or text:match("^مميزين عام$") or text:match("^المميزين العام$") then
 local abs =  'bot:vpall:'
 local list = DevAbs:smembers(DevProx..abs)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -9736,7 +9736,7 @@ faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 32, string.len(
 end
 DevAbs:del(DevProx..'bot:donky:'..msg.chat_id_)
 end
-if txt[2] == 'voplist' or txts[2] == 'الاعضاء المميزين' then
+if txt[2] == 'voplist' or txts[2] == 'المميزين' then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ VIP Members list has been cleared ', 1, 'md')
 else
@@ -11055,7 +11055,7 @@ local text =  [[
   💬*┇* الردود « » المحظورين 
   🥇*┇* المدراء « » الاعدادات 
   🥉*┇* الادمنيه « » المكتومين 
-  🏆*┇* المقيدين « » الاعضاء المميزين 
+  🏆*┇* المقيدين « » المميزين 
   🔱*┇* المطايه « »   المميزين عام 
   🎖*┇* المنشئين « » المدراء العامين 
   🛋*┇* الصلاحيات « » الاوامر المضافه
@@ -11187,7 +11187,7 @@ local text =  [[
   🗑*┇* حذف القوائم 
   🗑*┇* المحظورين « » البوتات 
   🗑*┇* المكتومين  « » الادمنيه 
-  🗑*┇* المقيدين « » الاعضاء المميزين 
+  🗑*┇* المقيدين « » المميزين 
   🗑*┇* قائمه المنع « » قائمه المنع العام 
   〰️➖〰️➖〰️➖〰️➖〰️➖
 🦠*┇* مطور البوت  ]]..SUDOUSERNAME..[[
