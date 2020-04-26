@@ -6783,7 +6783,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 end
 --     Source DevProx     --
-if is_sudo(msg) and (text:match("^[Ss]etsupport$") or text:match("^ضع دعم$")) then
+if is_sudo(msg) and (text:match("^[Ss]etsupport$") or text:match("^ضع دعم$")) or text:match("^وضع دعم$")) then
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ Please Send your *Support link* Or *Support Bot ID* now ", 1, "md")
 else
@@ -8152,7 +8152,7 @@ end
 end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^[Ss]etlink$") or text:match("^ضع رابط$")  then
+if text:match("^[Ss]etlink$") or text:match("^ضع رابط$") or text:match("^وضع الرابط$")  then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Plese send your group link now ', 1, 'md')
 else
@@ -8415,7 +8415,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تنظيف عدد رسٱئ
 end
 end
 --     Source DevProx     --
-if text:match("^[Ss]etlang (.*)$") or text:match("^ضع اللغه (.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^[Ss]etlang (.*)$") or text:match("^ضع اللغه (.*)$") or text:match("^وضع اللغه (.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 local langs = {string.match(text, "^(.*) (.*)$")}
 if langs[2] == "ar" or langs[2] == "العربيه" then
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -10216,7 +10216,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تغيير ٱسم ٱڵـم
 end
 end
 --     Source DevProx     --
-if text:match("^ضع صوره$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^ضع صوره$") or text:match("^وضع صوره$")  and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '️❗️🎢 Plese send group photo ', 1, 'md')
 else
@@ -10290,8 +10290,8 @@ end
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end
 --     Source DevProx     --
-if text:match('^كشف (-%d+)') then
-local chattid = text:match('كشف (-%d+)') 
+if text:match('^كشف (%d+)') then
+local chattid = text:match('كشف (%d+)') 
 if not is_admin(msg.sender_user_id_, msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطورين فقط ', 1, 'md')
 else
@@ -10336,9 +10336,9 @@ getChannelFull(chattid, abs_c9, nil)
 end 
 end
 --     Source DevProx     --
-if text:match("^غادر (-%d+)$")  then
+if text:match("^غادر (%d+)$")  then
 if not DevAbs:get(DevProx..'lock:add'..msg.chat_id_) then
-local txt = { string.match(text, "^(غادر) (-%d+)$")}
+local txt = { string.match(text, "^(غادر) (%d+)$")}
 if not is_sudo(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطورين فقط ', 1, 'md')
 else 
@@ -11351,7 +11351,7 @@ end
 --     Source DevProx     --
 if is_leader(msg) then
 local text = msg.content_.text_:gsub("[Ss]etprice", "Setnerkh")
-if text:match("^[Ss]etnerkh$") or text:match("^ضع كليشه المطور$") then
+if text:match("^[Ss]etnerkh$") or text:match("^ضع كليشه المطور$") or text:match("^وضع كليشه المطور$") then
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 Plese Send your sudo list now ", 1, "md")
 else
