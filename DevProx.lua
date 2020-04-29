@@ -6966,6 +6966,18 @@ end
 end
 getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
 end
+--     Source DevProx     --
+if text:match("^[Rr]eveal$") or text:match("^كشف$") and msg.reply_to_message_id_ ~= 0 then
+function id_by_reply(extra, result, success)
+if DevAbs:get('lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ user id : "..result.sender_user_id_, 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱيـۧدي ٱڵعضو : "..result.sender_user_id_.."\n", 1, 'md')
+end
+end
+getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
+end
+--     Source DevProx     --
 if text:match("^رتبته @(.*)$") then
 local ap = {string.match(text, "^(رتبته) @(.*)$")}
 function id_by_username(extra, result, success)
@@ -10390,7 +10402,7 @@ end
 if text:match("^(gpinfo)$") or text:match("^معلومات المجموعه$") then
 function gpinfo(arg,data)
 -- vardump(data) 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🧩 ⌯ ٱيـدي ٱڵـمجموعة :( '..msg.chat_id_..' )\n❗️🦠 ⌯ عدد ٱلٱعضٱء : ( *'..data.member_count_..' )*\n❗️⚜️ ⌯ عدد ٱلٱدمنية : ( *'..data.administrator_count_..' )*\n❗️⚠️ ⌯ عدد ٱڵـمحظورين : ( *'..data.kicked_count_..' )*\n〰️➖〰️➖〰️➖〰️➖〰️\n', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🧩 ⌯ ٱيـدي ٱڵـمجموعة :( '..msg.chat_id_..' )\n❗️🦠 ⌯ عدد ٱلٱعضٱء : ( *'..data.member_count_..'* )\n❗️⚜️ ⌯ عدد ٱلٱدمنية : ( *'..data.administrator_count_..'* )\n❗️⚠️ ⌯ عدد ٱڵـمحظورين : ( *'..data.kicked_count_..'* )\n〰️➖〰️➖〰️➖〰️➖〰️\n', 1, 'md') 
 end 
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end
