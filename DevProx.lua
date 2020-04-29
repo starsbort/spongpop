@@ -3624,7 +3624,8 @@ name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس')
 local ABS_PROX = {
  "ڵتكول بوت ٱسمي "..name_bot.." 😒🔪",
  "عندي ٱسم تره 😒💔",
- "صيحوڵي "..name_bot.." كٱفي بوت 😒🔪"
+ "صيحوڵي "..name_bot.." كٱفي بوت 😒🔪",
+ "ٱنت ٱڵبوت ڵك  😒💔"
 }
 DevAbs2 = math.random(#ABS_PROX)
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') 
