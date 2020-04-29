@@ -1467,10 +1467,10 @@ end
 if msg.chat_id_ then
 local id = tostring(msg.chat_id_)
 if id:match("-100(%d+)") then
-faederdx1:incr(FAEDER..'msg'..msg.chat_id_..':'..msg.sender_user_id_) 
+DevAbs:incr(DevProx..'msg'..msg.chat_id_..':'..msg.sender_user_id_) 
 Chat_Type = 'gg' 
 elseif id:match("^(%d+)") then
-faederdx1:sadd(FAEDER..'bot',msg.sender_user_id_)  
+DevAbs:sadd(DevProx..'bot',msg.sender_user_id_)  
 Chat_Type = 'pv' 
 else
 Chat_Type = 'gg' 
