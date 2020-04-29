@@ -2444,7 +2444,6 @@ local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('lastname',(result.last_name_ or ''))
 local text = text:gsub('username',(result.username_ or ''))
 local text = text:gsub('title_name',(result.title_name or ''))
-
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 if DevAbs:get(DevProx.."bot:welcome"..msg.chat_id_) then
@@ -2486,6 +2485,7 @@ end
 local text = text:gsub('firstname',(msg.content_.members_[0].first_name_ or ''))
 local text = text:gsub('lastname',(msg.content_.members_[0].last_name_ or ''))
 local text = text:gsub('username',(msg.content_.members_[0].username_ or ''))
+local text = text:gsub('title_name',(result.title_name or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 --     Source DevProx     --
