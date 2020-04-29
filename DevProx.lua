@@ -2440,9 +2440,11 @@ else
 text = '❗️☻ أهـلاً بِـك عـزيـزي \n[{firstname}](https://telegram.me/'..username..')\n🙎🏻‍♂️ • مُعرفـك : { {username} } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
-local text = text:gsub('{firstname}',(result.first_name_ or ''))
-local text = text:gsub('{lastname}',(result.last_name_ or ''))
-local text = text:gsub('{username}',(result.username_ or ''))
+local text = text:gsub('{firstname}',(result.first_name_ or 'لايوجد'))
+local text = text:gsub('{lastname}',(result.last_name_ or 'لايوجد'))
+local text = text:gsub('{username}',(result.username_ or 'لايوجد'))
+local text = text:gsub('username',(..msg.content_.members_[0].username_ or 'لايوجد'))
+
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 if DevAbs:get(DevProx.."bot:welcome"..msg.chat_id_) then
