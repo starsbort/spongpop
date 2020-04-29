@@ -977,6 +977,31 @@ function chat_del_user(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, 'Editor')
 end
 --     Source DevProx     --
+function s_api(web) 
+local info, res = https.request(web) 
+local req = json:decode(info) if res ~= 200 then 
+return false 
+end 
+if not req.ok then 
+return false 
+end 
+return req 
+end 
+--     Source DevProx     --
+function send_inline(chat_id,text,keyboard,inline,reply_id) 
+local response = {} 
+response.keyboard = keyboard 
+response.inline_keyboard = inline 
+response.resize_keyboard = true 
+response.one_time_keyboard = false 
+response.selective = false  
+local send_api = "https://api.telegram.org/bot"..tokenbot.."/sendMessage?chat_id="..chat_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true&reply_markup="..URL.escape(JSON.encode(response)) 
+if reply_id then 
+send_api = send_api.."&reply_to_message_id="..reply_id 
+end 
+return s_api(send_api) 
+end
+--     Source DevProx     --
 function getChannelMembers(channel_id, offset, filter, limit)
 if not limit or limit > 200 then
 limit = 200
