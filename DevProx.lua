@@ -2435,15 +2435,15 @@ if DevAbs:get(DevProx..'welcome:'..msg.chat_id_) then
 text = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = 'Hi (firstname)\nWelcome To Group '
+text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_name } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_ } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('lastname',(result.last_name_ or ''))
 local text = text:gsub('username',(result.username_ or ''))
-local text = text:gsub('title_name',(result.title_name or ''))
+local text = text:gsub('title_',(f2.title_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 if DevAbs:get(DevProx.."bot:welcome"..msg.chat_id_) then
@@ -2477,15 +2477,15 @@ if DevAbs:get(DevProx..'welcome:'..msg.chat_id_) then
 text = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = 'Hi (firstname)\nWelcome To Group '
+text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_name } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_ } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(msg.content_.members_[0].first_name_ or ''))
 local text = text:gsub('lastname',(msg.content_.members_[0].last_name_ or ''))
 local text = text:gsub('username',(msg.content_.members_[0].username_ or ''))
-local text = text:gsub('title_name',(msg.content_.members_[0].title_name or ''))
+local text = text:gsub('title_',(msg.content_.members_[0].title_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 --     Source DevProx     --
