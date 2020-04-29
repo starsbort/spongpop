@@ -2435,9 +2435,9 @@ if DevAbs:get(DevProx..'welcome:'..msg.chat_id_) then
 text = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = 'Hi (firstname) Welcome To Group '
+text = 'Hi { {firstname} }\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي {firstname}\n🙎🏻‍♂️ • مُعرفـك : ('..username..') \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي \n{ {firstname} }\n🙎🏻‍♂️ • مُعرفـك : { '..username..' } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('{firstname}',(result.first_name_ or ''))
@@ -2476,9 +2476,9 @@ if DevAbs:get(DevProx..'welcome:'..msg.chat_id_) then
 text = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = 'Hi (firstname) Welcome To Group '
+text = 'Hi { {firstname} }\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي {firstname}\n🙎🏻‍♂️ • مُعرفـك : ('..username..') \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي \n{ {firstname} }\n🙎🏻‍♂️ • مُعرفـك : { '..username..' } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('{firstname}',(msg.content_.members_[0].first_name_ or ''))
