@@ -2437,13 +2437,12 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_ } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('lastname',(result.last_name_ or ''))
 local text = text:gsub('username',(result.username_ or ''))
-local text = text:gsub('title_',(f2.title_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 if DevAbs:get(DevProx.."bot:welcome"..msg.chat_id_) then
@@ -2479,13 +2478,12 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_ } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(msg.content_.members_[0].first_name_ or ''))
 local text = text:gsub('lastname',(msg.content_.members_[0].last_name_ or ''))
 local text = text:gsub('username',(msg.content_.members_[0].username_ or ''))
-local text = text:gsub('title_',(msg.content_.members_[0].title_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 --     Source DevProx     --
@@ -3637,11 +3635,11 @@ ABS_PROX = '❗️☻ لديك ('..(DevAbs:get(DevProx..'bot:add:num'..msg.chat_
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 end
-if text ==  'حذف رسائلي' then
+if text ==  'حذف رسائلي' or text ==  'مسح رسائلي' then
 DevAbs:del('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تم حذف رسائلك المضافه ', 1, 'md')
 end
-if text == 'سمايلات' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'سمايلات' or text == 'السمايلات' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:ids'..msg.chat_id_)
 DevAbs2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','🍒','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥒','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🏆','🎻','🎸','🎺','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','📤','🎗','🏵','🎖','🏆','🥌','🛷','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','🚚','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
 name = DevAbs2[math.random(#DevAbs2)]
@@ -3746,7 +3744,8 @@ name = string.gsub(name,'🚜','🚜')
 name = string.gsub(name,'🇮🇶','🇮🇶')
 name = string.gsub(name,'⚔️','⚔️')
 name = string.gsub(name,'🛡','🛡')
-name = string.gsub(name,'🔮','🔮')name = string.gsub(name,'🌡','🌡')
+name = string.gsub(name,'🔮','🔮')
+name = string.gsub(name,'🌡','🌡')
 name = string.gsub(name,'💣','💣')
 name = string.gsub(name,'⏱','⏱')
 name = string.gsub(name,'🛢','🛢')
@@ -3762,18 +3761,18 @@ name = string.gsub(name,'⏰','⏰')
 name = string.gsub(name,'📺','📺')
 name = string.gsub(name,'🎚','🎚')
 name = string.gsub(name,'☎️','☎️')
-ABS_PROX = '❗️☻ اول واحد يدز هذا السمايل  {'..name..'} يربح '
+ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يدز هذٱ ٱڵسمٱيڵ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:klmos'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:ids'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:ids'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل سمايلات '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( سمايلات ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:ids'..msg.chat_id_,true)
 end
-if text == 'ترتيب' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'ترتيب' or text == 'الترتيب' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
 DevAbs2 = {'سحور','سياره','استقبال','قنفه','ايفون','بزونه','مطبخ','كرستيانو','دجاجه','مدرسه','الوان','غرفه','ثلاجه','كهوه','سفينه','العراق','محطه','طياره','رادار','منزل','مستشفى','كهرباء','تفاحه','اخطبوط','سلمون','فرنسا','برتقاله','تفاح','مطرقه','بتيته','لهانه','شباك','باص','سمكه','ذباب','تلفاز','حاسوب','انترنيت','ساحه','جسر'};
 name = DevAbs2[math.random(#DevAbs2)]
@@ -3818,12 +3817,12 @@ name = string.gsub(name,'حاسوب','س ا ح و ب')
 name = string.gsub(name,'انترنيت','ا ت ن ر ن ي ت')
 name = string.gsub(name,'ساحه','ح ا ه س')
 name = string.gsub(name,'جسر','ر ج س')
-ABS_PROX = '❗️☻ اول واحد يرتبها  {'..name..'} يربح '
+ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يرتبهٱ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:klmo'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل ترتيب '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( ترتيب ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
@@ -3845,7 +3844,7 @@ Dev_Abs( msg.chat_id_, msg.id_, 1, TEST, 1, "md")
 DevAbs:setex(DevProx.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
 return false  
 end
-if text == 'حزوره' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'حزوره' or text == 'الحزوره' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
 DevAbs2 = {'الجرس','عقرب الساعه','السمك','المطر','5','الكتاب','البسمار','7','الكعبه','بيت الشعر','لهانه','انا','امي','الابره','الساعه','22','غلط','كم الساعه','البيتنجان','البيض','المرايه','الضوء','الهواء','الضل','العمر','القلم','المشط','الحفره','البحر','الثلج','الاسفنج','الصوت','بلم'};
 name = DevAbs2[math.random(#DevAbs2)]
@@ -3883,18 +3882,18 @@ name = string.gsub(name,'الثلج','انا ابن الماء فان تركون
 name = string.gsub(name,'الاسفنج','كلي ثقوب ومع ذالك احفض الماء فمن اكون ؟')
 name = string.gsub(name,'الصوت','اسير بلا رجلين ولا ادخل الا بالاذنين فمن انا ؟')
 name = string.gsub(name,'بلم','حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ')
-ABS_PROX = '❗️☻ اول واحد يحلها  {'..name..'} يربح '
+ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يحڵهٱ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:bkbk'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل حزوره '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( حزوره ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end 
-if text == 'المعاني' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'المعاني' or text == 'معاني' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
 DevAbs2 = {'قرد','دجاجه','بطريق','ضفدع','بومه','نحله','ديك','جمل','بقره','دولفين','تمساح','قرش','نمر','اخطبوط','سمكه','خفاش','اسد','فأر','ذئب','فراشه','عقرب','زرافه','قنفذ','تفاحه','باذنجان'}
 name = DevAbs2[math.random(#DevAbs2)]
@@ -3924,18 +3923,18 @@ name = string.gsub(name,'زرافه','🦒')
 name = string.gsub(name,'قنفذ','🦔')
 name = string.gsub(name,'تفاحه','🍎')
 name = string.gsub(name,'باذنجان','🍆')
-ABS_PROX = '❗️☻ ما معنى هذا السمايل ؟  {'..name..'} '
+ABS_PROX = '❗️🚸 ⌯ مٱ معنى هذٱ ٱڵسمٱيڵ :؟ {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:bkbk2'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل المعاني '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( المعاني ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end 
-if text == 'العكس' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'العكس' or text == 'عكس' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
 DevAbs2 = {'باي','فهمت','موزين','اسمعك','احبك','موحلو','نضيف','حاره','ناصي','جوه','سريع','ونسه','طويل','سمين','ضعيف','شريف','شجاع','رحت','عدل','نشيط','شبعان','موعطشان','خوش ولد','اني','هادئ'}
 name = DevAbs2[math.random(#DevAbs2)]
@@ -3965,18 +3964,18 @@ name = string.gsub(name,'موعطشان','عطشان')
 name = string.gsub(name,'خوش ولد','موخوش ولد')
 name = string.gsub(name,'اني','مطي')
 name = string.gsub(name,'هادئ','عصبي')
-ABS_PROX = '❗️☻ عكس كلمه ~ {'..name..'} '
+ABS_PROX = '❗️🚸 ⌯ مٱ هو عكس كڵمة {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:bkbk3'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل العكس '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( العكس ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end 
-if text == 'المختلف' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'المختلف' or text == 'مختلف' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
 DevAbs2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧜‍♂','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕒','🕤','⌛️','📅',};
 name = DevAbs2[math.random(#DevAbs2)]
@@ -4007,18 +4006,18 @@ name = string.gsub(name,'🕒','🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒')
 name = string.gsub(name,'🕤','🕥🕥🕥🕥🕥🕤🕥🕥🕥')
 name = string.gsub(name,'⌛️','⏳⏳⏳⏳⏳⏳⌛️⏳⏳')
 name = string.gsub(name,'📅','📆📆📆📆📆📆📅📆📆')
-ABS_PROX = '❗️☻ اول واحد يطلع المختلف {'..name..'} يربح '
+ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يطڵع ٱڵمختلف {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:bkbk4'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل المختلف '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( المختلف ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end  
-if text == 'امثله' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
+if text == 'امثله' or text == 'الامثله' and DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 DevAbs2 = {'جوز','ضراطه','الحبل','الحافي','شقره','بيدك','سلايه','النخله','الخيل','حداد','المبلل','يركص','قرد','العنب','العمه','الخبز','بالحصاد','شهر','شكه','يكحله',};
 name = DevAbs2[math.random(#DevAbs2)]
 DevAbs:set(DevProx..'bot:bkbk5'..msg.chat_id_,name)
@@ -4043,14 +4042,14 @@ name = string.gsub(name,'شهر','امشي__ولا تعبر نهر')
 name = string.gsub(name,'شكه','يامن تعب يامن__يا من على الحاضر لكة')
 name = string.gsub(name,'القرد','__بعين امه غزال')
 name = string.gsub(name,'يكحله','اجه___عماها')
-ABS_PROX = '❗️☻ اكمل المثل التالي {'..name..'} '
+ABS_PROX = '❗️🚸 ⌯ ٱكمڵ ٱڵمثٱڵ ٱڵتٱڵي {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 if text == ''..(DevAbs:get(DevProx..'bot:bkbk5'..msg.chat_id_) or '57999')..'' then -- // المختلف
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 DevAbs:del(DevProx..'bot:bkbk5'..msg.chat_id_)
-ABS_PROX = '❗️☻ انت الرابح  \n❗️☻ للعب مره اخرى ارسل امثله '
+ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( امثله ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
