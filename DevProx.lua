@@ -2437,7 +2437,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi (firstname) Welcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي    (firstname)\n🙎🏻‍♂️ • مُعرفـك :  @(username) \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي ('..firstname..')\n🙎🏻‍♂️ • مُعرفـك : (@'..username..') \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('{firstname}',(result.first_name_ or ''))
@@ -2478,7 +2478,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi (firstname) Welcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي    (firstname)\n🙎🏻‍♂️ • مُعرفـك :  @(username) \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي ('..firstname..')\n🙎🏻‍♂️ • مُعرفـك : (@'..username..') \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('{firstname}',(msg.content_.members_[0].first_name_ or ''))
@@ -4559,7 +4559,7 @@ local Dev_Abss = (DevAbs:get('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.se
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ welcome my dear \n📬┇ you have {*"..(user_msgs + Dev_Abss).." }* msg \n📖┇ in group ", 1, 'md')
 else 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🔑 ⌯ رسٱئڵك ٱڵحقيقية :  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵحقيقية :  *("..Dev_Abss..")* \n❗️🚸 ⌯ رسٱئڵك ٱڵيوم : *("..(ABS_PROX)..")*\n❗️💎 ⌯ مجموع رسٱئڵك : *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🔑 ⌯ رسٱئڵك ٱڵحقيقية :  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵمضٱفة :  *("..Dev_Abss..")* \n❗️🚸 ⌯ رسٱئڵك ٱڵيوم : *("..(ABS_PROX)..")*\n❗️💎 ⌯ مجموع رسٱئڵك : *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
 end
 end
 if text:match("^[Gg]p id$") or text:match("^ايدي المجموعه$") then
@@ -4771,7 +4771,7 @@ end
 resolve_username(username,ABS_PROX)
 end
 --     Source DevProx     --
-if text:match("^هينه$") or text:match("^بعد هينه$") then
+if text:match("^هينه$") or text:match("^بعد هينه$") or text:match("^هينه بعد$") then
 function hena(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, ' شكد غبي لعد 🌚?? تريدني اهين نفسي ؟ دكسمك 😌😂', 1, 'md') 
@@ -6972,7 +6972,7 @@ function id_by_reply(extra, result, success)
 if DevAbs:get('lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ user id : "..result.sender_user_id_, 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱيـۧدي ٱڵعضو : "..result.sender_user_id_.."\n", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱيـۧديه : ("..result.sender_user_id_..")\n", 1, 'md')
 end
 end
 getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
