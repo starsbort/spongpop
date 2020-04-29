@@ -10530,7 +10530,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,[[*
 ❗️🔗 ⌯ ٱرسڵ ⌯» ( المحيبس ) للعب
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️🏵 ⌯ CH ⌯» @Dev_Prox
-]], 1, 'md')
+*]], 1, 'md')
 DevAbs:set(DevProx..'bot:lock_geam'..msg.chat_id_,true)  
 end
 if text == 'تعطيل الالعاب' then  
