@@ -3764,7 +3764,7 @@ name = string.gsub(name,'☎️','☎️')
 ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يدز هذٱ ٱڵسمٱيڵ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:klmos'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:ids'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:klmos'..msg.chat_id_) or 'سر السمايلات')..'' and not DevAbs:get(DevProx..'bot:l:ids'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:ids'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( سمايلات ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -3820,7 +3820,7 @@ name = string.gsub(name,'جسر','ر ج س')
 ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يرتبهٱ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:klmo'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:klmo'..msg.chat_id_) or 'سر الترتيب')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( ترتيب ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -3885,7 +3885,7 @@ name = string.gsub(name,'بلم','حامل ومحمول نصف ناشف ونصف
 ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يحڵهٱ {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:bkbk'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:bkbk'..msg.chat_id_) or 'سر الحزوره')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( حزوره ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -3926,7 +3926,7 @@ name = string.gsub(name,'باذنجان','🍆')
 ABS_PROX = '❗️🚸 ⌯ مٱ معنى هذٱ ٱڵسمٱيڵ :؟ {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:bkbk2'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:bkbk2'..msg.chat_id_) or 'سر المعاني')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( المعاني ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -3967,7 +3967,7 @@ name = string.gsub(name,'هادئ','عصبي')
 ABS_PROX = '❗️🚸 ⌯ مٱ هو عكس كڵمة {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:bkbk3'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:bkbk3'..msg.chat_id_) or 'سر العكس')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( العكس ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -4009,7 +4009,7 @@ name = string.gsub(name,'📅','📆📆📆📆📆📆📅📆📆')
 ABS_PROX = '❗️🚸 ⌯ ٱوڵ وٱحد يطڵع ٱڵمختلف {'..name..'} يربح '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:bkbk4'..msg.chat_id_) or 'لفاتع')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
+if text == ''..(DevAbs:get(DevProx..'bot:bkbk4'..msg.chat_id_) or 'سر المختلف')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( المختلف ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
@@ -4022,35 +4022,34 @@ DevAbs2 = {'جوز','ضراطه','الحبل','الحافي','شقره','بيد�
 name = DevAbs2[math.random(#DevAbs2)]
 DevAbs:set(DevProx..'bot:bkbk5'..msg.chat_id_,name)
 DevAbs:del(DevProx..'bot:l:id'..msg.chat_id_)
-name = string.gsub(name,'جوز','ينطي____للماعده سنون')
-name = string.gsub(name,'ضراطه','الي يسوق المطي يتحمل___')
-name = string.gsub(name,'بيدك','اكل___محد يفيدك')
-name = string.gsub(name,'الحافي','تجدي من___نعال')
-name = string.gsub(name,'شقره','مع الخيل يا___')
-name = string.gsub(name,'النخله','الطول طول___والعقل عقل الصخلة')
-name = string.gsub(name,'سلايه','بالوجه امراية وبالظهر___')
-name = string.gsub(name,'الخيل','من قلة___شدو على الچلاب سروج')
-name = string.gsub(name,'حداد','موكل من صخم وجهه كال آني___')
-name = string.gsub(name,'المبلل','___ما يخاف من المطر')
-name = string.gsub(name,'الحبل','اللي تلدغة الحية يخاف من جرة___')
-name = string.gsub(name,'يركص','المايعرف___يكول الكاع عوجه')
-name = string.gsub(name,'العنب','المايلوح___يكول حامض')
-name = string.gsub(name,'العمه','___إذا حبت الچنة ابليس يدخل الجنة')
-name = string.gsub(name,'الخبز','انطي___للخباز حتى لو ياكل نصه')
-name = string.gsub(name,'باحصاد','اسمة___ومنجله مكسور')
-name = string.gsub(name,'شهر','امشي__ولا تعبر نهر')
-name = string.gsub(name,'شكه','يامن تعب يامن__يا من على الحاضر لكة')
-name = string.gsub(name,'القرد','__بعين امه غزال')
-name = string.gsub(name,'يكحله','اجه___عماها')
+name = string.gsub(name,'جوز','ينطي ____ للماعده سنون')
+name = string.gsub(name,'ضراطه','الي يسوق المطي يتحمل ___ ')
+name = string.gsub(name,'بيدك','اكل ___ محد يفيدك')
+name = string.gsub(name,'الحافي','تجدي من ___ نعال')
+name = string.gsub(name,'شقره','مع الخيل يا ___ ')
+name = string.gsub(name,'النخله','الطول طول ___ والعقل عقل الصخلة')
+name = string.gsub(name,'سلايه','بالوجه امراية وبالظهر ___ ')
+name = string.gsub(name,'الخيل','من قلة ___ شدو على الچلاب سروج')
+name = string.gsub(name,'حداد','موكل من صخم وجهه كال آني ___ ')
+name = string.gsub(name,'المبلل',' ___ ما يخاف من المطر')
+name = string.gsub(name,'الحبل','اللي تلدغة الحية يخاف من جرة ___ ')
+name = string.gsub(name,'يركص','المايعرف ___ يكول الكاع عوجه')
+name = string.gsub(name,'العنب','المايلوح ___ يكول حامض')
+name = string.gsub(name,'العمه',' ___ إذا حبت الچنة ابليس يدخل الجنة')
+name = string.gsub(name,'الخبز','انطي ___ للخباز حتى لو ياكل نصه')
+name = string.gsub(name,'باحصاد','اسمة ___ ومنجله مكسور')
+name = string.gsub(name,'شهر','امشي __ ولا تعبر نهر')
+name = string.gsub(name,'شكه','يامن تعب يامن __ يا من على الحاضر لكة')
+name = string.gsub(name,'القرد',' __ بعين امه غزال')
+name = string.gsub(name,'يكحله','اجه ___ عماها')
 ABS_PROX = '❗️🚸 ⌯ ٱكمڵ ٱڵمثٱڵ ٱڵتٱڵي {'..name..'} '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
-if text == ''..(DevAbs:get(DevProx..'bot:bkbk5'..msg.chat_id_) or '57999')..'' then -- // المختلف
+if text == ''..(DevAbs:get(DevProx..'bot:bkbk5'..msg.chat_id_) or 'سر الامثله')..'' and not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then
 if not DevAbs:get(DevProx..'bot:l:id'..msg.chat_id_) then 
-DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
-DevAbs:del(DevProx..'bot:bkbk5'..msg.chat_id_)
 ABS_PROX = '❗️🚸 ⌯ ڵقد ربحت وحصڵت عڵى نقطة \n❗️🔑 ⌯ ٱرسڵ ( امثله ) ڵڵعب مره ٱخرى \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
+DevAbs:incrby(DevProx..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end
