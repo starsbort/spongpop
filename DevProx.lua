@@ -2437,7 +2437,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi { {firstname} }\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي \n{ {firstname} }\n🙎🏻‍♂️ • مُعرفـك : { '..username..' } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي \n[{firstname}](https://telegram.me/'..username..')\n🙎🏻‍♂️ • مُعرفـك : { {username} } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('{firstname}',(result.first_name_ or ''))
@@ -2478,12 +2478,13 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi { {firstname} }\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك عـزيـزي \n{ {firstname} }\n🙎🏻‍♂️ • مُعرفـك : { '..username..' } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك عـزيـزي \n[{firstname}](https://telegram.me/'..username..')\n🙎🏻‍♂️ • مُعرفـك : { {username} } \n⛔️❗️ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
-local text = text:gsub('{firstname}',(msg.content_.members_[0].first_name_ or ''))
-local text = text:gsub('{lastname}',(msg.content_.members_[0].last_name_ or ''))
-local text = text:gsub('{username}',('@'..msg.content_.members_[0].username_ or ''))
+local text = text:gsub('{firstname}',(msg.content_.members_[0].first_name_ or 'لايوجد'))
+local text = text:gsub('{lastname}',(msg.content_.members_[0].last_name_ or 'لايوجد'))
+local text = text:gsub('{username}',('@'..msg.content_.members_[0].username_ or 'لايوجد'))
+local text = text:gsub('username',(..msg.content_.members_[0].username_ or 'لايوجد'))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 --     Source DevProx     --
