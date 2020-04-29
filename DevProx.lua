@@ -2435,7 +2435,7 @@ if DevAbs:get(DevProx..'welcome:'..msg.chat_id_) then
 text = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = 'Hi (firstname)\nWelcome To Group '                     {"..title_name(msg.chat_id_).."}
+text = 'Hi (firstname)\nWelcome To Group '
 else
 text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️🚸 في : { title_name } \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
