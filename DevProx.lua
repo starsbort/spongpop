@@ -3114,7 +3114,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـكفر ه�
 end 
 end
 --     Source DevProx     --
-if text == 'جلب نسخه الكروبات' or if text == 'جلب نسخة الكروبات' or if text == 'نسخة الكروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
+if text == 'جلب نسخه الكروبات' or text == 'جلب نسخة الكروبات' or text == 'نسخة الكروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
 local list = DevAbs:smembers(DevProx..'bot:groups')  
 local t = '{"BOT_ID": '..DevProx..',"GP_BOT":{'  
 for k,v in pairs(list) do   
