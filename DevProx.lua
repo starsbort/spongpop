@@ -2129,7 +2129,7 @@ if msgsonpv > (13 - 1) then
 blockUser(msg.sender_user_id_)
 end
 local idmem = tostring(msg.chat_id_)
-if idmem:match("^(%d+)") then
+if idmem:match("^كودايي(%d+)") then
 DevAbs:setex(DevProx..pmonpv, TIME_CHECK, msgsonpv+1)
 end
 local Time = os.date("%X")
@@ -2201,9 +2201,9 @@ end
 DevAbs:del(DevProx..'bot:viewget'..msg.sender_user_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ The more hits you : '..msg.views_..' seen ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, 'The number of post views is : ('..msg.views_..') \n ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ مشاهدات المنشور  '..msg.views_..' تقريبا ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ عدد مشٱهدٱت ٱڵمنشور هوَ : ('..msg.views_..') \n ', 1, 'md')
 end
 DevAbs:del(DevProx..'bot:viewget'..msg.sender_user_id_)
 end
