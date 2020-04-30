@@ -11560,15 +11560,9 @@ io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*")
 print("\27[31;47m\n          ( تم تحديث البوت )          \n\27[0;34;49m\n") 
 Dev_Abs(msg.chat_id_, msg.id_, 1, "🧩 ⌯ تـۖم تـۧـحـډيـث ٱڵـبـۄت ⌯ ", 1, "md")
 end 
-if text and text:match("^اضف رسائل (%d+)$") and is_monsh(msg.sender_user_id_, msg.chat_id_) then  
+if text and text:match("^اضف رسائل (%d+)$") or text:match('^اضف رسائل @(.*)$') and is_monsh(msg.sender_user_id_, msg.chat_id_) then  
 DevAbs0 = text:match("^اضف رسائل (%d+)$")
-DevAbs:set('ABS_PROX:'..bot_id..'id:user'..msg.chat_id_,DevAbs0)  
-DevAbs:setex('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱرسـڵ عـدد ٱڵـرسٱئـڵ ٱلٱن \n❗️🔑 ⌯ ٱرسـڵ ٱڵغٱء لٱڵغٱء ٱلٱمر ", 1, "md")
-Dev_Abs(msg.chat_id_, msg.id_, 1,Anwar, 1, 'md') 
-end 
-if text and text:match('^اضف رسائل @(.*)$') and is_monsh(msg.sender_user_id_, msg.chat_id_) then
-local ap = {string.match(text, '^(اضف رسائل) @(.*)$')}
+DevAbs0 = text:match('^اضف رسائل @(.*)$')
 DevAbs:set('ABS_PROX:'..bot_id..'id:user'..msg.chat_id_,DevAbs0)  
 DevAbs:setex('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱرسـڵ عـدد ٱڵـرسٱئـڵ ٱلٱن \n❗️🔑 ⌯ ٱرسـڵ ٱڵغٱء لٱڵغٱء ٱلٱمر ", 1, "md")
