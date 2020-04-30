@@ -11012,7 +11012,7 @@ DevAbs:del(DevProx..'bot:help4', text)
 DevAbs:del(DevProx..'bot:help5', text) 
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم ٱستعـٱدة ٱڵـكـلٱيش ٱلٱصڵيه" ,  1, "md") 
 end
-if is_leader(msg) and text:match("^تعيين الاوامر$") text:match("^تعيين امر الاوامر$") then
+if is_leader(msg) and text:match("^تعيين الاوامر$") or text:match("^تعيين امر الاوامر$") then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ ⌯ ٱرسـڵ كڵيشة (الاوامر) ٱلٱن " ,  1, "md")
 DevAbs:set(DevProx..'bot:help0'..msg.sender_user_id_..'', 'msg')
 return false end
