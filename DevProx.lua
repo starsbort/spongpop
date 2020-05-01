@@ -3612,6 +3612,14 @@ local ABS_PROX = {
 DevAbs2 = math.random(#ABS_PROX)
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') 
 end
+if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه'  then 
+name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') 
+local ABS_PROX = {
+ "مرحبٱ عزيزي 😻♥️ \nٱسمي "..name_bot.." 😻♥️",
+}
+DevAbs2 = math.random(#ABS_PROX)
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') 
+end
 if (text and text == (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس')) then
 name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس')
 local namebot = { 
@@ -4824,7 +4832,7 @@ return false
 end 
 local ABS_PROX = " صار ستاذي راح اتماصص وياه 🙊😻" 
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
-local ABS_PROX = {" تعالي حياتي خل نتماصص 😻👏"," اممممووووواااااح لصق الشفه 😻"," امح امح امح امح بوسه لو عسل 😼😻"} 
+local ABS_PROX = {" تعال حياتي خل نتماصص 😻👏"," اممممووووواااااح لصق الشفه 😻"," امح امح امح امح بوسه لو عسل 😼😻"} 
 Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1, 'md') 
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
@@ -4832,6 +4840,27 @@ else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
 end
 end
+if text:match("^صيحه$") or text:match("^صيحها$") or text:match("^صيحهه$") then
+function hena(extra, result, success)
+if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
+Dev_Abs(msg.chat_id_, msg.id_, 1, ' حياتي بس فهمني شون اصيح نفسي  😔😂', 1, 'md') 
+return false  
+end  
+if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
+Dev_Abs(msg.chat_id_, msg.id_, 1, 'تعال مطوري محتاجيك', 1, 'md')
+return false
+end 
+local ABS_PROX = "صار ستاذي هسه اصيحه" 
+Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
+local ABS_PROX = {" تعال محتاجيك"," وينكك يمعودد"," يابه مو دنصيحك"} 
+Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1, 'md') 
+end 
+if tonumber(msg.reply_to_message_id_) == 0 then
+else 
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+end
+end
+--     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
@@ -10866,7 +10895,7 @@ return false
 end
 end
 --     Source DevProx     --
-if  msg.content_.text_ == "ردود المطور" or msg.content_.text_ == "الردود العام" and is_sudo(msg) then
+if  msg.content_.text_ == "ردود المطور" or msg.content_.text_ == "الردود العام" or msg.content_.text_ == "ردود العام" and is_sudo(msg) then
 local redod = DevAbs:smembers(DevProx.."rep_sudo")
 if #redod == 0 then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ لٱ تـوجـد رډوډ مضـٱفـة" ,  1, "md")
@@ -10900,7 +10929,7 @@ return false
 end
 end 
 --     Source DevProx     --
-if text:match("^تغيير اسم البوت$") or text:match("^وضع اسم البوت$") then
+if text:match("^تغيير اسم البوت$") or text:match("^وضع اسم البوت$") or text:match("^ضع اسم البوت$") then
 if not is_leader(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطور ٱلٱسٱسي فقط ', 1, 'md')
 else
