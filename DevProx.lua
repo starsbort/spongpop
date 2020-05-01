@@ -1275,9 +1275,9 @@ t = "❗️🎒 ⌯ قٱئمة ٱلٱوامر ٱڵمضافة : \n〰️➖〰️
 for k,v in pairs(list) do
 Cmds = DevAbs:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
-t = t..""..k.."⌯ ("..v..") • {"..Cmds.."}\n"
+t = t..""..k.." ⌯ ("..v..") • {"..Cmds.."}\n"
 else
-t = t..""..k.."⌯ ("..v..") \n"
+t = t..""..k.." ⌯ ("..v..") \n"
 end
 end
 if #list == 0 then
@@ -1314,14 +1314,14 @@ t = "❗️🎒 ⌯ قٱئمة ٱڵصلٱحيٱت ٱڵمضافة : \n〰️➖�
 for k,v in pairs(list) do
 var = DevAbs:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
-t = t..""..k.."⌯ "..v.." • ("..var..")\n"
+t = t..""..k.." ⌯ "..v.." • ("..var..")\n"
 else
-t = t..""..k.."⌯ "..v.."\n"
+t = t..""..k.." ⌯ "..v.."\n"
 end
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
-if text == "حذف الصلاحيات" then
+if text == "حذف الصلاحيات" text == "حذف صلاحيات" then
 local list = DevAbs:smembers(bot_id.."Coomds"..msg.chat_id_)
 for k,v in pairs(list) do
 DevAbs:del(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
@@ -4394,7 +4394,7 @@ getMessage(msg.chat_id_, msg.reply_to_message_id_,rt_by_reply)
 end
 --     Source DevProx     --
 if is_sudo(msg) then
-if text == 'توجيه للكل' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'توجيه للكل' or text == 'نشر بالتوجيه' or text == 'الاذاعه بالتوجيه' and tonumber(msg.reply_to_message_id_) > 0 then
 function ABS_PROX(extra,result,success)
 local list = DevAbs:smembers(DevProx.."bot:groups")
 for k,v in pairs(list) do
@@ -4473,20 +4473,19 @@ end
 end   
 --     Source DevProx     --
 
-if text == 'تعطيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تعطيل اطردني' or text == 'تعطيل ادفرني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."lock_kickme"..msg.chat_id_) then
 DevAbs:set(DevProx.."lock_kickme"..msg.chat_id_, true)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱمـر ٱطردني \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 end
 end
-if text == 'تفعيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تفعيل اطردني' or text == 'تفعيل ادفرني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get(DevProx.."lock_kickme"..msg.chat_id_) then
 DevAbs:del(DevProx.."lock_kickme"..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱمـر ٱطردني \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 end
 end
 --     Source DevProx     --
-
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text == "تاك للكل" then
 function tall(f1, f2)
@@ -4505,6 +4504,26 @@ print(text)
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},tall,nil)
 end
+--     Source DevProx     --
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text and text == "صيحهم" then
+function tall(f1, f2)
+local text = "❗️🚸 ⌯ وينكم يٱڵربع \n〰️➖〰️➖〰️➖〰️➖〰️\n"
+i = 0
+for k, v in pairs(f2.members_) do
+i = i + 1
+local user_info = DevAbs:hgetall('user:'..v.user_id_)  
+if user_info and user_info.username then
+local username = user_info.username
+text = text.."<b> "..i.." ⌯ </b> { @"..username.." }\n"
+end
+end 
+Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+print(text)
+end
+tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},tall,nil)
+end
+--     Source DevProx     --
 if text:match("^كلهم (.*)$")  then
 local txt = {string.match(text, "^(كلهم) (.*)$")}
 function tall(f1, f2)
@@ -6648,9 +6667,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6696,9 +6715,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6722,9 +6741,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6737,7 +6756,7 @@ end
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 --     Source DevProx     --
-if text:match("^[Vv]iplist$") or text:match("^المميزين$") or text:match("^مميزين$") then
+if text:match("^[Vv]iplist$") or text:match("^المميزين$") or text:match("^مميزين$") or text:match("^الاعضاء المميزين$") then
 local abs =  'bot:vipmem:'..msg.chat_id_
 local list = DevAbs:smembers(DevProx..abs)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -6749,9 +6768,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6776,9 +6795,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6803,9 +6822,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6830,9 +6849,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6857,9 +6876,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6884,9 +6903,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6911,9 +6930,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6938,9 +6957,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 end
 end
 if #list == 0 then
@@ -6984,9 +7003,9 @@ for k,v in pairs(list) do
 local user_info = DevAbs:hgetall('user:'..v)
 if user_info and user_info.username then
 local username = user_info.username
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..")\n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..")\n"
 else
-text = text..k.."⌯ (@"..username..")\n ⌯ ("..v..") \n"
+text = text..k.." ⌯ (@"..username..")\n ⌯ ("..v..") \n"
 end
 end
 if #list == 0 then
@@ -7012,9 +7031,9 @@ end
 local user_info = DevAbs:get(DevProx.."user:Name" .. v)
 if user_info then
 local username = user_info
-text = text .. k .. "⌯ ( " .. username .. " ) \n⌯ Groups : ( " .. gps .. " )\n"
+text = text .. k .. " ⌯ ( " .. username .. " ) \n⌯ Groups : ( " .. gps .. " )\n"
 else
-text = text .. k .. "⌯ ( " .. v .. " ) \n⌯ Groups : ( " .. gps .. " )\n"
+text = text .. k .. " ⌯ ( " .. v .. " ) \n⌯ Groups : ( " .. gps .. " )\n"
 end end
 if #list == 0 then
 text = "❗️⚠️ ⌯ عذرٱ ڵم يتم رفع ٱي مطورين"
