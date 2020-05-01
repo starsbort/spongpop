@@ -4486,6 +4486,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱمـر 
 end
 end
 --     Source DevProx     --
+
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text == "تاك للكل" then
 function tall(f1, f2)
@@ -4504,7 +4505,6 @@ print(text)
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},tall,nil)
 end
---     Source DevProx     --
 if text:match("^كلهم (.*)$")  then
 local txt = {string.match(text, "^(كلهم) (.*)$")}
 function tall(f1, f2)
