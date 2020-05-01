@@ -1084,6 +1084,47 @@ vardump(data)
 end ,nil) 
 end
 --     Source DevProx     --
+function aass(user_id,chat_id)
+if is_leaderid(user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:admins:', user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:onall:', user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:moall:', user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:vpall:', user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:monsh:'..chat_id, user_id) then
+var = true
+elseif is_monsh(chat_id, user_id) then
+var = true 
+elseif DevAbs:sismember(DevProx..'bot:owners:'..chat_id, user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:momod:'..chat_id, user_id) then
+var = true  
+elseif DevAbs:sismember(DevProx..'bot:vipmem:'..chat_id, user_id) then  
+var = true  
+else  
+var = false  
+end  
+return var
+end
+function aasss(user_id,chat_id)
+if is_leaderid(user_id) then
+var = 'botad'  
+elseif DevAbs:sismember(DevProx..'bot:admins', user_id) then
+var = 'sudo3'  
+elseif DevAbs:sismember(DevProx..'bot:monsh:'..chat_id, user_id) then
+var = 'monsh'
+elseif DevAbs:sismember(DevProx..'bot:owners:'..chat_id, user_id) then
+var = 'owner'  
+else  
+var = 'No'
+end  
+return var
+end 
+--     Source DevProx     --
 local function check_filter_words(msg, value)
 local abs = (DevProx..'bot:filters:'..msg.chat_id_)
 if abs then
@@ -4900,6 +4941,129 @@ else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
 end
 end
+--     Source DevProx     --
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+function promote_by_reply(extra, result, success)
+if is_leaderid(result.sender_user_id_) == true then
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❌ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
+return false 
+end
+if DevAbs:sismember(DevProx..'bot:admins:',result.sender_user_id_) then
+sudo3 = 'مطور ثالث • ' else sudo3 = '' end
+if DevAbs:sismember(DevProx..'bot:onall:',result.sender_user_id_) then
+onall = 'مدير عام • ' else onall = '' end
+if DevAbs:sismember(DevProx..'bot:moall:',result.sender_user_id_) then
+moall = 'ادمن عام • ' else moall = '' end
+if DevAbs:sismember(DevProx..'bot:vpall:',result.sender_user_id_) then
+vpall = 'مميز عام • ' else vpall = '' end
+if DevAbs:sismember(DevProx..'bot:monsh:'..msg.chat_id_, result.sender_user_id_) then
+monsh = 'منشئ • ' else monsh = '' end
+if DevAbs:sismember(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_) then
+owner = 'مدير • ' else owner = '' end
+if DevAbs:sismember(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_) then
+momod = 'ادمن • ' else momod = '' end
+if DevAbs:sismember(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_) then
+vipmem = 'مميز' else vipmem = ''
+end
+if aass(result.sender_user_id_,msg.chat_id_) ~= false then
+Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇تم تنزيله من ↓↓\n🗑┇{ "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..owner..''..momod..''..vipmem.." } \n🧪┇رتبته الان { عضو فقط }\n", 1, 'md')
+else 
+Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇لم يتم رفعه باي رتبه سابقا \n", 1, 'md')
+end 
+if fadx(msg.sender_user_id_,msg.chat_id_) == 'botad' then
+DevAbs:srem(DevProx..'bot:admins:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:onall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:moall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vpall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
+DevAbs:srem(DevProx..'bot:onall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:moall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vpall:', result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
+elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh2' then
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'owner' then
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+end
+end
+getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
+end 
+----
+if text and text:match("^تنزيل الكل @(.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+local rem = {string.match(text, "^(تنزيل الكل) @(.*)$")}
+function remm(extra, result, success)
+if result.id_ then
+if is_leaderid(result.id_) == true then
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❌ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
+return false 
+end
+if DevAbs:sismember(DevProx..'bot:admins:',result.id_) then
+sudo3 = 'مطور ثالث • ' else sudo3 = '' end
+if DevAbs:sismember(DevProx..'bot:onall:',result.id_) then
+onall = 'مدير عام • ' else onall = '' end
+if DevAbs:sismember(DevProx..'bot:moall:',result.id_) then
+moall = 'ادمن عام • ' else moall = '' end
+if DevAbs:sismember(DevProx..'bot:vpall:',result.id_) then
+vpall = 'مميز عام • ' else vpall = '' end
+if DevAbs:sismember(DevProx..'bot:monsh:'..msg.chat_id_, result.id_) then
+monsh = 'منشئ • ' else monsh = '' end
+if DevAbs:sismember(DevProx..'bot:owners:'..msg.chat_id_, result.id_) then
+owner = 'مدير • ' else owner = '' end
+if DevAbs:sismember(DevProx..'bot:momod:'..msg.chat_id_, result.id_) then
+momod = 'ادمن • ' else momod = '' end
+if DevAbs:sismember(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_) then
+vipmem = 'مميز' else vipmem = ''
+end
+if aass(result.id_,msg.chat_id_) ~= false then
+Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇تم تنزيله من ↓↓\n🗑┇{ "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..owner..''..momod..''..vipmem.." } \n🧪┇رتبته الان { عضو فقط }\n", 1, 'md')
+else 
+Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇لم يتم رفعه باي رتبه سابقا \n", 1, 'md')
+end 
+if aasss(msg.sender_user_id_,msg.chat_id_) == 'botad' then
+DevAbs:srem(DevProx..'bot:admins:', result.id_)
+DevAbs:srem(DevProx..'bot:onall:', result.id_)
+DevAbs:srem(DevProx..'bot:moall:', result.id_)
+DevAbs:srem(DevProx..'bot:vpall:', result.id_)
+DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
+DevAbs:srem(DevProx..'bot:onall:', result.id_)
+DevAbs:srem(DevProx..'bot:moall:', result.id_)
+DevAbs:srem(DevProx..'bot:vpall:', result.id_)
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.id_)
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.id_)
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'owner' then
+DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
+DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
+end
+Fsend = '🚸┇المعرف غير صحيح*'
+send(msg.chat_id_, msg.id_, 1, Fsend, 1, 'md')
+end
+end
+resolve_username(rem[2],remm)
+end 
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
