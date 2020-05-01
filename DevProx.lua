@@ -1321,7 +1321,7 @@ end
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
-if text == "حذف الصلاحيات" text == "حذف صلاحيات" then
+if text == "حذف الصلاحيات" or text == "حذف صلاحيات" then
 local list = DevAbs:smembers(bot_id.."Coomds"..msg.chat_id_)
 for k,v in pairs(list) do
 DevAbs:del(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
