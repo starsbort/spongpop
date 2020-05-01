@@ -591,18 +591,18 @@ end
 function add_file(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if File_Name:lower():match('(%d+)') ~= DevProx:lower() then 
-DevAbs13(chat,msg.id_,"*⛔️❗️ عـذراً  هـذا ٱڵـملف ليس تابع لـهذٱ ٱڵـسورس*")   
+DevAbs13(chat,msg.id_,"*❗️📛 ⌯ عـذراً هـذا ٱڵـملف ليس تابع لـهذٱ ٱڵـسورس*")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot' .. tokenbot .. '/getfile?file_id='..ID_FILE) ) 
 download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..File.result.file_path, ''..File_Name) 
 DevAbs13(chat,msg.id_,"*❗️☻ جـٱري رفـع ٱڵـمـلـف*")   
 else
-DevAbs13(chat,msg.id_,"*⛔️❗️ غَـيـر صـحـيـح*")   
+DevAbs13(chat,msg.id_,"❗️📛 ⌯ غَـيـر صـحـيـح")   
 end      
 local info_file = io.open('./'..DevProx..'.json', "r"):read('*a')
 local groups = JSON.decode(info_file)
-DevAbs13(chat,msg.id_,"*❗️☻ تـۖم رفـع ٱڵـنـسـخـه بِـنـجـاح \n❗️☻ تـۖم رفـع ٱداريين ٱڵمجمۄعات  ٱڵسابقين \n❗️☻ تـۖم قفـڵ جميع ٱوامـر ٱڵمجـمۄعات*")
+DevAbs13(chat,msg.id_,"❗️☻ تـۖم رفـع ٱڵـنـسـخـه بِـنـجـاح \n❗️☻ تـۖم رفـع ٱداريين ٱڵمجمۄعات  ٱڵسابقين \n❗️☻ تـۖم قفـڵ جميع ٱوامـر ٱڵمجـمۄعات*")
 vardump(groups)
 for idg,v in pairs(groups.GP_BOT) do
 DevAbs:sadd(DevProx.."bot:groups",idg)
@@ -3055,7 +3055,7 @@ if text and is_monsh(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 DevAbs:del('ABS_PROX:'..bot_id..'id:user'..msg.chat_id_)  
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⛔️❗️ تـۖم ٱڵـغـاء ٱلٱمـر', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ تـۖم ٱڵـغـاء ٱلٱمـر', 1, 'md')
 DevAbs:del('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  end 
 DevAbs:del('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
@@ -3081,7 +3081,7 @@ local msgs = { [0] = id}
 local chat = msg.chat_id_
 if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'fshaerdil' then
 delete_msg(chat, msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـفشٱر هنا *', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️📛 ⌯ ممنوع ٱڵـفشٱر هنا *', 1, 'md') 
 elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'fshaerdil2' then
 delete_msg(chat, msgs)
 end
@@ -3095,7 +3095,7 @@ local msgs = { [0] = id}
 local chat = msg.chat_id_
 if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'thhhh' then
 delete_msg(chat, msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⛔️❗️ ممنوع ٱڵـتكلم بٱڵـغـة  ٱڵـفارسية هـنـا  ', 1, 'md')   
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ممنوع ٱڵـتكلم بٱڵـغـة  ٱڵـفارسية هـنـا  ', 1, 'md')   
 elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'bedthhh' then
 delete_msg(chat, msgs)
 end
@@ -3117,8 +3117,20 @@ local id = msg.id_
 local msgs = { [0] = id}
 local chat = msg.chat_id_
 delete_msg(chat, msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـتكلم بٱڵـطائفية هنا *', 1, 'md')   
 end 
+end
+if text:match("شيعي نكس") or text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("سني") or text:match("طائفتكم") or text:match("شيعي") or text:match("طائفيه") or text:match("انا سني") or text:match("انا شيعي") or text:match("مسيحي") or text:match("يهودي") or text:match("صائبي") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx.."taf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+local id = msg.id_
+local msgs = { [0] = id}
+local chat = msg.chat_id_
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'tafdil' then
+delete_msg(chat, msgs)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ممنوع ٱڵـتكلم بٱڵـطائفية هنا', 1, 'md') 
+elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'tafdil2' then
+delete_msg(chat, msgs)
+end
+end
 end
 --     Source DevProx     --
 if text:match("خره بالله") or text:match("خبربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
@@ -3127,8 +3139,20 @@ local id = msg.id_
 local msgs = { [0] = id}
 local chat = msg.chat_id_
 delete_msg(chat, msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـكفر هنا *', 1, 'md')   
 end 
+end
+if text:match("خره بالله") or text:match("خبربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+local id = msg.id_
+local msgs = { [0] = id}
+local chat = msg.chat_id_
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'kfrdil' then
+delete_msg(chat, msgs)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️📛 ⌯ ممنوع ٱڵـكفر هنا *', 1, 'md') 
+elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'kfrdil2' then
+delete_msg(chat, msgs)
+end
+end
 end
 --     Source DevProx     --
 if text == 'جلب نسخه الكروبات' or text == 'جلب نسخة الكروبات' or text == 'نسخة الكروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
@@ -8140,7 +8164,7 @@ DevAbs:set(DevProx..'floodstatus'..msg.chat_id_,'DelMsg')
 end
 end
 end
-
+--     Source DevProx     --
 if text:match("^ضع الفارسيه (.*)$") then
 local status = {string.match(text, "^(ضع الفارسيه) (.*)$")}
 if status[2] == "بالتحذير" then
@@ -8213,6 +8237,78 @@ end
 end
 end
 --     Source DevProx     --
+if text:match("^ضع الطائفيه (.*)$") then
+local status = {string.match(text, "^(ضع الطائفيه) (.*)$")}
+if status[2] == "بالتحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "tafdil" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism by warning certainly activated ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵطائفية بٱڵتحذير بٱڵتاكيد مۧوضوعة', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism was put into warning ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵطائفية بٱڵتحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'tafdil')
+end
+end
+if status[2] == "بدون تحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "tafdil2" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism with warning certainly disabled ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵطائفية بدون تحذير بٱڵتاكيد مۧوضوعة ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism was placed without warning ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵطائفية بدون تحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'tafdil2')
+end
+end
+end
+--     Source DevProx     --
+if text:match("^ضع الكفر (.*)$") then
+local status = {string.match(text, "^(ضع الكفر) (.*)$")}
+if status[2] == "بالتحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "kfrdil" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism by warning certainly activated ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵكفر بٱڵتحذير بٱڵتاكيد مۧوضوع ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism was put into warning ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵكفر بٱڵتحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'kfrdil')
+end
+end
+if status[2] == "بدون تحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "kfrdil2" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism with warning certainly disabled ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵكفر بدون تحذير بٱڵتاكيد مۧوضوع ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Sectarianism was placed without warning ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵكفر بدون تحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'kfrdil2')
+end
+end
+end
+--     Source DevProx     --
 if (text and text == 'enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تفعيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -8252,7 +8348,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ID has been enable  ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱلٱيـدي \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱلٱيـدي فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:del('DevProx:id:mute'..msg.chat_id_)
 end end end
 if (text and text == 'disable id') and is_owner(msg.sender_user_id_, msg.chat_id_)  or (text and text == 'Disable Id') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تعطيل الايدي') and is_owner(msg.sender_user_id_, msg.chat_id_) then
@@ -8266,7 +8362,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ID has been disable  ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱلٱيـدي \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱلٱيـدي فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:set('DevProx:id:mute'..msg.chat_id_,true)
 end end end
 --     Source DevProx     --
@@ -8405,7 +8501,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تعيين ٱڵترح
 end
 DevAbs:set(DevProx..'welcome:'..msg.chat_id_,welcome[2])
 end
-if text:match("^[Dd]el welcome$") or text:match("^حذف الترحيب$") then
+if text:match("^[Dd]el welcome$") or text:match("^حذف الترحيب$") or text:match("^حذف ترحيب$") then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Welcome text has been removed ', 1, 'md')
 else
@@ -8413,7 +8509,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حـذف ٱڵترحي
 end
 DevAbs:del(DevProx..'welcome:'..msg.chat_id_)
 end
-if text:match("^[Gg]et welcome$") or text:match("^جلب الترحيب$") then
+if text:match("^[Gg]et welcome$") or text:match("^جلب الترحيب$") or text:match("^جلب ترحيب$") then
 local wel = DevAbs:get(DevProx..'welcome:'..msg.chat_id_)
 if wel then
 Dev_Abs(msg.chat_id_, msg.id_, 1, wel, 1, 'md')
@@ -8438,7 +8534,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تعيين رد ٱڵ�
 end
 DevAbs:set(DevProx..'textsec',clerk[2])
 end
-if text:match("^[Dd]el clerk$") or text:match("^حذف رد الخاص$") then
+if text:match("^[Dd]el clerk$") or text:match("^حذف رد الخاص$") or text:match("^مسح رد الخاص$") then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Clerk text has been removed ', 1, 'md')
 else
@@ -11346,11 +11442,23 @@ local text =  [[
 〰️➖〰️➖〰️➖〰️➖〰️
 🧼 ⌯ ضع ⌯» صوره
 🧩 ⌯ ضع ⌯» الرابط
-📁 ⌯ ضع ⌯» قوانين
 🚸 ⌯ ضع ⌯» ترحيب
+
 🔖 ⌯ ضع ⌯» اسم + الاسم
+📁 ⌯ ضع ⌯» قوانين + الكليشة
+
+⛔️ ⌯ ضع ⌯» الكفر بالتحذير
+🛑 ⌯ ضع ⌯» الكفر بدون تحذير
+
+🔔 ⌯ ضع ⌯» الفشار بالتحذير
+🔕 ⌯ ضع ⌯» الفشار بدون تحذير
+
 🔉 ⌯ ضع ⌯» الفارسيه بالتحذير
 🔇 ⌯ ضع ⌯» الفارسيه بدون تحذير
+
+♨️ ⌯ ضع ⌯» الطائفيه بالتحذير
+💢 ⌯ ضع ⌯» الطائفيه بدون تحذير
+
 🖍 ⌯ ضع ⌯» عدد الاحرف + العدد
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️🏆 ⌯ Dev ⌯» ]]..SUDOUSERNAME..[[ 
