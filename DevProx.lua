@@ -4473,13 +4473,13 @@ end
 end   
 --     Source DevProx     --
 
-if text == 'تعطيل اطردني' or text == 'تعطيل ادفرني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تعطيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."lock_kickme"..msg.chat_id_) then
 DevAbs:set(DevProx.."lock_kickme"..msg.chat_id_, true)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱمـر ٱطردني \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 end
 end
-if text == 'تفعيل اطردني' or text == 'تفعيل ادفرني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تفعيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get(DevProx.."lock_kickme"..msg.chat_id_) then
 DevAbs:del(DevProx.."lock_kickme"..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱمـر ٱطردني \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
