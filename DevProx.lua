@@ -4970,7 +4970,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇تم تنزيله من ↓↓\n🗑┇
 else 
 Dev_Abs(msg.chat_id_, msg.id_, 1, "🚩┇لم يتم رفعه باي رتبه سابقا \n", 1, 'md')
 end 
-if fadx(msg.sender_user_id_,msg.chat_id_) == 'botad' then
+if aasss(msg.sender_user_id_,msg.chat_id_) == 'botad' then
 DevAbs:srem(DevProx..'bot:admins:', result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:onall:', result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:moall:', result.sender_user_id_)
@@ -4979,7 +4979,7 @@ DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
-elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
 DevAbs:srem(DevProx..'bot:onall:', result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:moall:', result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vpall:', result.sender_user_id_)
@@ -4987,15 +4987,15 @@ DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
-elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
 DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
-elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh2' then
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'monsh2' then
 DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
-elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'owner' then
+elseif aasss(msg.sender_user_id_,msg.chat_id_) == 'owner' then
 DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 end
