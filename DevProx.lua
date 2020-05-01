@@ -3065,15 +3065,29 @@ DevAbs:incrby('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..iduserr,numadded)
 Dev_Abs(msg.chat_id_, msg.id_,  1, "❗️☻ تـۖم ٱضٱفـة  *{ "..numadded..' }* رسٱئڵ ', 1, 'md')
 end
 end
+--     Source DevProx     --
 if text:match("طيز") or text:match("ديس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
 local chat = msg.chat_id_
 delete_msg(chat, msgs)
+end
+end
+if text:match("طيز") or text:match("ديس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+local id = msg.id_
+local msgs = { [0] = id}
+local chat = msg.chat_id_
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'fshaerdil' then
+delete_msg(chat, msgs)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـفشٱر هنا *', 1, 'md') 
+elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'fshaerdil2' then
+delete_msg(chat, msgs)
 end
 end
+end
+--     Source DevProx     --
 if text:match("ڄ") or text:match("ڬ") or text:match("ٺ") or text:match("چ") or text:match("ڇ") or text:match("ڿ") or text:match("ڀ") or text:match("ڎ") or text:match(" ݫ") or text:match("ژ") or text:match("ڟ") or text:match("ݜ") or text:match("ڸ") or text:match("پ") or text:match("۴") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("کلیپشن") or text:match("خوششون") or text:match("میدا") or text:match("که") or text:match("بدانیم") or text:match("باید") or text:match("زناشویی") or text:match("آموزش") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get(DevProx.."farsi"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
@@ -3096,6 +3110,7 @@ delete_msg(chat, msgs)
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end 
 end
+--     Source DevProx     --
 if text:match("شيعي نكس") or text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("سني") or text:match("طائفتكم") or text:match("شيعي") or text:match("طائفيه") or text:match("انا سني") or text:match("انا شيعي") or text:match("مسيحي") or text:match("يهودي") or text:match("صائبي") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."taf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
@@ -3105,7 +3120,8 @@ delete_msg(chat, msgs)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '*⛔️❗️ ⌯ ممنوع ٱڵـتكلم بٱڵـطائفية هنا *', 1, 'md')   
 end 
 end
-if text:match("خره بالله") or text:match("خبربك") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+--     Source DevProx     --
+if text:match("خره بالله") or text:match("خبربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -8161,7 +8177,43 @@ end
 end
 end
 --     Source DevProx     --
-if (text and text == 'enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^ضع الفشار (.*)$") then
+local status = {string.match(text, "^(ضع الفشار) (.*)$")}
+if status[2] == "بالتحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "fshaerdil" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status is *already* on Kicked ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵفشٱر بٱڵتحذير بٱڵتاكيد مۧوضوع', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status change to *Kicking* ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵفشٱر بٱڵتحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'fshaerdil')
+end
+end
+if status[2] == "بدون تحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "fshaerdil2" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status is *already* on Deleting ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵفشٱر بدون تحذير بٱڵتاكيد مۧوضوع ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status has been change to *Deleting* ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵفشٱر بدون تحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'fshaerdil2')
+end
+end
+end
+--     Source DevProx     --
+if (text and text == 'enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Enable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تفعيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Get id status is *already* on Photo ', 1, 'md')
@@ -8175,7 +8227,7 @@ else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱلٱيـدي بٱڵصورة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
 DevAbs:del('DevProx:id:photo'..msg.chat_id_)
 end end end
-if (text and text == 'disable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Disable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بدون صوره') and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if (text and text == 'disable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Disable id photo') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بدون صوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تعطيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get('DevProx:id:photo'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Get ID status is *already* on Simple ', 1, 'md')
@@ -11251,6 +11303,7 @@ local text =  [[
 💌 ⌯ بوسه • بوسها ⌯» بالرد
 🗡 ⌯ هينه ⌯» بالرد بالمعرف
 🧽 ⌯ رتبته ⌯» بالرد بالمعرف
+📣 ⌯ صيحه • صيحها ⌯» بالرد
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️🏆 ⌯ Dev ⌯» ]]..SUDOUSERNAME..[[ 
 ❗️🏵 ⌯ CH ⌯» @Dev_Prox
