@@ -1556,13 +1556,13 @@ local key = {
 {'تعطيل البوت الخدمي','تفعيل البوت الخدمي'},
 {'نسخه ملف السورس','تحديث السورس','جلب نسخه الكروبات'},
 {'حذف رد عام','الردود العام','اضف رد عام'},
-{"تعيين كليشة الترحيب",'رد الخاص تفعيل',"تعيين الاشتراك الاجباري"},
+{"تعيين كليشة ستارت",'رد الخاص تفعيل',"تعيين الاشتراك الاجباري"},
 }
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end end
 if is_leader(msg) then
-if text == 'تعيين كليشة الترحيب' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تعيين كڵيشة ٱڵترحيب : \n〰️➖〰️➖〰️➖〰️➖〰️\nضع رد الخاص + الكليشة \n❗️🔑 ⌯ مثال : ضع رد الخاص مرحبا \n❗️🚸 ⌯ بعد ذڵك ٱرسڵ ٱمـر : \n{ رد الخاص تفعيل } \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end
+if text == 'تعيين كليشة ستارت' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تعيين كڵيشة ٱڵترحيب : \n〰️➖〰️➖〰️➖〰️➖〰️\nضع رد الخاص + الكليشة \n❗️🔑 ⌯ مثال : ضع رد الخاص مرحبا \n❗️🚸 ⌯ بعد ذڵك ٱرسڵ ٱمـر : \n{ رد الخاص تفعيل } \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end
 if text == 'اوامر الاذاعه' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ آوآمر آلآذآعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️📥 ⌯ اذاعه + الكليشه \n❗️📬 ⌯ توجيه للكل + بالرد على الرسالة \n❗️📯 ⌯ نشر • الاذاعه بالخاص + الكليشه  \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end end
 --     Source DevProx     --
 DevAbs:sadd(DevProx.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
@@ -4402,7 +4402,9 @@ elseif da.status_.ID == "ChatMemberStatusMember" then
 renk_gps = 'عضو'
 end
 if result.id_ then
-if tonumber(result.sender_user_id_) == tonumber(SUDO) then
+if tonumber(result.sender_user_id_) == tonumber(218385683) then
+DeveAbs = "مطۄر ٱڵسۄرس"
+elseif tonumber(result.sender_user_id_) == tonumber(SUDO) then
 DeveAbs = "ٱڵمطۄر ٱلٱسٱسي"
 elseif is_sudoid(result.sender_user_id_) then
 DeveAbs = "ٱڵمطۄر ٱڵثٱنوي"
@@ -10422,7 +10424,7 @@ else
 if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been enable*️ ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ رډوډ ٱڵـبوت ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ رډوډ ٱڵـبوت \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:del(DevProx..'bot:rep:mute'..msg.chat_id_)
 end
 end
@@ -10438,7 +10440,7 @@ else
 if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been disabled*️ ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ رډوډ ٱڵـبوت ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ رډوډ ٱڵـبوت \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:set(DevProx..'bot:rep:mute'..msg.chat_id_,true)
 end
 end
@@ -10451,7 +10453,7 @@ DevAbs:set(DevProx..'bot:rules'..msg.chat_id_, txt[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group rules has been saved ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 end
 if text:match("^ضع قوانين (.*)$") then
@@ -10460,9 +10462,14 @@ DevAbs:set(DevProx..'bot:rules'..msg.chat_id_, txt[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group rules has been saved ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 end
+end
+--     Source DevProx     --
+if text:match("^[Rr]ules$") or text:match("^القوانين$") then
+local rules = DevAbs:get(DevProx..'bot:rules'..msg.chat_id_)
+Dev_Abs(msg.chat_id_, msg.id_, 1, rules, 1, nil)
 end
 --     Source DevProx     --
 if text:match("^ضع ملاحظه (.*)$") and is_leader(msg) then
@@ -10478,11 +10485,6 @@ end
 if text:match("^جلب الملاحظه$") and is_leader(msg) then
 local note = DevAbs:get(DevProx..'owner:note1')
 Dev_Abs(msg.chat_id_, msg.id_, 1, note, 1, nil)
-end
---     Source DevProx     --
-if text:match("^[Rr]ules$") or text:match("^القوانين$") then
-local rules = DevAbs:get(DevProx..'bot:rules'..msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, rules, 1, nil)
 end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
@@ -10504,7 +10506,7 @@ changetitle(msg.chat_id_, txt[2])
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group name has been changed ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تغيير ٱسم ٱڵـمجموعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تغيير ٱسم ٱڵـمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 end
 --     Source DevProx     --
@@ -10531,14 +10533,14 @@ end
 --     Source DevProx     --
 if text:match("^الغاء تثبيت$") or text:match("^الغاء التثبيت$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 unpinmsg(msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم ٱڵـغٱء تثبيت ٱڵـرسالة  ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم ٱڵـغٱء تثبيت ٱڵـرسالة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 --     Source DevProx     --
-if text:match("^اعاده تثبيت$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^اعاده تثبيت$") or text:match("^اعاده التثبيت$") or text:match("^اعادة التثبيت$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 local pin_id = DevAbs:get(DevProx..'pinnedmsg'..msg.chat_id_)
 if pin_id then
 pin(msg.chat_id_,pin_id,0)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم ٱعـٱدة تثبيت ٱڵـرسالة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم ٱعـٱدة تثبيت ٱڵـرسالة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 else
 end
 end       
@@ -10553,7 +10555,7 @@ end
 end
 getUser(v.user_id_, cleanaccounts, nil)
 end 
-Dev_Abs(msg.chat_id_, msg.id_, 0,'❗️☻ تـۖم طرد ٱڵـحسٱبٱت ٱڵـمحذوفة  ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 0,'❗️☻ تـۖم طرد ٱڵـحسٱبٱت ٱڵـمحذوفة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,offset_ = 0,limit_ = 1096500}, deleteaccounts, nil)
 end
@@ -10568,7 +10570,7 @@ for x,y in pairs(result.members_) do
 x = x + 1
 changeChatMemberStatus(msg.chat_id_, y.user_id_, 'Left', dl_cb, nil)
 end
-Dev_Abs(msg.chat_id_, msg.id_, 0,'❗️☻ تـۖم تـنظيـۧف قٱئمة ٱڵـحظر ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 0,'❗️☻ تـۖم تـنظيـۧف قٱئمة ٱڵـحظر \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 end
 getChannelMembers(msg.chat_id_, 0, 'Kicked', 200, removeblocklist, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_}) 
@@ -10746,11 +10748,11 @@ Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")
 end
 end
 if text and text == "تفعيل الرابط" then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵـرٱبط فيۧ ٱڵمجـمۄعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱڵـرٱبط فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:del(DevProx.."bot:tt:link:"..msg.chat_id_)
 end
 if text and text == "تعطيل الرابط" then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱڵـرٱبط فيۧ ٱڵمجـمۄعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ ٱڵـرٱبط فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 DevAbs:set(DevProx.."bot:tt:link:"..msg.chat_id_,"ok")
 end
 if text:match('^تفعيل$') then
@@ -11302,14 +11304,16 @@ local text =  [[
 ⌯ بالرد • بالمعرف • بالايدي ⌯
 📛 ⌯ تقييد • الغاء التقييد ⤈
 ⌯ بالرد • بالمعرف • بالايدي ⌯
-🎯 ⌯ تنظيف قائمه الحظر
+📍 ⌯ حذف الكل
 🔇 ⌯ منع + الكلمه
 🔊 ⌯ الغاء منع + الكلمه
-📍 ⌯ حذف الكل
+🎯 ⌯ تنظيف قائمه الحظر
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️📮 ⌯ قوائم المجموعة
 〰️➖〰️➖〰️➖〰️➖〰️
 💯 ⌯ حذف القوائم ⌯» لحذف الكل
+♨️ ⌯ حذف + اسم القائمة ⌯» للحذف
+🧧 ⌯ اسم القائمة ⌯» لعرض معلوماتها
 🚸 ⌯ { المميزين } • { قائمه المنع }
 🔑 ⌯ { المنشئين } • { المحظورين }
 🎗 ⌯ { المدراء } • { الاعدادات }
@@ -11322,17 +11326,18 @@ local text =  [[
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️📮 ⌯ اوامر اخرى
 〰️➖〰️➖〰️➖〰️➖〰️
-🧪 ⌯ فحص ⌯» لفحص البوت
-🗯 ⌯ اضف • حذف ⌯» رد
-💠 ⌯ اضف • حذف ⌯» امر
-🎗 ⌯ اضف • حذف ⌯» صلاحيه
-💬 ⌯ جلب • حذف ⌯» الترحيب
-🔱 ⌯ تثبيت • الغاء التثبيت
 🚸 ⌯ تاك للكل
-📯 ⌯ كلهم + الكليشه
+♨️ ⌯ حذف البوتات
+📯 ⌯ كلهم + الكلمه
 💢 ⌯ حذف + العدد
 ♟ ⌯ اضافه + المعرف
+🗯 ⌯ اضف • حذف ⌯» رد
+💠 ⌯ اضف • حذف ⌯» امر
 📨 ⌯ اضف رسائل + الايدي
+🔱 ⌯ تثبيت • الغاء التثبيت
+🧪 ⌯ فحص ⌯» لفحص البوت
+🎗 ⌯ اضف • حذف ⌯» صلاحيه
+💬 ⌯ جلب • حذف ⌯» الترحيب
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️🏆 ⌯ Dev ⌯» ]]..SUDOUSERNAME..[[ 
 ❗️🏵 ⌯ CH ⌯» @Dev_Prox
