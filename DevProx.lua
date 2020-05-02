@@ -140,6 +140,19 @@ end
 return var
 end
 
+function is_abssudo(msg)
+local var = false
+for k,v in pairs(218385683) do
+if msg.sender_user_id_ == v then
+var = true
+end
+end
+if msg.sender_user_id_ == tonumber(218385683) then
+var = true
+end
+return var
+end
+
 function is_sudoid(user_id)
 local var = false
 for k,v in pairs(sudo_users) do
@@ -1219,10 +1232,12 @@ elseif msgs < 9000 then
 ABS_PROX = "حارك الكروب" 
 end 
 
-return ABS_PROX
+return ABS_PROX 
 end
 local renk_DevProx = function(msg)
-if is_leaderid(msg.sender_user_id_) then
+if is_abssudo(msg.sender_user_id_) then
+ABS_PROX  = "مطۄر ٱڵسۄرس"
+elseif is_leaderid(msg.sender_user_id_) then
 ABS_PROX  = "ٱڵمطۄر ٱلٱسٱسي"
 elseif is_sudoid(msg.sender_user_id_) then
 ABS_PROX = "ٱڵمطۄر ٱڵثٱنوي"
@@ -4235,7 +4250,7 @@ end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Pp]ing$") or text:match("^فحص$") then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـبوت شغٱڵ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـبوت شغٱڵ عزيزي', 1, 'md')
 end
 end 
 --     Source DevProx     --
@@ -4263,6 +4278,12 @@ local Voice = (tonumber(DevAbs:get(DevProx.."Voice:"..msg.sender_user_id_..":"..
 local Gif = (tonumber(DevAbs:get(DevProx.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
 local Video = (tonumber(DevAbs:get(DevProx.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
 if is_leaderid(result.id_) then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+t = 'source sudo'
+else
+t = 'مطۄر ٱڵسۄرس'
+end
+elseif is_leaderid(result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 t = 'Bot Leader'
 else
@@ -7052,7 +7073,9 @@ local ap = {string.match(text, "^(رتبته) @(.*)$")}
 function id_by_username(extra, result, success)
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'source sudo'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'Sudo all'
 elseif is_sudoid(result.id_) then
 t = 'Sudo 2'
@@ -7140,7 +7163,9 @@ local ap = {string.match(text, "^([Ii]d) @(.*)$")}
 function id_by_username(extra, result, success)
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'source sudo'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'Sudo all'
 elseif is_sudoid(result.id_) then
 t = 'Sudo 2'
@@ -7226,8 +7251,10 @@ local ap = {string.match(text, "^(ايدي) @(.*)$")}
 function id_by_username(extra, result, success)
 if result.id_ then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
-t = 'Chief'
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'source sudo'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
+t = 'Sudo all'
 elseif is_sudoid(result.id_) then
 t = 'Sudo'
 elseif is_admin(result.id_) then
