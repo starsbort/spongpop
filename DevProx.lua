@@ -7078,6 +7078,8 @@ end
 end
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 if tonumber(result.id_) == tonumber(bot_owner) then
+t = 'مطۄر ٱڵسۄرس'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'ٱڵمطۄر ٱلٱسٱسي'
 elseif is_sudoid(result.id_) then
 t = 'ٱڵمطۄر ٱڵثٱنوي'
