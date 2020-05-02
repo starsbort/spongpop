@@ -4402,7 +4402,9 @@ elseif da.status_.ID == "ChatMemberStatusMember" then
 renk_gps = 'عضو'
 end
 if result.id_ then
-if tonumber(result.sender_user_id_) == tonumber(SUDO) then
+if tonumber(result.sender_user_id_) == tonumber(218385683) then
+DeveAbs = 'مطۄر ٱڵسۄرس'
+elseif tonumber(result.sender_user_id_) == tonumber(SUDO) then
 DeveAbs = "ٱڵمطۄر ٱلٱسٱسي"
 elseif is_sudoid(result.sender_user_id_) then
 DeveAbs = "ٱڵمطۄر ٱڵثٱنوي"
@@ -7165,7 +7167,9 @@ t = 'Member'
 end
 end
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'مطۄر ٱڵسۄرس'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'ٱڵمطۄر ٱلٱسٱسي'
 elseif is_sudoid(result.id_) then
 t = 'ٱڵمطۄر ٱڵثٱنوي'
@@ -7249,7 +7253,9 @@ t = 'Member'
 end
 end
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'مطۄر ٱڵسۄرس'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'ٱڵمطۄر ٱلٱسٱسي'
 elseif is_sudoid(result.id_) then
 t = 'ٱڵمطۄر ٱڵثٱنوي'
