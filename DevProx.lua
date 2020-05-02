@@ -7077,7 +7077,7 @@ t = 'Member'
 end
 end
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
 t = 'مطۄر ٱڵسۄرس'
 elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'ٱڵمطۄر ٱلٱسٱسي'
