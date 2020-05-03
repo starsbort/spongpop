@@ -596,18 +596,18 @@ end
 function add_file(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if File_Name:lower():match('(%d+)') ~= DevProx:lower() then 
-DevAbs13(chat,msg.id_,"*❗️📛 ⌯ عـذراً هـذا ٱڵـملف ليس تابع لـهذٱ ٱڵـسورس*")   
+DevAbs13(chat,msg.id_,"*❗️📛 ⌯ عذراً هذا ٱڵملف ليس تابع لهذٱ ٱڵسورس*")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot' .. tokenbot .. '/getfile?file_id='..ID_FILE) ) 
 download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..File.result.file_path, ''..File_Name) 
-DevAbs13(chat,msg.id_,"*❗️☻ جـٱري رفـع ٱڵـمـلـف*")   
+DevAbs13(chat,msg.id_,"❗️☻ جـٱري رفـع ٱڵـمـلـف")   
 else
 DevAbs13(chat,msg.id_,"❗️📛 ⌯ غَـيـر صـحـيـح")   
 end      
 local info_file = io.open('./'..DevProx..'.json', "r"):read('*a')
 local groups = JSON.decode(info_file)
-DevAbs13(chat,msg.id_,"❗️☻ تـۖم رفـع ٱڵـنـسـخـه بِـنـجـاح \n❗️☻ تـۖم رفـع ٱداريين ٱڵمجمۄعات  ٱڵسابقين \n❗️☻ تـۖم قفـڵ جميع ٱوامـر ٱڵمجـمۄعات*")
+DevAbs13(chat,msg.id_,"❗️🔑 ⌯ تـۖم رفـع ٱڵـنـسـخـه بِـنـجـاح  \n❗️🎗 ⌯ تـۖم رفـع ٱداريين ٱڵمجمۄعات ٱڵسابقين  \n❗️🚸 ⌯ تـۖم قفـڵ جميع ٱوامـر ٱڵمجـمۄعات")
 vardump(groups)
 for idg,v in pairs(groups.GP_BOT) do
 DevAbs:sadd(DevProx.."bot:groups",idg)
@@ -3654,7 +3654,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'اكلك' or text == 'اكلج' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  " ڪـﮩﮩۛﮩـوڵ مـاكـوڵ لٱحـﮩـد 🐿"
+ABS_PROX =  "كٰہٰٖوٰلہٰٖ مٰہٰٖاٰكٰہٰٖوٰلہٰٖ لہٰٖاٰحٰہٰٖدٰ😴🌸✿⇣"
 else 
 ABS_PROX = ''
 end 
@@ -3662,7 +3662,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'ها' or text == 'هاا' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "ۿۿہآ رديِٰـﮧِۢنِٰـﮧِۢۿۿہ لِٰـِﮧۢﯛ̲୭ لِٰـِﮧۢآ ₎⇣🌚🔥 ┇₎⇣"
+ABS_PROX =  "هٰہٰٖاٰ رٰدٰيٰہٰٖنٰہٰٖاٰ لہٰٖوَٰ لہٰٖاٰ⁞❉💥┋♩"
 else 
 ABS_PROX = ''
 end
@@ -3670,7 +3670,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'سورس عبس' or text == 'سورس بروكس' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "لآ سٰٰٓوِرسٰٰٓ خٰ̐ہآلتَہَٰڪٰྀہٰٰٖ ديِٰہ لڪٰྀہٰٰٖ ┋՞❁ 🌞?? ﴾"
+ABS_PROX =  "لہٰٖاٰ سٰہٰٖوَٰرٰسٰہٰٖ خٰہٰٖاٰلہٰٖتٰہٰٖكٰہٰٖ دٰيٰہٰٖ لہٰٖكٰہٰٖ•|• 〄💖‘"
 else 
 ABS_PROX = ''
 end
@@ -3678,7 +3678,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end 
 if text == 'عبس' or text == 'abs' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  " ٲلمطور ماڵتي فديتهہ 😻💙 @IQ_ABS "
+ABS_PROX =  "ٲلمطور ماڵتي فديتهہ 😻💙 @IQ_ABS "
 else 
 ABS_PROX = ''
 end
@@ -3698,7 +3698,7 @@ end
 if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه'  then 
 name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') 
 local ABS_PROX = {
- "مرحبٱ عزيزي 😻♥️ \nٱسمي "..name_bot.." 😻♥️",
+ "مرحبٱ عزيزي 😻♥️ \nٱسمي "..name_bot.." 😚♥️",
 }
 DevAbs2 = math.random(#ABS_PROX)
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX[DevAbs2] , 1, 'md') 
@@ -4458,7 +4458,7 @@ for i=1, #gpss do
 Dev_Abs(gpss[i], 0, 1, bib, 1, 'md')
 end
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Your Message send to :{ '..gps..' } groups ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Your Message send to :{ '..gps..' } groups ', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم ٱذٱعة رسٱڵتك \n❗️🔑 ⌯ في : { '..gps..' } مجموعة \n‏ ', 1, 'md')
 end
@@ -4610,7 +4610,7 @@ local Dev_Abss = (DevAbs:get('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.se
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ welcome my dear \n📬┇ you have {*"..(user_msgs + Dev_Abss).." }* msg \n📖┇ in group ", 1, 'md')
 else 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🔑 ⌯ رسٱئڵك ٱڵحقيقية :  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵمضٱفة :  *("..Dev_Abss..")* \n❗️🚸 ⌯ رسٱئڵك ٱڵيوم : *("..(ABS_PROX)..")*\n❗️💎 ⌯ مجموع رسٱئڵك : *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ رسٱئڵك ٱڵحقيقية :  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵمضٱفة :  *("..Dev_Abss..")* \n❗️🎗 ⌯ رسٱئڵك ٱڵيوم : *("..(ABS_PROX)..")*\n❗️🔅 ⌯ مجموع رسٱئڵك : *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
 end
 end
 if text:match("^[Gg]p id$") or text:match("^ايدي المجموعه$") then
@@ -4642,9 +4642,9 @@ end
 if text:match("^[Mm]y name$") or text:match("^اسمي$") then
 function get_firstname(extra,result,success)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '❗️🚸 ⌯ your name : ( firstname )'
+text = '❗️🚸 ⌯ your name : (firstname)'
 else
-text = '❗️🚸 ⌯ ٱسـمـك : ( firstname )'
+text = '❗️🚸 ⌯ ٱسـمـك : (firstname)'
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
