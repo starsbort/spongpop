@@ -8628,9 +8628,9 @@ end
 end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^[Uu]nfilter all (.*)$") or text:match("^الغاء منع عام (.*)$") then
+if text:match("^[Uu]nfilter all (.*)$") or text:match("^الغاء فلتر عام (.*)$") then
 local rws = {string.match(text, "^([Uu]nfilter all) (.*)$")}
-local rwss = {string.match(text, "^(الغاء منع عام) (.*)$")}
+local rwss = {string.match(text, "^(الغاء فلتر عام) (.*)$")}
 local name = string.sub(rws[2] or rwss[2], 1, 50)
 local cti = msg.chat_id_
 local abs = (DevProx..'bot:freewords:')
@@ -10065,7 +10065,7 @@ if is_admin(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Cc]lean (.*)$") or text:match("^حذف (.*)$") then
 local txt = {string.match(text, "^([Cc]lean) (.*)$")}
 local txts = {string.match(text, "^(حذف) (.*)$")}
-if txts[2] == 'حذف قائمه المنع العام' then
+if txts[2] == 'قائمه المنع العام' or txts[2] == 'قائمه المنع عام' then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Freelist has been cleared ', 1, 'md')
 else
