@@ -7035,16 +7035,7 @@ end
 getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
 end
 --     Source DevProx     --
-if text:match("^[Rr]eveal$") or text:match("^كشف$") and msg.reply_to_message_id_ ~= 0 then
-function id_by_reply(extra, result, success)
-if DevAbs:get('lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ user id : "..result.sender_user_id_, 1, 'md')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱيـۧديه : ("..result.sender_user_id_..")\n", 1, 'md')
-end
-end
-getMessage(msg.chat_id_,msg.reply_to_message_id_,id_by_reply)
-end
+
 --     Source DevProx     --
 if text:match("^رتبته @(.*)$") then
 local ap = {string.match(text, "^(رتبته) @(.*)$")}
