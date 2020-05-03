@@ -7386,7 +7386,7 @@ text = text..'» 🚸 '..names[i]..'\n'
 end
 if #names == 0 then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = "❗️☻ Filterlist is empty "
+text = "❗️📛 ⌯ Filterlist is empty "
 else
 text = "❗️📛 ⌯ لٱ يوجد كڵمٱت ممنوعة "
 end
@@ -7395,7 +7395,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 end
 --     Source DevProx     --
-if text:match("^[Ff]ilterall list$") or text:match("^قائمه المنع العام$") then
+if text:match("^[Ff]ilterall list$") or text:match("^قائمه المنع العام$") or text:match("^قائمه الفلاتر العام$") then
 local abs = (DevProx..'bot:freewords:')
 if abs then
 local names = DevAbs:hkeys(abs) 
@@ -7409,7 +7409,7 @@ text = text..' • '..names[i]..'\n'
 end
 if #names == 0 then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = "❗️☻ Filter all list is empty "
+text = "❗️📛 ⌯ Filter all list is empty "
 else
 text = "❗️📛 ⌯ لٱ يوجد كڵمٱت ممنوعة عٱم "
 end
@@ -10065,7 +10065,7 @@ if is_admin(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Cc]lean (.*)$") or text:match("^حذف (.*)$") then
 local txt = {string.match(text, "^([Cc]lean) (.*)$")}
 local txts = {string.match(text, "^(حذف) (.*)$")}
-if txts[2] == 'قائمه المنع العام' or txts[2] == 'قائمه المنع عام' then
+if txts[2] == 'freelist' or txts[2] == 'قائمه المنع العام' then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Freelist has been cleared ', 1, 'md')
 else
