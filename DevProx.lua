@@ -3918,13 +3918,14 @@ if text == 'محيبس' or text == 'بات' or text == 'المحيبس' and DevA
 Num = math.random(1,6)
 DevAbs:set(DevProx.."GAMES"..msg.chat_id_,Num) 
 TEST = [[
-*➀       ➁     ➂      ➃      ➄     ➅
+➀       ➁     ➂      ➃      ➄     ➅
 ↓      ↓     ↓      ↓     ↓     ↓
-👊 ‹› 👊 ‹› 👊 ‹› 👊 ‹› 👊 ‹› 👊
+👊 ‹› 👊🏻 ‹› 👊🏼 ‹› 👊🏽 ‹› 👊🏾 ‹› 👊🏿
 
 
-📤 ┇ اختر رقم يد لاستخراج المحيبس  
-🎊 ┇ الفائز يحصل على { 5 } النقاط *
+❗️🚸 ⌯ ٱختر رقم ٱڵيد
+❗️🔑 ⌯ لٱستخرٱج ٱڵمحيبس
+❗️🎗 ⌯ ٱڵفٱئز يحصڵ عڵى ( 5 ) نقٱط
 ]]
 Dev_Abs( msg.chat_id_, msg.id_, 1, TEST, 1, "md") 
 DevAbs:setex(DevProx.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
@@ -4030,7 +4031,7 @@ name = string.gsub(name,'فهمت','مافهمت')
 name = string.gsub(name,'موزين','زين')
 name = string.gsub(name,'اسمعك','ماسمعك')
 name = string.gsub(name,'احبك','ماحبك')
-name = string.gsub(name,'موحلو','حلو')
+name = string.gsub(name,'محلو','حلو')
 name = string.gsub(name,'نضيف','وصخ')
 name = string.gsub(name,'حاره','بارده')
 name = string.gsub(name,'ناصي','عالي')
@@ -4043,7 +4044,7 @@ name = string.gsub(name,'ضعيف','قوي')
 name = string.gsub(name,'شريف','كواد')
 name = string.gsub(name,'شجاع','جبان')
 name = string.gsub(name,'رحت','اجيت')
-name = string.gsub(name,'عدل','ميت')
+name = string.gsub(name,'حي','ميت')
 name = string.gsub(name,'نشيط','كسول')
 name = string.gsub(name,'شبعان','جوعان')
 name = string.gsub(name,'موعطشان','عطشان')
