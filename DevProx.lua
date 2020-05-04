@@ -10237,6 +10237,11 @@ mute_kaf = 'مـفعـۧڵ'
 else
 mute_kaf = 'مـعطـۧڵ'
 end
+if DevAbs:del(DevProx.."fshar"..msg.chat_id_) then
+mute_fshar = 'مـفعـۧڵ'
+else
+mute_fshar = 'مـعطـۧڵ'
+end
 if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
 mute_bots = 'مـفعـۧڵ'
 else
@@ -10371,6 +10376,7 @@ local TXTAR = "❗️☻ اعدادات المجموعه :\n\n"
 .."❗️☻ عدد التكرار [ "..flood_m.." ]\n"
 .."️❗️☻ عدد السبام [ "..spam_c.." ]\n"
 .."❗️☻ قفل الكفر "..mute_kaf.."\n"
+.."❗️☻ قفل الفشار "..mute_fshar.."\n"
 .."❗️☻ قفل الدردشه "..mute_text.."\n"
 .."❗️☻ قفل الصور "..mute_photo.."\n"
 .."❗️☻ قفل الفيديو "..mute_video.."\n"
