@@ -10232,16 +10232,6 @@ mute_music = 'مـفعـۧڵ'
 else
 mute_music = 'مـعطـۧڵ'
 end
-if DevAbs:get(DevProx..'kaf'..msg.chat_id_) then
-mute_kaf = 'مـفعـۧڵ'
-else
-mute_kaf = 'مـعطـۧڵ'
-end
-if DevAbs:del(DevProx.."fshar"..msg.chat_id_) then
-mute_fshar = 'مـفعـۧڵ'
-else
-mute_fshar = 'مـعطـۧڵ'
-end
 if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
 mute_bots = 'مـفعـۧڵ'
 else
@@ -10353,40 +10343,35 @@ else
 send_welcome = 'مـعطـۧڵ'
 end
 --     Source DevProx     --
-local TXTAR = "❗️☻ اعدادات المجموعه :\n\n"
-.."❗️☻ قفل الحمايه "..strict.."\n"
-.."❗️☻ قفل الكل "..mute_all.."\n"
-.."❗️☻ قفل الشارحه "..mute_cmd.."\n"
-.."❗️☻ قفل الكلايش "..lock_spam.."\n"
-.."❗️☻ قفل الروابط "..mute_links.."\n"
-.."️❗️☻ قفل الشبكات "..lock_wp.."\n"
-.."❗️☻ قفل المعرف "..lock_tag.."\n"
-.."❗️☻ قفل الهاشتاك "..lock_htag.."\n"
-.."❗️☻ قفل التوجيه "..lock_forward.."\n"
-.."❗️☻ قفل البوتات "..mute_bots.."\n"
-.."❗️☻ قفل التعديل "..mute_edit.."\n"
-.."❗️☻ قفل التثبيت "..lock_pin.."\n"
-.."❗️☻ قفل الاونلاين "..mute_in.."\n"
-.."❗️☻ قفل العربيه "..lock_arabic.."\n"
-.."❗️☻ قفل الانكليزيه "..lock_english.."\n"
-.."❗️☻ قفل الماركداون "..markdown.."\n"
-.."️❗️☻ قفل الاشعارات "..lock_tgservice.."\n"
-.."❗️☻ قفل التكرار "..mute_flood.."\n"
+local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️➖〰️➖〰️➖〰️\n"
+.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
+.."❗️♟ ⌯ ٱڵمعرف ⌯» "..lock_tag.."\n"
+.."❗️🚸 ⌯ ٱڵبوتٱت "..mute_bots.."\n"
+.."❗️🗯 ⌯ ٱڵشٱرحه ⌯» "..mute_cmd.."\n"
+.."❗️🎨 ⌯ ٱڵمتحركه ⌯» "..mute_gifs.."\n"
+.."❗️🗂 ⌯ ٱڵمڵفٱت ⌯» "..lock_file.."\n"
+.."❗️🎬 ⌯ ٱڵفيديو ⌯» "..mute_video.."\n"
+.."❗️🖲 ⌯ ٱلٱونلٱين ⌯» "..mute_in.."\n"
+.."❗️💬 ⌯ ٱڵدردشه ⌯» "..mute_text.."\n"
+.."❗️🧬 ⌯ ٱڵتوجيه ⌯» "..lock_forward.."\n"
+.."❗️🎧 ⌯ ٱلٱغٱني ⌯» "..mute_music.."\n"
+.."❗️🎤 ⌯ ٱڵصوت ⌯» "..mute_voice.."\n"
+.."❗️📟 ⌯ ٱڵجهات ⌯» "..lock_contact.."\n"
+.."❗️🕹 ⌯ ٱڵمٱركدٱون ⌯» "..markdown.."\n"
+.."❗️⚙️ ⌯ ٱڵحمٱيه ⌯» "..strict.."\n"
+.."❗️🔖 ⌯ ٱڵهٱشتٱك ⌯» "..lock_htag.."\n"
+.."❗️🛠 ⌯ ٱڵتعديل ⌯» "..mute_edit.."\n"
+.."❗️🔱 ⌯ ٱڵتثبيت ⌯» "..lock_pin.."\n"
+.."❗️🥁 ⌯ ٱلٱشعٱرٱت ⌯» "..lock_tgservice.."\n"
+.."❗️📑 ⌯ ٱڵكلٱيش ⌯» "..lock_spam.."\n"
+.."❗️📶 ⌯ ٱڵشبكٱت ⌯» "..lock_wp.."\n"
+.."❗️📱 ⌯ ٱڵموٱقع ⌯» "..lock_location.."\n"
+.."❗️📕 ⌯ ٱڵعربيه ⌯» "..lock_arabic.."\n"
+.."❗️📘 ⌯ ٱلٱنكڵيزيه ⌯» "..lock_english.."\n"
+.."❗️🖇 ⌯ ٱڵتكرٱر ⌯» "..mute_flood.."\n"
 .."❗️☻ خاصيه التكرار "..floodstatus.."\n"
 .."❗️☻ عدد التكرار [ "..flood_m.." ]\n"
 .."️❗️☻ عدد السبام [ "..spam_c.." ]\n"
-.."❗️☻ قفل الكفر "..mute_kaf.."\n"
-.."❗️☻ قفل الفشار "..mute_fshar.."\n"
-.."❗️☻ قفل الدردشه "..mute_text.."\n"
-.."❗️☻ قفل الصور "..mute_photo.."\n"
-.."❗️☻ قفل الفيديو "..mute_video.."\n"
-.."❗️☻ قفل المتحركه "..mute_gifs.."\n"
-.."❗️☻ قفل الاغاني "..mute_music.."\n"
-.."❗️☻ قفل الصوت "..mute_voice.."\n"
-.."❗️☻ قفل الملفات "..lock_file.."\n"
-.."❗️☻ قفل الملصقات "..lock_sticker.."\n"
-.."❗️☻ قفل الجهات "..lock_contact.."\n"
-.."️❗️☻ قفل المواقع "..lock_location.."\n"
 local TXTEN = "⚙ Group Settings :\n\n"
 .."◾️ *Strict Mode* : "..strict.."\n"
 .."◾️ *Group lock All* : "..mute_all.."\n"
