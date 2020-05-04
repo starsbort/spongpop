@@ -4242,7 +4242,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم مغٱدرة ٱڵمج
 end
 end
 --     Source DevProx     --
-if (text:match("^موقعي$") or text:match("^رتبتييي$") or text:match("^معلوماتي$")) and Abbas_Abs(msg) then
+if (text:match("^موقعي$") or text:match("^رتبتي$") or text:match("^معلوماتي$")) and Abbas_Abs(msg) then
 function get_me(extra,result,success)
 local Dev_Abss = (DevAbs:get('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
 local ABS_PROX = DevAbs:get(DevProx..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
@@ -4382,44 +4382,6 @@ end
 end
 getUser(msg.sender_user_id_,get_me)
 end
-
-if text:match("^رتبتي$") and Abbas_Abs(msg) then
-function ABS_PROX(extra,result,success)
-if result.id_ then
-if tonumber(result.sender_user_id_) == tonumber(SUDO) then
-DeveAbs = "ٱڵمطۄر ٱلٱسٱسي"
-elseif is_sudoid(result.sender_user_id_) then
-DeveAbs = "ٱڵمطۄر ٱڵثٱنوي"
-elseif is_admin(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "ٱڵمطۄر ٱلثٱڵث"
-elseif is_onall(result.sender_user_id_) then
-DeveAbs = "ٱڵمدير ٱڵعٱم"
-elseif is_moall(result.sender_user_id_) then
-DeveAbs = "ٱلٱدمن ٱڵعٱم"
-elseif is_vpall(result.sender_user_id_) then
-DeveAbs = "ٱڵمميز ٱڵعٱم"
-elseif is_monsh(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "ٱڵـۧمـۧنشئ"
-elseif is_owner(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "ٱڵـۧمـۧدير"
-elseif is_momod(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "ٱلٱدمـۧن"
-elseif is_vipmem(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "عضو مميز"
-elseif is_donky(result.sender_user_id_, msg.chat_id_) then
-DeveAbs = "مطي مرتب 😹💔"
-else
-DeveAbs = "فقط عضو"
-end
-end
-local ABS_PROX = '❗️💎 ⌯ في ٱڵـبوت : { '..DeveAbs..' }'
-Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
-end,nil)
-end
-end
-getMessage(msg.chat_id_, Abbas_Abs,ABS_PROX)
-end
-
 if text:match("^الرتبه$") or text:match("^رتبته$") and msg.reply_to_message_id_ ~= 0 then
 function rt_by_reply(extra, result, success) 
 local user_info_ = DevAbs:get(DevProx..'user:Name' .. result.sender_user_id_)
