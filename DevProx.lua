@@ -10371,7 +10371,7 @@ local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️
 .."❗️🖇 ⌯ ٱڵتكرٱر ⌯» "..mute_flood.."\n"
 .."❗️🧷 ⌯ خٱصية ٱڵتكرٱر ⌯» "..floodstatus.."\n"
 .."❗️📎 ⌯ عدد ٱڵتكرٱر ⌯» [ "..flood_m.." ]\n"
-.."️❗️🧮 ⌯ عدد ٱڵسبٱم ⌯» [ "..spam_c.." ]\n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🏵 ⌯ CH ⌯» @Dev_Prox"
+.."️❗️🧮 ⌯ عدد ٱڵسبٱم ⌯» [ "..spam_c.." ]\n〰️➖〰️➖〰️➖〰️➖〰️\n"
 local TXTEN = "⚙ Group Settings :\n\n"
 .."◾️ *Strict Mode* : "..strict.."\n"
 .."◾️ *Group lock All* : "..mute_all.."\n"
