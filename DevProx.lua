@@ -3581,7 +3581,7 @@ end
 end
 end 
 --     Source DevProx     --
-if text == 'دي' or text == 'دي لك' then 
+if text == 'دي' or text == 'دي لك' or text == 'دي بابه' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
 ABS_PROX =  "ٱخلٱقك يٱڵعٱر 😾💔"
 else 
@@ -4894,6 +4894,29 @@ if tonumber(msg.reply_to_message_id_) == 0 then
 else 
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
 end
+end
+--     Source DevProx     --
+if text and text:match('^صيحه @(.*)')  then 
+local username = text:match('^صيحه @(.*)') 
+function ABS_PROX(extra,result,success)
+if result.id_ then  
+if tonumber(result.id_) == tonumber(bot_id) then  
+Dev_Abs(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md')  
+return false 
+end  
+if tonumber(result.id_) == tonumber(bot_owner) then 
+Dev_Abs(msg.chat_id_, msg.id_, 1, 'تعال مطوريي محتاجيكك🏃🏻‍♂️♥️', 1, 'md') 
+return false  
+end  
+local ABS_PROX = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
+local ABS_PROX = { "تتعـال ححـب @"..username.." محتاجيـك🙂🍭","تعال يولل @"..username.." استاذكك ايريدككك😒🔪","يمعوود @"..username.." تعـاال يريدوكك🤕♥️","تعـال لكك @"..username.." ديصيحـوك😐🖤",}
+Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1, 'html') 
+else  
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـعضو غير موجود في ٱڵـمجموعة', 1, 'md') 
+end 
+end 
+resolve_username(username,ABS_PROX)
 end
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
