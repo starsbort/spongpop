@@ -10177,34 +10177,34 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Ss]ettings$") or text:match("^الاعدادات$") then
 if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
-mute_all = 'مـفعـۧڵ'
+mute_all = 'مقفڵه'
 else
-mute_all = 'مـعطـۧڵ'
+mute_all = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) then
-mute_text = 'مـفعـۧڵ'
+mute_text = 'مقفڵه'
 else
-mute_text = 'مـعطـۧڵ'
+mute_text = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) then
-mute_photo = 'مـفعـۧڵ'
+mute_photo = 'مقفڵه'
 else
-mute_photo = 'مـعطـۧڵ'
+mute_photo = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:video:mute'..msg.chat_id_) then
-mute_video = 'مـفعـۧڵ'
+mute_video = 'مقفڵه'
 else
-mute_video = 'مـعطـۧڵ'
+mute_video = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:gifs:mute'..msg.chat_id_) then
-mute_gifs = 'مـفعـۧڵ'
+mute_gifs = 'مقفڵه'
 else
-mute_gifs = 'مـعطـۧڵ'
+mute_gifs = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'anti-flood:'..msg.chat_id_) then
-mute_flood = 'مـفعـۧڵ'
+mute_flood = 'مقفڵه'
 else
-mute_flood = 'مـعطـۧڵ'
+mute_flood = 'مفتوحه'
 end
 --     Source DevProx     --
 if not DevAbs:get(DevProx..'flood:max:'..msg.chat_id_) then
@@ -10228,119 +10228,119 @@ floodstatus = "بٱڵحذف"
 end
 --     Source DevProx     --
 if DevAbs:get(DevProx..'bot:music:mute'..msg.chat_id_) then
-mute_music = 'مـفعـۧڵ'
+mute_music = 'مقفڵه'
 else
-mute_music = 'مـعطـۧڵ'
+mute_music = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
-mute_bots = 'مـفعـۧڵ'
+mute_bots = 'مقفڵه'
 else
-mute_bots = 'مـعطـۧڵ'
+mute_bots = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:inline:mute'..msg.chat_id_) then
-mute_in = 'مـفعـۧڵ'
+mute_in = 'مقفڵه'
 else
-mute_in = 'مـعطـۧڵ'
+mute_in = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:cmds'..msg.chat_id_) then
-mute_cmd = 'مـفعـۧڵ'
+mute_cmd = 'مقفڵه'
 else
-mute_cmd = 'مـعطـۧڵ'
+mute_cmd = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:voice:mute'..msg.chat_id_) then
-mute_voice = 'مـفعـۧڵ'
+mute_voice = 'مقفڵه'
 else
-mute_voice = 'مـعطـۧڵ'
+mute_voice = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'editmsg'..msg.chat_id_) then
-mute_edit = 'مـفعـۧڵ'
+mute_edit = 'مقفڵه'
 else
-mute_edit = 'مـعطـۧڵ'
+mute_edit = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
-mute_links = 'مـفعـۧڵ'
+mute_links = 'مقفڵه'
 else
-mute_links = 'مـعطـۧڵ'
+mute_links = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:pin:mute'..msg.chat_id_) then
-lock_pin = 'مـفعـۧڵ'
+lock_pin = 'مقفڵه'
 else
-lock_pin = 'مـعطـۧڵ'
+lock_pin = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) then
-lock_sticker = 'مـفعـۧڵ'
+lock_sticker = 'مقفڵه'
 else
-lock_sticker = 'مـعطـۧڵ'
+lock_sticker = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:tgservice:jk'..msg.chat_id_) then
-lock_tgservice = 'مـفعـۧڵ'
+lock_tgservice = 'مقفڵه'
 else
-lock_tgservice = 'مـعطـۧڵ'
+lock_tgservice = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:webpage:mute'..msg.chat_id_) then
-lock_wp = 'مـفعـۧڵ'
+lock_wp = 'مقفڵه'
 else
-lock_wp = 'مـعطـۧڵ'
+lock_wp = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:strict'..msg.chat_id_) then
-strict = 'مـفعـۧڵ'
+strict = 'مقفڵه'
 else
-strict = 'مـعطـۧڵ'
+strict = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:abstag:mute'..msg.chat_id_) then
-lock_htag = 'مـفعـۧڵ'
+lock_htag = 'مقفڵه'
 else
-lock_htag = 'مـعطـۧڵ'
+lock_htag = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) then
-lock_tag = 'مـفعـۧڵ'
+lock_tag = 'مقفڵه'
 else
-lock_tag = 'مـعطـۧڵ'
+lock_tag = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:location:mute'..msg.chat_id_) then
-lock_location = 'مـفعـۧڵ'
+lock_location = 'مقفڵه'
 else
-lock_location = 'مـعطـۧڵ'
+lock_location = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:contact:mute'..msg.chat_id_) then
-lock_contact = 'مـفعـۧڵ'
+lock_contact = 'مقفڵه'
 else
-lock_contact = 'مـعطـۧڵ'
+lock_contact = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:english:mute'..msg.chat_id_) then
-lock_english = 'مـفعـۧڵ'
+lock_english = 'مقفڵه'
 else
-lock_english = 'مـعطـۧڵ'
+lock_english = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:arabic:mute'..msg.chat_id_) then
-lock_arabic = 'مـفعـۧڵ'
+lock_arabic = 'مقفڵه'
 else
-lock_arabic = 'مـعطـۧڵ'
+lock_arabic = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:forward:mute'..msg.chat_id_) then
-lock_forward = 'مـفعـۧڵ'
+lock_forward = 'مقفڵه'
 else
-lock_forward = 'مـعطـۧڵ'
+lock_forward = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) then
-lock_file = 'مـفعـۧڵ'
+lock_file = 'مقفڵه'
 else
-lock_file = 'مـعطـۧڵ'
+lock_file = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'markdown:lock'..msg.chat_id_) then
-markdown = 'مـفعـۧڵ'
+markdown = 'مقفڵه'
 else
-markdown = 'مـعطـۧڵ'
+markdown = 'مفتوحه'
 end
 if DevAbs:get(DevProx..'bot:spam:mute'..msg.chat_id_) then
-lock_spam = 'مـفعـۧڵ'
+lock_spam = 'مقفڵه'
 else
-lock_spam = 'مـعطـۧڵ'
+lock_spam = 'مفتوحه'
 end
 if DevAbs:get(DevProx.."bot:welcome"..msg.chat_id_) then
-send_welcome = 'مـفعـۧڵ'
+send_welcome = 'مقفڵه'
 else
-send_welcome = 'مـعطـۧڵ'
+send_welcome = 'مفتوحه'
 end
 --     Source DevProx     --
 local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️➖〰️➖〰️➖〰️\n"
@@ -10369,9 +10369,9 @@ local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️
 .."❗️📕 ⌯ ٱڵعربيه ⌯» "..lock_arabic.."\n"
 .."❗️📘 ⌯ ٱلٱنكڵيزيه ⌯» "..lock_english.."\n"
 .."❗️🖇 ⌯ ٱڵتكرٱر ⌯» "..mute_flood.."\n"
-.."❗️☻ خاصيه التكرار "..floodstatus.."\n"
-.."❗️☻ عدد التكرار [ "..flood_m.." ]\n"
-.."️❗️☻ عدد السبام [ "..spam_c.." ]\n"
+.."❗️🧷 ⌯ خٱصية ٱڵتكرٱر ⌯» "..floodstatus.."\n"
+.."❗️📎 ⌯ عدد ٱڵتكرٱر ⌯» [ "..flood_m.." ]\n"
+.."️❗️🧮 ⌯ عدد ٱڵسبٱم ⌯» [ "..spam_c.." ]\n"
 local TXTEN = "⚙ Group Settings :\n\n"
 .."◾️ *Strict Mode* : "..strict.."\n"
 .."◾️ *Group lock All* : "..mute_all.."\n"
