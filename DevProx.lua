@@ -4806,10 +4806,12 @@ if tonumber(result.id_) == tonumber(bot_owner) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md') 
 return false  
 end  
+local ABS_PROX = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
 local ABS_PROX = { "لكك جرجف @"..username.." احترم اسيادكك لا اكتلكك وازربب على كبركك،💩🖐🏿","هشش لكك فاشل @"..username.." لتضل تمسلت لا اخربط تضاريس وجهك جنه ابط عبده، 😖👌🏿","حبيبي @"..username.." راح احاول احترمكك هالمره بلكي تبطل حيونه، 🤔🔪","دمشي لك @"..username.." ينبوع الفشل مو زين ملفيك ونحجي وياك هي منبوذ 😏🖕🏿","ها الغليض التفس ابو راس المربع @"..username.." متعلملك جم حجايه وجاي تطكطكهن علينه دبطل😒🔪",}
 Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1, 'html') 
 else  
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـعضو لٱ يوجد في ٱڵـمجموعة', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـعضو غير موجود في ٱڵـمجموعة', 1, 'md') 
 end 
 end 
 resolve_username(username,ABS_PROX)
@@ -4835,8 +4837,8 @@ else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
 end
 end
-if text:match("^بوسها$") or text:match("^بعد بوسها$") or text:match("^ضل بوس$") then
-function hena(extra, result, success)
+if text:match("^بوسها$") or text:match("^بعد بوسها$") or text:match("^ضل بوس$") or text:match("^بوسها بعد$") or text:match("^بوسهه$") then
+function bosha(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح ابوس نفسيي؟😶💔', 1, 'md') 
 return false  
@@ -4852,11 +4854,11 @@ Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1,
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),bosha)   
 end
 end
-if text:match("^بوسه$") or text:match("^بعد بوسه$") or text:match("^ضل بوس$") then
-function hena(extra, result, success)
+if text:match("^بوسه$") or text:match("^بعد بوسه$") or text:match("^ضل بوس$") or text:match("^بوسه بعد$") then
+function bosh(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح ابوس نفسيي؟😶💔', 1, 'md') 
 return false  
@@ -4872,11 +4874,11 @@ Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1,
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),bosh)   
 end
 end
 if text:match("^صيحه$") or text:match("^صيحها$") or text:match("^صيحهه$") then
-function hena(extra, result, success)
+function seha(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md') 
 return false  
@@ -4892,7 +4894,7 @@ Dev_Abs(msg.chat_id_, result.id_, 1,''..ABS_PROX[math.random(#ABS_PROX)]..'', 1,
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),seha)   
 end
 end
 --     Source DevProx     --
