@@ -4670,8 +4670,16 @@ local ABS_PROX = DevAbs:get(DevProx..'user:msgs'..bot_id..os.date('%d')..':'..ms
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ رسٱئڵك ٱڵيوم : *( "..(ABS_PROX).." )* ", 1, 'md')
 end
 --     Source DevProx     --
+if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(طقس) (.*)$") then
+  MatchesEN = {text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$")}; Matchesab = {text:match("^(طقس) (.*)$")}
+  Ptrn = MatchesEN[2] or Matchesab[2]
+    Ptrn = MatchesEN[2] or Matchesab[2]
+  local function temps(K)
+   local F = (K*1.8)-459.67
+   local C = K-273.15
+   return F,C
+  end
 local BASE_URL = "http://api.openweathermap.org/data/2.5/weather" 
-
 local function get_weather(location) 
   print("Finding weather in ", location) 
   local url = BASE_URL 
@@ -4709,14 +4717,7 @@ local function IQ_ABS(msg, matches)
   end 
   return wtext 
 end 
-     
-return { 
 
-  patterns = { 
-   "^[/!]weather (.*)$", 
-    }, 
-  run = IQ_ABS 
-} 
 --     Source DevProx     --
 if (msg.sender_user_id_) then
 local text = msg.content_.text_:gsub("[Pp]rice", "Nerkh")
