@@ -10240,7 +10240,7 @@ end
 if DevAbs:get(DevProx..'taf'..msg.chat_id_) then
 mute_taf = 'مـفعـۧڵ'
 else
-mute_kaf = 'مـعطـۧڵ'
+mute_taf = 'مـعطـۧڵ'
 end
 if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
 mute_bots = 'مـفعـۧڵ'
