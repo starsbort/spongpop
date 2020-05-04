@@ -7568,7 +7568,7 @@ end
 if not DevAbs:get('DevProx:id:mute'..msg.chat_id_) then 
 if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then 
 if not DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_) then 
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,"\n❗️🚸 ⌯ معرفک ⇜ { "..username.." }\n❗️🧬 ⌯ ٱيـډيک ⇜ { "..msg.sender_user_id_.." }\n❗️💎 ⌯ رتـبتک ⇜ { "..t.." }\n❗️🗽 ⌯ صورک ⇜  { "..result.total_count_.." }\n❗️🔎 ⌯ رسٱئڵک ⇜ { "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." }\n❗️🦠 ⌯ تفٱعڵک ⇜ { "..formsgg(msguser).." }\n❗️🏮 ⌯ نقاطک ⇜ { "..user_nkt.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n",msg.id_,msg.id_.."")
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,"\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n",msg.id_,msg.id_.."")
 else 
 local new_id = DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('username',(username or 'لا يوجد'))
@@ -7651,18 +7651,18 @@ t = 'فقط عضو'
 end
 end
 if not DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ معرفک ⇜ { "..username.." }\n❗️🧬 ⌯ ٱيـډيک ⇜ { "..msg.sender_user_id_.." }\n❗️💎 ⌯ رتـبتک ⇜ { "..t.." }\n❗️🗽 ⌯ صورک ⇜  { "..result.total_count_.." }\n❗️🔎 ⌯ رسٱئڵک ⇜ { "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." }\n❗️🔮 ⌯ تفٱعڵک ⇜ { "..formsgg(msguser).." }\n❗️🦠 ⌯ جـهٱتک ⇜ { "..cont.." }\n❗️🏮 ⌯ نقاطک ⇜ { "..user_nkt.." }\n❗️🧩 ⌯ مڵصقٱتک ⇜ { "..sticker.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️📯 ⌯ جـهٱتک ⇜ ◝ "..cont.." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n❗️🛎 ⌯ مڵصقٱتک ⇜ ◝ "..sticker.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 else
 local new_id = DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('username',(username or 'لا يوجد'))
-local new_id = new_id:gsub('photo',(result.total_count_ or 'لا يوجد')) 
+local new_id = new_id:gsub('photos',(result.total_count_ or 'لا يوجد')) 
 local new_id = new_id:gsub('nkat',(user_nkt or 'لا يوجد'))
 local new_id = new_id:gsub('cont',(cont or 'لا يوجد'))
 local new_id = new_id:gsub('sticker',(sticker or 'لا يوجد'))
 local new_id = new_id:gsub('msgs',(user_msgs + Dev_Abss / ABS_PROX or 'لا يوجد'))
 local new_id = new_id:gsub('id',(msg.sender_user_id_ or 'لا يوجد'))
 local new_id = new_id:gsub('formsg',(formsgg(msguser) or 'لا يوجد'))
-local new_id = new_id:gsub('renk',(t or 'لا يوجد'))
+local new_id = new_id:gsub('rank',(t or 'لا يوجد'))
 Dev_Abs(msg.chat_id_, msg.id_, 1, new_id, 1, 'html')  
 end
 end
@@ -7746,7 +7746,7 @@ if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ You don'n have a personal picture \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ User name : { "..username.." }\n❗️🗽 ⌯ Photo : { "..result.total_count_.." }\n❗️🏮 ⌯ Point : { "..user_nkt.." }\n❗️🗽 ⌯ Contacts : { "..cont.." }\n❗️🧩 ⌯ Sticker : { "..sticker.." }\n❗️🔎 ⌯ Msg : { "..user_msgs.." }\n❗️🧬 ⌯ ID : { "..msg.sender_user_id_.." }\n❗️🔮 ⌯ interaction : { "..formsgg(msguser).." }\n❗️💎 ⌯ Renk : { "..t.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ لٱ ٱستطيع عرض صورتک \n❗️📛 ⌯ ربمٱ لٱ تمتڵك صورة شخصية \n❗️📛 ⌯ ٱو ٱنك قمت بحظر ٱڵـبوت \n❗️📛 ⌯ ٱو ٱنك قفڵتهٱ من ٱلٱعدٱدٱت \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفک ⇜ { "..username.." }\n❗️🧬 ⌯ ٱيـډيک ⇜ { "..msg.sender_user_id_.." }\n❗️💎 ⌯ رتـبتک ⇜ { "..t.." }\n❗️🗽 ⌯ صورک ⇜  { "..result.total_count_.." }\n❗️🔎 ⌯ رسٱئڵک ⇜ { "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." }\n❗️🔮 ⌯ تفٱعڵک ⇜ { "..formsgg(msguser).." }\n❗️🦠 ⌯ جـهٱتک ⇜ { "..cont.." }\n❗️🏮 ⌯ نقاطک ⇜ { "..user_nkt.." }\n❗️🧩 ⌯ مڵصقٱتک ⇜ { "..sticker.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ لٱ ٱستطيع عرض صورتک \n❗️📛 ⌯ ربمٱ لٱ تمتڵك صورة شخصية \n❗️📛 ⌯ ٱو ٱنك قمت بحظر ٱڵـبوت \n❗️📛 ⌯ ٱو ٱنك قفڵتهٱ من ٱلٱعدٱدٱت \n〰️➖〰️➖〰️➖〰️➖〰️\n\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️📯 ⌯ جـهٱتک ⇜ ◝ "..cont.." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n❗️🛎 ⌯ مڵصقٱتک ⇜ ◝ "..sticker.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 end
 else
 if is_sudo(msg) then
@@ -7819,7 +7819,7 @@ end
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ User name : { "..username.." }\n❗️🗽 ⌯ Photo : { "..result.total_count_.." }\n❗️🏮 ⌯ Point : { "..user_nkt.." }\n❗️🗽 ⌯ Contacts : { "..cont.." }\n❗️🧩 ⌯ Sticker : { "..sticker.." }\n❗️🔎 ⌯ Msg : { "..user_msgs.." }\n❗️🧬 ⌯ ID : { "..msg.sender_user_id_.." }\n❗️🔮 ⌯ interaction : { "..formsgg(msguser).." }\n❗️💎 ⌯ Renk : { "..t.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ معرفک ⇜ { "..username.." }\n❗️🧬 ⌯ ٱيـډيک ⇜ { "..msg.sender_user_id_.." }\n❗️💎 ⌯ رتـبتک ⇜ { "..t.." }\n❗️🗽 ⌯ صورک ⇜  { "..result.total_count_.." }\n❗️🔎 ⌯ رسٱئڵک ⇜ { "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." }\n❗️🔮 ⌯ تفٱعڵک ⇜ { "..formsgg(msguser).." }\n❗️🦠 ⌯ جـهٱتک ⇜ { "..cont.." }\n❗️🏮 ⌯ نقاطک ⇜ { "..user_nkt.." }\n❗️🧩 ⌯ مڵصقٱتک ⇜ { "..sticker.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️📯 ⌯ جـهٱتک ⇜ ◝ "..cont.." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n❗️🛎 ⌯ مڵصقٱتک ⇜ ◝ "..sticker.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 end
 end
 else
@@ -10370,7 +10370,7 @@ local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️
 .."❗️📱 ⌯ ٱڵموٱقع ⌯» "..lock_location.."\n"
 .."❗️📕 ⌯ ٱڵعربيه ⌯» "..lock_arabic.."\n"
 .."❗️📘 ⌯ ٱلٱنكڵيزيه ⌯» "..lock_english.."\n"
-.."❗️🧿 ⌯ ٱڵكل ⌯» "..mute_all.."\n"
+.."❗️🧿 ⌯ ٱڵكل⌯» "..mute_all.."\n"
 .."❗️🖇 ⌯ ٱڵتكرٱر ⌯» "..mute_flood.."\n"
 .."❗️🧷 ⌯ خٱصية ٱڵتكرٱر ⌯» "..floodstatus.."\n"
 .."❗️📎 ⌯ عدد ٱڵتكرٱر ⌯» [ "..flood_m.." ]\n"
