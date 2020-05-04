@@ -4774,9 +4774,6 @@ if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(ط�
    end
    Text = today.."• حاله الطقس ل5 ايام القادمه 🔽:\n"..after
    Dev_Abs(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
-  else
-   Text  = "*❗️🚸 ⌯ لٱ توجد مدينة بهذٱ ٱلٱسـم *"
-   Dev_Abs(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
   end
  end
 --     Source DevProx     --
