@@ -4712,7 +4712,7 @@ local function IQ_ABS(msg, matches)
   end 
   return wtext 
 end 
-
+end
 return { 
 
   patterns = { 
