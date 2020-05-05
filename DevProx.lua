@@ -12210,31 +12210,6 @@ end
 DevAbs:setex(DevProx.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end
 --     Source DevProx     --
-do
-
-local function parsed_url(link)
-  local parsed_link = URL.parse(link)
-  local parsed_path = URL.parse_path(parsed_link.path)
-  return parsed_path[2]
-end
-
-function run(msg, matches)
-  local hash = parsed_url(matches[1])   
-  join = import_chat_link(hash,ok_cb,false)
-end
-
-
-return {
-  description = "Add Robot to Group", 
-  usage = "ادخل (link) : add bot to group",
-  patterns = {
-    "^ادخل (.*)$"
-  }, 
-  run = run
-}
-
-end
---     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'Ξ ❗️🚸 • قـنـاة الـسـورس • \nΞ ❕🚸 • @Dev_Prox • \n ', 1, 'md')    
 end end
