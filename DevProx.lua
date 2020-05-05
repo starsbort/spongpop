@@ -3118,7 +3118,7 @@ local chat = msg.chat_id_
 delete_msg(chat, msgs)
 end
 end
-if text:match("طيز") or text:match("ديس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("طيز") or text:match("ديس") or text:match("كس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -3163,7 +3163,7 @@ local chat = msg.chat_id_
 delete_msg(chat, msgs)
 end 
 end
-if text:match("شيعي نكس") or text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("سني") or text:match("طائفتكم") or text:match("شيعي") or text:match("طائفيه") or text:match("انا سني") or text:match("انا شيعي") or text:match("مسيحي") or text:match("يهودي") or text:match("صائبي") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("شيعي نكس") or text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("سني") or text:match("طائفتكم") or text:match("شيعي") or text:match("طائفيه") or text:match("انا سني") or text:match("انا شيعي") or text:match("مسيحي") or text:match("يهودي") or text:match("صابئي") or text:match("ملحد") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."taf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -3177,7 +3177,7 @@ end
 end
 end
 --     Source DevProx     --
-if text:match("خره بالله") or text:match("خبربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("خره بالله") or text:match("خبربك") or text:match("كسدينربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -3185,7 +3185,7 @@ local chat = msg.chat_id_
 delete_msg(chat, msgs)
 end 
 end
-if text:match("خره بالله") or text:match("خبربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if text:match("خره بالله") or text:match("خبربك") or text:match("كسدينربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -7746,7 +7746,7 @@ if not DevAbs:get('DevProx:id:photo'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ You don'n have a personal picture \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ User name : { "..username.." }\n❗️🗽 ⌯ Photo : { "..result.total_count_.." }\n❗️🏮 ⌯ Point : { "..user_nkt.." }\n❗️🗽 ⌯ Contacts : { "..cont.." }\n❗️🧩 ⌯ Sticker : { "..sticker.." }\n❗️🔎 ⌯ Msg : { "..user_msgs.." }\n❗️🧬 ⌯ ID : { "..msg.sender_user_id_.." }\n❗️🔮 ⌯ interaction : { "..formsgg(msguser).." }\n❗️💎 ⌯ Renk : { "..t.." }\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ لٱ ٱستطيع عرض صورتک \n❗️📛 ⌯ ربمٱ لٱ تمتڵك صورة شخصية \n❗️📛 ⌯ ٱو ٱنك قمت بحظر ٱڵـبوت \n❗️📛 ⌯ ٱو ٱنك قفڵتهٱ من ٱلٱعدٱدٱت \n〰️➖〰️➖〰️➖〰️➖〰️\n\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️📯 ⌯ جـهٱتک ⇜ ◝ "..cont.." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n❗️🛎 ⌯ مڵصقٱتک ⇜ ◝ "..sticker.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️⚠️ ⌯ لٱ ٱستطيع عرض صورتک \n❗️📛 ⌯ ربمٱ لٱ تمتڵك صورة شخصية \n❗️📛 ⌯ ٱو ٱنك قمت بحظر ٱڵـبوت \n❗️📛 ⌯ ٱو ٱنك قفڵتهٱ من ٱلٱعدٱدٱت \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفک ⇜ ◝ "..username.." ◟\n❗️🔑 ⌯ ٱيـډيک ⇜ ◝ "..msg.sender_user_id_.." ◟\n❗️📣 ⌯ رتـبتک ⇜ ◝ "..t.." ◟\n❗️🎗 ⌯ صورک ⇜ ◝ "..result.total_count_.." ◟\n❗️〽️ ⌯ رسٱئڵک ⇜ ◝ "..(user_msgs + Dev_Abss).." / "..(ABS_PROX).." ◟\n❗️⚜️ ⌯ تفٱعڵک ⇜ ◝ "..formsgg(msguser).." ◟\n❗️📯 ⌯ جـهٱتک ⇜ ◝ "..cont.." ◟\n❗️🔅 ⌯ نقاطک ⇜ ◝ "..user_nkt.." ◟\n❗️🛎 ⌯ مڵصقٱتک ⇜ ◝ "..sticker.." ◟\n〰️➖〰️➖〰️➖〰️➖〰️\n", 1, 'html')
 end
 else
 if is_sudo(msg) then
@@ -8525,7 +8525,7 @@ if text:match("^[Dd]el welcome$") or text:match("^حذف الترحيب$") or te
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Welcome text has been removed ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حـذف ٱڵترحيب ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حـذف ٱڵترحيب \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 DevAbs:del(DevProx..'welcome:'..msg.chat_id_)
 end
@@ -8707,7 +8707,7 @@ if text:match("^[Rr]esgp$") or text:match("^تنظيف الكروبات$") and i
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Nubmper of groups bot has been update ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تنظيف ٱڵكروبٱت ٱڵوهمية ', 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تنظيف ٱڵكروبٱت ٱڵوهمية \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 'md')
 end
 DevAbs:del(DevProx.."bot:groups")
 end
@@ -8722,7 +8722,7 @@ DevAbs:del(DevProx.."bot:allmsgs")
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ All msg received has been reset ', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تنظيف عدد رسٱئڵ ٱڵكروبٱت ', 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تنظيف عدد رسٱئڵ ٱڵكروبٱت \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 'md')
 end
 end
 --     Source DevProx     --
