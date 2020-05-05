@@ -10502,17 +10502,57 @@ end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الروابط$") then
-
 local ABS_PROX = "\n"
 .."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^الصور$") then
-
+if text:match("^المعرف$") or text:match("^المعرفات$") then
 local ABS_PROX = "\n"
-.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_photo.."\n"
+.."❗️♟ ⌯ ٱڵمعرف ⌯» "..lock_tag.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^البوتات$") then
+local ABS_PROX = "\n"
+.."❗️🚸 ⌯ ٱڵبوتٱت "..mute_bots.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الشارحه$") then
+local ABS_PROX = "\n"
+.."❗️🗯 ⌯ ٱڵشٱرحه ⌯» "..mute_cmd.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^المتحركه$") or text:match("^الملصقات المتحركه$") then
+local ABS_PROX = "\n"
+.."❗️🎨 ⌯ ٱڵمتحركه ⌯» "..mute_gifs.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الملصقات$") then
+local ABS_PROX = "\n"
+.."❗️🎭 ⌯ ٱڵمڵصقٱت ⌯» "..lock_sticker.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الملفات$") then
+local ABS_PROX = "\n"
+.."❗️🗂 ⌯ ٱڵمڵفٱت ⌯» "..lock_file.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الصور$") then
+local ABS_PROX = "\n"
+.."❗️🔖 ⌯ ٱڵصور ⌯» "..mute_photo.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
