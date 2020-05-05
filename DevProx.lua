@@ -10502,13 +10502,17 @@ end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الروابط$") then
-if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
-mute_links = 'مـقفۄڵة'
-else
-mute_links = 'مـفتۄحة'
-end
+
 local ABS_PROX = "\n"
 .."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الصور$") then
+
+local ABS_PROX = "\n"
+.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_photo.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
