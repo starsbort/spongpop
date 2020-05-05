@@ -418,8 +418,6 @@ local abssssss =  'bot:onall:'
 local onall = DevAbs:sismember(DevProx..abssssss, user_id)
 local absabs =  'bot:moall:'
 local moall = DevAbs:sismember(DevProx..absabs, user_id)
-local abas =  'bot:monsh2:'..chat_id
-local monsh2 = DevAbs:sismember(DevProx..abas, user_id)
 if vipmem then
 var = true
 end
@@ -439,9 +437,6 @@ if onall then
 var = true
 end
 if moall then
-var = true
-end
-if monsh2 then
 var = true
 end
 for k,v in pairs(sudo_users) do
@@ -4294,7 +4289,7 @@ t = 'ٱڵمميز ٱڵعٱم'
 end
 elseif is_monsh(result.id_, msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-t = ' creator'
+t = 'creator'
 else
 t = 'ٱڵـۧمـۧنشئ'
 end
@@ -4920,6 +4915,86 @@ end
 end 
 resolve_username(username,ABS_PROX)
 end
+--     Source DevProx     --
+
+
+    local msg = data.message_
+    text = msg.content_.text_
+    if not DevAbs:get("DevProx:get:hms:gr:"..bot_id..msg.chat_id_) then 
+    if text and text:match("^اهمس (.*) (.*)") then 
+    text = text:gsub('@',"")
+    keko_ts = {string.match(text, "اهمس (.*) (.*)")}
+    function cb_DevProx(t1,t2)
+    if not t2.id_ then 
+    send(msg.chat_id_, msg.id_, 1, "👤┇لا يوجد هاكذا معرف", 1, 'html')
+    return "keko"
+    end
+    function DevProx_jd(y1,y2)
+    if (y2 and ((y2.status_ and y2.status_.ID == "ChatMemberStatusLeft") or y2.ID == "Error")) then 
+    send(msg.chat_id_, msg.id_, 1, "👤┇المستخدم ليس في المجموعه", 1, 'html')
+    return "keko"
+    end
+    tdcli_function ({
+    ID="DeleteMessages",
+    chat_id_= msg.chat_id_,
+    message_ids_= {[0] = msg.id_}
+    },
+    dl_cb, nil)
+    DevAbs:set("DevProx:get:hms:msg:"..bot_id..msg.chat_id_..msg.id_..t2.id_,keko_ts[1])
+    function bot_id_get(t11,t22)
+    bot_username = (t22.username_ or "DevProxbot")
+    function kekko(u1,u2)
+    local id_send = msg.sender_user_id_
+    if u2.username_ then 
+    id_send = "@"..u2.username_
+    end
+    send(msg.chat_id_, msg.id_, 1, "🔘┇عزيزي ( @["..keko_ts[2].."] )\n📩┇هناك همسه لك من قبل ( ["..id_send.."] )\n📃┇[اضغط هنا لعرض الهمسه](https://t.me/"..bot_username.."?start=hms"..msg.chat_id_..msg.id_.."_"..t2.id_..").", 1, 'html')
+    end
+    getUser(msg.sender_user_id_, kekko)
+    end
+    getUser(bot_id, bot_id_get)
+    end
+    tdcli_function ({
+    ID = "GetChatMember",
+    chat_id_ = msg.chat_id_,
+    user_id_ = t2.id_
+    }, DevProx_jd, nil)
+    end
+    resolve_username(keko_ts[2],cb_DevProx)
+    end
+    end
+    if text and text == "اهمس" then 
+    send(msg.chat_id_, msg.id_, 1, "🏮┇يمكنك عمل همسه\n\n🕹┇اهمس الرساله معرف الشخص\n📥┇مثال : اهمس مرحبا @ikeko ", 1, 'html')
+    end
+    if text and text:match("/start hms(.*)_(%d+)") then 
+    keko_ts = {string.match(text, "^/start hms(.*)_(%d+)")}
+    if tonumber(msg.sender_user_id_) == tonumber(keko_ts[2]) then 
+    kekol = DevAbs:get("DevProx:get:hms:msg:"..bot_id..keko_ts[1]..keko_ts[2])
+    if kekol then 
+    send(msg.chat_id_, msg.id_, 1, "📥┇الهمسه هيه : ["..kekol.."]", 1, 'html')
+    else 
+    send(msg.chat_id_, msg.id_, 1, "🏮┇ الهمسه ليست لك", 1, 'html')
+    end
+    else 
+    send(msg.chat_id_, msg.id_, 1, "🏮┇ الهمسه ليست لك", 1, 'html')
+    end
+    end
+
+    if is_monsh(msg) then 
+    if text and text == "تعطيل اهمس" then 
+    DevAbs:set("DevProx:get:hms:gr:"..bot_id..msg.chat_id_,"DevProx")
+    send(msg.chat_id_, msg.id_, 1, "🔘┇ تم تعطيل اهمس", 1, 'html')
+    end 
+    if text and text == "تفعيل اهمس" then 
+    DevAbs:del("DevProx:get:hms:gr:"..bot_id..msg.chat_id_)
+    send(msg.chat_id_, msg.id_, 1, "☑️┇ تم تفعيل اهمس ", 1, 'html')
+    end 
+    end
+
+    end
+    return {
+        hmsa = hmsa,
+    }
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
