@@ -10507,8 +10507,7 @@ mute_links = 'مـقفۄڵة'
 else
 mute_links = 'مـفتۄحة'
 end
-local ABS_PROX = "❗️🎒 ⌯ ٱعدٱدٱت ٱڵروٱبط : \n"
-.." ٱڵروٱبط : "..mute_links.."\n"
+.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
