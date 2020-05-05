@@ -10552,7 +10552,7 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملصقات$") then
 if DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) then
-lock_sticker = 'مقفڵة'
+lock_sticker = 'مـقفۄڵة'
 else
 lock_sticker = 'مفتوحة'
 end
@@ -10564,7 +10564,7 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملفات$") then
 if DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) then
-lock_file = 'مقفڵة'
+lock_file = 'مـقفۄڵة'
 else
 lock_file = 'مفتوحة'
 end
@@ -10612,9 +10612,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الدردشه$") then
 if DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) then
-mute_text = 'مقفڵه'
+mute_text = 'مقفڵة'
 else
-mute_text = 'مفتوحه'
+mute_text = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️💬 ⌯ ٱڵدردشه ⌯» "..mute_text.."\n"
@@ -10672,9 +10672,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الماركداون$") then
 if DevAbs:get(DevProx..'markdown:lock'..msg.chat_id_) then
-markdown = 'مقفڵه'
+markdown = 'مقفڵ'
 else
-markdown = 'مفتوحه'
+markdown = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🕹 ⌯ ٱڵمٱركدٱون ⌯» "..markdown.."\n"
@@ -10684,9 +10684,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الحمايه$") then
 if DevAbs:get(DevProx..'bot:strict'..msg.chat_id_) then
-strict = 'مقفڵه'
+strict = 'مـقفۄڵة'
 else
-strict = 'مفتوحه'
+strict = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️⚙️ ⌯ ٱڵحمٱيه ⌯» "..strict.."\n"
@@ -10696,9 +10696,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الهاشتاك$") then
 if DevAbs:get(DevProx..'bot:abstag:mute'..msg.chat_id_) then
-lock_htag = 'مقفڵه'
+lock_htag = 'مقفڵ'
 else
-lock_htag = 'مفتوحه'
+lock_htag = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🔖 ⌯ ٱڵهٱشتٱك ⌯» "..lock_htag.."\n"
@@ -10708,9 +10708,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^التعديل$") then
 if DevAbs:get(DevProx..'editmsg'..msg.chat_id_) then
-mute_edit = 'مقفڵه'
+mute_edit = 'مقفڵ'
 else
-mute_edit = 'مفتوحه'
+mute_edit = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🛠 ⌯ ٱڵتعديل ⌯» "..mute_edit.."\n"
@@ -10720,9 +10720,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^التثبيت$") then
 if DevAbs:get(DevProx..'bot:pin:mute'..msg.chat_id_) then
-lock_pin = 'مقفڵه'
+lock_pin = 'مقفڵ'
 else
-lock_pin = 'مفتوحه'
+lock_pin = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🔱 ⌯ ٱڵتثبيت ⌯» "..lock_pin.."\n"
@@ -10732,9 +10732,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الاشعارات$") then
 if DevAbs:get(DevProx..'bot:tgservice:jk'..msg.chat_id_) then
-lock_tgservice = 'مقفڵه'
+lock_tgservice = 'مـقفۄڵة'
 else
-lock_tgservice = 'مفتوحه'
+lock_tgservice = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🥁 ⌯ ٱلٱشعٱرٱت ⌯» "..lock_tgservice.."\n"
@@ -10744,9 +10744,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الكلايش$") then
 if DevAbs:get(DevProx..'bot:spam:mute'..msg.chat_id_) then
-lock_spam = 'مقفڵه'
+lock_spam = 'مـقفۄڵة'
 else
-lock_spam = 'مفتوحه'
+lock_spam = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📑 ⌯ ٱڵكلٱيش ⌯» "..lock_spam.."\n"
@@ -10756,9 +10756,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الشبكات$") then
 if DevAbs:get(DevProx..'bot:webpage:mute'..msg.chat_id_) then
-lock_wp = 'مقفڵه'
+lock_wp = 'مـقفۄڵة'
 else
-lock_wp = 'مفتوحه'
+lock_wp = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📶 ⌯ ٱڵشبكٱت ⌯» "..lock_wp.."\n"
@@ -10768,9 +10768,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المواقع$") then
 if DevAbs:get(DevProx..'bot:location:mute'..msg.chat_id_) then
-lock_location = 'مقفڵه'
+lock_location = 'مـقفۄڵة'
 else
-lock_location = 'مفتوحه'
+lock_location = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📱 ⌯ ٱڵموٱقع ⌯» "..lock_location.."\n"
@@ -10780,9 +10780,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^العربيه$") then
 if DevAbs:get(DevProx..'bot:arabic:mute'..msg.chat_id_) then
-lock_arabic = 'مقفڵه'
+lock_arabic = 'مـقفۄڵة'
 else
-lock_arabic = 'مفتوحه'
+lock_arabic = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📕 ⌯ ٱڵعربيه ⌯» "..lock_arabic.."\n"
@@ -10792,9 +10792,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الانكليزيه$") then
 if DevAbs:get(DevProx..'bot:english:mute'..msg.chat_id_) then
-lock_english = 'مقفڵه'
+lock_english = 'مـقفۄڵة'
 else
-lock_english = 'مفتوحه'
+lock_english = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📘 ⌯ ٱلٱنكڵيزيه ⌯» "..lock_english.."\n"
@@ -10806,7 +10806,7 @@ if text:match("^الكل$") then
 if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
 mute_all = 'مقفڵه'
 else
-mute_all = 'مفتوحه'
+mute_all = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🧿 ⌯ ٱڵكل⌯» "..mute_all.."\n"
@@ -10816,9 +10816,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^التكرار$") then
 if DevAbs:get(DevProx..'anti-flood:'..msg.chat_id_) then
-mute_flood = 'مقفڵه'
+mute_flood = 'مقفڵ'
 else
-mute_flood = 'مفتوحه'
+mute_flood = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🖇 ⌯ ٱڵتكرٱر ⌯» "..mute_flood.."\n"
