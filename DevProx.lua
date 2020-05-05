@@ -4513,7 +4513,7 @@ if kickme == 'kickyes' then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 DevAbs:del(DevProx..'yes'..msg.sender_user_id_..'', 'kickyes')
 DevAbs:del(DevProx..'no'..msg.sender_user_id_..'', 'kickno')
-Dev_Abs(msg.chat_id_, msg.id_, 1, "*العضو* "..result.sender_user_id_.." \n❗️🚸 ⌯ تم طرده بامر منه ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم طردك هيج هيج مٱبيك فٱيدة ", 1, "md")
 end
 end
 end
