@@ -8525,7 +8525,7 @@ end
 DevAbs:set(DevProx.."bot:group:link"..msg.chat_id_, 'waiting')
 end
 --     Source DevProx     --
-if text:match("^الدعم$") or text:match("^المطور$") then
+if text:match("^الدعم$") then
 local link = DevAbs:get(DevProx.."bot:supports:link")
 if link then
 if link:match("https://") then
@@ -12209,9 +12209,9 @@ end
 DevAbs:setex(DevProx.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end
 if is_sudo(msg) and (text:match("^[Dd]elnerkh$") or text:match("^حذف كليشه المطور$")) then
-if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
+if DevAbs:del(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ sudo *Information* Deleted ", 1, "md")
-else
+else 
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم حـذف كڵيشة ٱڵمطور ", 1, "md")
 end
 DevAbs:del(DevProx.."bot:nerkh")
