@@ -1366,7 +1366,7 @@ for k,v in pairs(list) do
 DevAbs:del(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 DevAbs:del(bot_id.."Coomds"..msg.chat_id_)
 end
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️📛 ⌯ تـۖم حـذف ٱلصلاحيات ٱڵـمُـضافة فيۧ ٱڵـمجـمۄعة", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️📛 ⌯ تـۖم حذف ٱلصلاحيات ٱڵمُضافة فيۧ ٱڵمجمۄعة", 1, 'html')
 end
 if text and text:match("^اضف صلاحيه (.*)$") then 
 ComdNew = text:match("^اضف صلاحيه (.*)$")
@@ -4497,7 +4497,7 @@ if text:match("^اطردني$") or text:match("^ادفرني$") then
 if not DevAbs:get(DevProx.."lock_kickme"..msg.chat_id_) then
 DevAbs:set(DevProx..'yes'..msg.sender_user_id_..'', 'kickyes')
 DevAbs:set(DevProx..'no'..msg.sender_user_id_..'', 'kickno')
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ هڵ ٱنت متأكد من ٱڵمغٱدرة \n❗️☑️ ⌯ ٱرسل *{ نعم }* ڵيتم طردك \n❗️🔘 ⌯ ٱرسل *{ لا }* لٱڵغٱء ٱلٱمـر ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ هڵ ٱنت متأكد من ٱڵمغٱدرة \n❗️☑️ ⌯ ٱرسل *{ نعم }* ڵيتم ٱلٱمـر \n❗️🔘 ⌯ ٱرسل *{ لا }* لٱڵغٱء ٱلٱمـر ", 1, "md")
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ عذرٱ هذه ٱڵخٱصية معطڵة ', 1, 'md')
 end
@@ -4513,7 +4513,7 @@ if kickme == 'kickyes' then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 DevAbs:del(DevProx..'yes'..msg.sender_user_id_..'', 'kickyes')
 DevAbs:del(DevProx..'no'..msg.sender_user_id_..'', 'kickno')
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم طردك هيج هيج مٱبيك فٱيدة ", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "*العضو* "..result.sender_user_id_.." \n❗️🚸 ⌯ تم طرده بامر منه ", 1, "md")
 end
 end
 end
@@ -7493,11 +7493,11 @@ return "ABS_PROX"
 end
 if text and is_owner(msg.sender_user_id_, msg.chat_id_)  and DevAbs:get("DevProx:now:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
 DevAbs:del("DevProx:now:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفـۨظ ٱڵكڵيشة ٱڵجډيډة', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حفـۨظ ٱڵكڵيشة ٱڵجډيډة', 1, 'md')
 DevAbs:set("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_,text)
 end
 if text:match("^حذف الايدي$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حـذف كڵيشة ٱلٱيدي', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حـذف كڵيشة ٱلٱيدي ', 1, 'md')
 DevAbs:del("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 end
 --     Source DevProx     --
@@ -8533,12 +8533,12 @@ if link:match("https://") then
 if DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ <b>Support Link</b> :\n\n " .. link, 1, "html")
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تم ٱرسٱڵ بيٱنٱتك ڵڵـمطور \n❗️🦠 ⌯ سوف يٱتي في ٱقرب وقت \n❗️💎 ⌯ يمكنك طڵب ٱڵمسٱعدة \n❗️🧬 ⌯ من كروب ٱڵـدعم \n〰️➖〰️➖〰️➖〰️➖〰️\n•- " .. link, 1, "html")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم ٱرسٱڵ بيٱنٱتك ڵڵـمطور \n❗️🦠 ⌯ سوف يٱتي في ٱقرب وقت \n❗️💎 ⌯ يمكنك طڵب ٱڵمسٱعدة \n❗️🧬 ⌯ من كروب ٱڵـدعم \n〰️➖〰️➖〰️➖〰️➖〰️\n•- " .. link, 1, "html")
 end
 elseif DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ <b>Support Bot ID</b> : @" .. link, 1, "html")
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تم ٱرسٱڵ بيٱنٱتك ڵڵـمطور \n❗️🦠 ⌯ سوف يٱتي في ٱقرب وقت \n❗️💎 ⌯ يمكنك طڵب ٱڵمسٱعدة \n❗️🧬 ⌯ من بوت توٱصڵ ٱڵـمطور \n〰️➖〰️➖〰️➖〰️➖〰️\n•- @" .. link, 1, "html")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم ٱرسٱڵ بيٱنٱتك ڵڵـمطور \n❗️🦠 ⌯ سوف يٱتي في ٱقرب وقت \n❗️💎 ⌯ يمكنك طڵب ٱڵمسٱعدة \n❗️🧬 ⌯ من بوت توٱصڵ ٱڵـمطور \n〰️➖〰️➖〰️➖〰️➖〰️\n•- @" .. link, 1, "html")
 end
 elseif DevAbs:get(DevProx.."lang:gp:" .. msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ *Support link* is not found ", 1, "md")
@@ -8953,9 +8953,9 @@ local num1 = tonumber(hour) * 3600
 local num = tonumber(num1)
 DevAbs:setex(DevProx..'bot:muteall'..msg.chat_id_, num, true)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ Lock all has been enable for "..mutept[1].." hours ", 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ Lock all has been enable for ("..mutept[1]..") hours ", 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـۖم فـتـۧح جـمـيع ٱڵـوسـآئط ڵمدة "..mutept[1].." ساعه ", 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـۖم فـتـۧح جـمـيع ٱڵـوسـآئط ڵمدة ("..mutept[1]..") ساعه ", 'md')
 end
 end
 if text:match("^قفل الكل بالساعات (%d+)$") then
@@ -8965,9 +8965,9 @@ local num1 = tonumber(hour) * 3600
 local num = tonumber(num1)
 DevAbs:setex(DevProx..'bot:muteall'..msg.chat_id_, num, true)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ Lock all has been enable for "..mutept[1].." hours ", 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ Lock all has been enable for ("..mutept[1]..") hours ", 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـۖم قفـڵ جـمـيع ٱڵـوسـآئط ڵمدة "..mutept[1].." ساعه ", 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـۖم قفـڵ جـمـيع ٱڵـوسـآئط ڵمدة ("..mutept[1]..") ساعه ", 'md')
 end
 end
 end
@@ -10176,7 +10176,7 @@ end
 end
 if text == 'حذف الرابط' then
 DevAbs:del(DevProx.."bot:group:link"..msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حـذف رٱبط ٱڵمجموعة ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حـذف رٱبط ٱڵمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
 end
 if is_admin(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Cc]lean (.*)$") or text:match("^حذف (.*)$") then
@@ -10248,7 +10248,7 @@ DevAbs:del(DevProx..'bot:donky:'..msg.chat_id_)
 DevAbs:del(DevProx..'bot:vipmem:'..msg.chat_id_)
 DevAbs:del(DevProx..'bot:filters:'..msg.chat_id_)
 DevAbs:del(DevProx..'bot:muted:'..msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️⚠️ ⌯ تم حذف ٱڵمحظورين \n❗️🔕 ⌯ تم حذف ٱڵمكتومين \n❗️🔱 ⌯ تم حذف ٱلٱدمنية \n❗️💎 ⌯ تم حذف ٱڵمميزين \n❗️🦠 ⌯ تم حذف ٱڵمطٱية  \n❗️🎒 ⌯ تم حذف قٱ ئمة ٱڵمنع \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️⚠️ ⌯ تـۖم حذف ٱڵمحظورين \n❗️🔕 ⌯ تـۖم حذف ٱڵمكتومين \n❗️🔱 ⌯ تـۖم حذف ٱلٱدمنية \n❗️💎 ⌯ تـۖم حذف ٱڵمميزين \n❗️🦠 ⌯ تـۖم حذف ٱڵمطٱية  \n❗️🎒 ⌯ تـۖم حذف قٱ ئمة ٱڵمنع \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
 end
 end
 if text:match("^تفعيل الحمايه القصوى$") or text:match("^قفل التفليش$") then
@@ -10269,7 +10269,7 @@ DevAbs:del(DevProx.."taf"..msg.chat_id_)
 DevAbs:del(DevProx.."kaf"..msg.chat_id_)
 DevAbs:set(DevProx..'floodstatus'..msg.chat_id_,'Kicked')
 DevAbs:set('DevProx:id:photo'..msg.chat_id_,true)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تم تفعيل ٱڵحمٱية ٱڵقصوى \n〰️➖〰️➖〰️➖〰️➖〰️ \n❗️🎳 ⌯ تم قفل ٱڵتكرٱر \n❗️🧩 ⌯ تم قفل ٱڵرو ٱبط \n❗️🦠 ⌯ تم قفل ٱڵتوجية \n❗️📮 ⌯ تم قفل ٱڵمڵصقٱت \n❗️🔎 ⌯ تم قفل ٱڵمتحركة \n❗️🎥 ⌯ تم قفل ٱڵفيديو\n❗️📌 ⌯ تم قفل ٱڵفشٱر \n❗️📍 ⌯ تم قفل ٱڵكفر \n❗️🧬 ⌯ تم قفل ٱڵطٱئفية \n❗️💎 ⌯ تم قفل ٱڵبوتٱت بٱڵطرد \n❗️⚠️ ⌯ تم قفل ٱڵفٱرسية بٱڵطرد \n❗️🚸 ⌯ تم وضع ٱڵتكرٱر بٱڵطرد \n❗️⛑ ⌯ تم وضع ٱلٱيدي بدون صورة \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تـۖم تفعيل ٱڵحمٱية ٱڵقصوى \n〰️➖〰️➖〰️➖〰️➖〰️ \n❗️🎳 ⌯ تـۖم قفل ٱڵتكرٱر \n❗️🧩 ⌯ تـۖم قفل ٱڵرو ٱبط \n❗️🦠 ⌯ تـۖم قفل ٱڵتوجية \n❗️📮 ⌯ تـۖم قفل ٱڵمڵصقٱت \n❗️🔎 ⌯ تـۖم قفل ٱڵمتحركة \n❗️🎥 ⌯ تـۖم قفل ٱڵفيديو\n❗️📌 ⌯ تـۖم قفل ٱڵفشٱر \n❗️📍 ⌯ تـۖم قفل ٱڵكفر \n❗️🧬 ⌯ تـۖم قفل ٱڵطٱئفية \n❗️💎 ⌯ تـۖم قفل ٱڵبوتٱت بٱڵطرد \n❗️⚠️ ⌯ تـۖم قفل ٱڵفٱرسية بٱڵطرد \n❗️🚸 ⌯ تـۖم وضع ٱڵتكرٱر بٱڵطرد \n❗️⛑ ⌯ تـۖم وضع ٱلٱيدي بدون صورة \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
 end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
