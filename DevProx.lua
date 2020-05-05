@@ -4998,6 +4998,7 @@ local function hmsa(data)
 	
     local msg = data.message_
     text = msg.content_.text_
+	end
     if not DevAbs:get("DevProx:get:hms:gr:"..bot_id..msg.chat_id_) then 
     if text and text:match("^اهمس (.*) (.*)") then 
     text = text:gsub('@',"")
@@ -5073,7 +5074,7 @@ local function hmsa(data)
     return {
         hmsa = hmsa,
     }
-   end
+	end
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
