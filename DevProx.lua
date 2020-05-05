@@ -3106,6 +3106,28 @@ end
 end
 --     Source DevProx     --
 if text:match("طيز") or text:match("ديس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx.."zhf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+local id = msg.id_
+local msgs = { [0] = id}
+local chat = msg.chat_id_
+delete_msg(chat, msgs)
+end
+end
+if text:match("احبك") or text:match("احبج") or text:match("بحبك") or text:match("بموت فيك") or text:match("اموت عليج") or text:match("اموت عليك") or text:match("حبيبتي") or text:match("حبيبي") or text:match("عمري") or text:match("روحي") or text:match("كلبي") or text:match("بموت بيك") or text:match("حياتي") or text:match("تعالي خاص") or text:match("تعال خاص") or text:match("خاصك") or text:match("ممكن نتعرف") or text:match("دمج خفيف") or text:match("فديتج") or text:match("فديتك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx.."zhf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+local id = msg.id_
+local msgs = { [0] = id}
+local chat = msg.chat_id_
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'zhfdil1' then
+delete_msg(chat, msgs)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ممنوع ٱڵتكڵم بٱڵحب هنا ', 1, 'md') 
+elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'zhfdil2' then
+delete_msg(chat, msgs)
+end
+end
+end
+--     Source DevProx     --
+if text:match("طيز") or text:match("ديس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
@@ -8252,6 +8274,42 @@ end
 end
 end
 --     Source DevProx     --
+if text:match("^ضع الزحف (.*)$") then
+local status = {string.match(text, "^(ضع الزحف) (.*)$")}
+if status[2] == "بالتحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "zhfdil1" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status is *already* on Kicked ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵزحف بٱڵتحذير بٱڵتاكيد مۧوضوع', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status change to *Kicking* ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵزحف بٱڵتحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'zhfdil1')
+end
+end
+if status[2] == "بدون تحذير" then
+if DevAbs:get(DevProx..'far'..msg.chat_id_) == "zhfdil2" then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status is *already* on Deleting ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵزحف بدون تحذير بٱڵتاكيد مۧوضوع ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Flood status has been change to *Deleting* ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵزحف بدون تحذير \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..')', 1, 'md')
+end
+DevAbs:set(DevProx..'far'..msg.chat_id_,'zhfdil2')
+end
+end
+end
+--     Source DevProx     --
 if text:match("^ضع الطائفيه (.*)$") then
 local status = {string.match(text, "^(ضع الطائفيه) (.*)$")}
 if status[2] == "بالتحذير" then
@@ -9397,6 +9455,50 @@ end
 local ABS_PROX = '❗️☻ تـۖم فـتـۧح ٱڵـفشٱر فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..tar..' \n❗️📮 ⌯ ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
 absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
 DevAbs:set(DevProx.."fshar"..msg.chat_id_, true)
+end
+if text == 'قفل الزحف' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if is_leaderid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_sudoid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_admin(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_onall(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_moall(msg.sender_user_id_) then
+tar = 'ٱلٱدمـۧن'
+elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧنشئ'
+elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱلٱدمـۧن'          
+end
+local ABS_PROX = '❗️☻ تـۖم قفـڵ ٱڵزحف فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..tar..' \n❗️📮 ⌯ ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
+absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 57, string.len(msg.sender_user_id_))
+DevAbs:del(DevProx.."zhf"..msg.chat_id_)
+end
+if text == 'فتح الزحف' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+if is_leaderid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_sudoid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_admin(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_onall(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_moall(msg.sender_user_id_) then
+tar = 'ٱلٱدمـۧن'
+elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧنشئ'
+elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱلٱدمـۧن'          
+end
+local ABS_PROX = '❗️☻ تـۖم فـتـۧح ٱڵزحف فيۧ ٱڵمجـمۄعة \n❗️🚸 ⌯ بوٱسـۧطـة : '..tar..' \n❗️📮 ⌯ ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
+absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
+DevAbs:set(DevProx.."zhf"..msg.chat_id_, true)
 end
 if text == 'قفل الطائفيه' and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
