@@ -1258,6 +1258,10 @@ local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getc
 local data = json:decode(url)
 if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
 var = false 
+if DevAbs:get(DevProx..'bot:textch:user') then
+local textchuser = DevAbs:get(DevProx..'bot:textch:user')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '['..textchuser..']', 1, 'md')
+else
 Dev_Abs(msg.chat_id_,msg.id_, 1, "❗️☻ عُـذراً لايُمكِنك ٱستخدام ٱڵـبوت  \nلانك لم تشترك فيۧ قناة ٱڵـبوت  \n❗️🚸 رجائاً ٱشترك  بٱڵـقناة ڵـتتمكن من ٱستخدٱمة. \n❗️📍 قناة ٱڵـبوت : { ["..channel.."] } \n ", 1 , "md")
 elseif data.ok then
 return var
@@ -12209,6 +12213,28 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱرسـڵ كڵيشة ٱڵـم
 end
 DevAbs:setex(DevProx.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end
+--     Source DevProx     --
+if DevAbs:get(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
+if text and text:match("^الغاء$") then 
+Dev_Abs(msg.chat_id_, msg.id_, 1, "*📬¦ تم الغاء الامر *\n✓", 1, "md") 
+DevAbs:del(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+return false  end 
+DevAbs:del(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+local texxt = string.match(text, "(.*)") 
+DevAbs:set(DevProx..'bot:textch:user',texxt)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*📮¦ تم تغيير رسالة الاشتراك بنجاح *\n✓', 1, 'md')
+end
+
+if text and text:match("^تغير رساله الاشتراك$") and is_leader(msg) then  
+DevAbs:setex(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
+local t = '*📮¦ حسنآ ارسل لي النص الذي تريده*\n💥'  
+Dev_Abs(msg.chat_id_, msg.id_, 1,t, 1, 'md') 
+end
+if text == "حذف رساله الاشتراك" and is_leader(msg) then  
+DevAbs:del(DevProx..'text:ch:user')
+textt = "*📮¦ تم مسح رساله الاشتراك*\n✓"
+Dev_Abs(msg.chat_id_, msg.id_, 1,textt, 1, 'md') 
+end
 --     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'Ξ ❗️🚸 • قـنـاة الـسـورس • \nΞ ❕🚸 • @Dev_Prox • \n ', 1, 'md')    
