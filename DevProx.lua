@@ -10587,10 +10587,17 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵم
 end
 end
 end
+if text and text:match("^حذف القوانين$")  and is_momod(msg) then  
+Dev_Abs(msg.chat_id_, msg.id_, 1, "📪¦ تم مسح القوانين", 1, "md")  
+DevAbs:del(DevProx.."bot:rules" .. msg.chat_id_) 
+end
 --     Source DevProx     --
 if text:match("^[Rr]ules$") or text:match("^القوانين$") then
 local rules = DevAbs:get(DevProx..'bot:rules'..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, rules, 1, nil)
+else      
+Dev_Abs(msg.chat_id_, msg.id_, 1, "📮¦ لا يوجد قوانين هنا",  1, "md")   
+end    
 end
 --     Source DevProx     --
 if text:match("^ضع ملاحظه (.*)$") and is_leader(msg) then
@@ -12225,13 +12232,13 @@ local texxt = string.match(text, "(.*)")
 DevAbs:set(DevProx..'bot:textch:user',texxt)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تغيير كڵيشة ٱلٱشترٱك ٱلٱجبٱري', 1, 'md')
 end
-
-if text and text:match("^تغيير رساله الاشتراك$") or text:match("^تغيير كليشه الاشتراك$") and is_leader(msg) then  
+--     Source DevProx     --
+if text and text:match("^تغيير كليشه الاشتراك الاجباري$") or text:match("^تغيير كليشه الاشتراك$") and is_leader(msg) then  
 DevAbs:setex(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
 local t = '❗️🚸 ⌯ حسنٱ ٱرسڵ كڵيشة ٱلٱشترٱك ٱڵجديدة'  
 Dev_Abs(msg.chat_id_, msg.id_, 1,t, 1, 'md') 
 end
-if text == "حذف رساله الاشتراك" or text == "حذف كليشه الاشتراك" and is_leader(msg) then  
+if text == "حذف كليشه الاشتراك الاجباري" or text == "حذف كليشه الاشتراك" and is_leader(msg) then  
 DevAbs:del(DevProx..'bot:textch:user')
 textt = "❗️🚸 ⌯ تـۖم حذف كڵيشة ٱلٱشترٱك ٱلٱجبٱري"
 Dev_Abs(msg.chat_id_, msg.id_, 1,textt, 1, 'md') 
