@@ -1263,6 +1263,7 @@ local textchuser = DevAbs:get(DevProx..'bot:textch:user')
 Dev_Abs(msg.chat_id_, msg.id_, 1, '['..textchuser..']', 1, 'md')
 else
 Dev_Abs(msg.chat_id_,msg.id_, 1, "❗️☻ عُـذراً لايُمكِنك ٱستخدام ٱڵـبوت  \nلانك لم تشترك فيۧ قناة ٱڵـبوت  \n❗️🚸 رجائاً ٱشترك  بٱڵـقناة ڵـتتمكن من ٱستخدٱمة. \n❗️📍 قناة ٱڵـبوت : { ["..channel.."] } \n ", 1 , "md")
+end
 elseif data.ok then
 return var
 end
