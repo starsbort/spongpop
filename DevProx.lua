@@ -10587,17 +10587,10 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵم
 end
 end
 end
-if text and text:match("^حذف القوانين$")  and is_momod(msg) then  
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📪¦ تم مسح القوانين", 1, "md")  
-DevAbs:del(DevProx.."bot:rules" .. msg.chat_id_) 
-end
 --     Source DevProx     --
 if text:match("^[Rr]ules$") or text:match("^القوانين$") then
 local rules = DevAbs:get(DevProx..'bot:rules'..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, rules, 1, nil)
-else      
-Dev_Abs(msg.chat_id_, msg.id_, 1, "📮¦ لا يوجد قوانين هنا",  1, "md")   
-end    
 end
 --     Source DevProx     --
 if text:match("^ضع ملاحظه (.*)$") and is_leader(msg) then
