@@ -10502,6 +10502,11 @@ end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الروابط$") then
+if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
+mute_links = 'مـقفۄڵة'
+else
+mute_links = 'مـفتۄحة'
+end
 local ABS_PROX = "\n"
 .."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10509,6 +10514,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المعرف$") or text:match("^المعرفات$") then
+if DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) then
+lock_tag = 'مقفڵه'
+else
+lock_tag = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️♟ ⌯ ٱڵمعرف ⌯» "..lock_tag.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10516,6 +10526,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^البوتات$") then
+if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
+mute_bots = 'مقفڵه'
+else
+mute_bots = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🚸 ⌯ ٱڵبوتٱت "..mute_bots.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10523,6 +10538,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الشارحه$") then
+if DevAbs:get(DevProx..'bot:cmds'..msg.chat_id_) then
+mute_cmd = 'مقفڵه'
+else
+mute_cmd = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🗯 ⌯ ٱڵشٱرحه ⌯» "..mute_cmd.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10530,6 +10550,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المتحركه$") or text:match("^الملصقات المتحركه$") then
+if DevAbs:get(DevProx..'bot:gifs:mute'..msg.chat_id_) then
+mute_gifs = 'مقفڵه'
+else
+mute_gifs = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🎨 ⌯ ٱڵمتحركه ⌯» "..mute_gifs.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10537,6 +10562,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملصقات$") then
+if DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) then
+lock_sticker = 'مقفڵه'
+else
+lock_sticker = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🎭 ⌯ ٱڵمڵصقٱت ⌯» "..lock_sticker.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10544,6 +10574,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملفات$") then
+if DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) then
+lock_file = 'مقفڵه'
+else
+lock_file = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🗂 ⌯ ٱڵمڵفٱت ⌯» "..lock_file.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
@@ -10551,6 +10586,11 @@ end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الصور$") then
+if DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) then
+mute_photo = 'مقفڵه'
+else
+mute_photo = 'مفتوحه'
+end
 local ABS_PROX = "\n"
 .."❗️🔖 ⌯ ٱڵصور ⌯» "..mute_photo.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
