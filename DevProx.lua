@@ -2456,7 +2456,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \ntفي '..title_name(msg.chat_id_)..'\n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️🚸 ⌯ أهـلاً بِـك ⌯» [firstname](https://telegram.me/username) \n❗️🎗 ⌯ فـي ⌯» '..title_name(msg.chat_id_)..'\n❗️📛 ⌯ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد'
 end
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
@@ -2497,7 +2497,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \ntفي '..title_name(msg.chat_id_)..'\n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️🚸 ⌯ أهـلاً بِـك ⌯» [firstname](https://telegram.me/username) \n❗️🎗 ⌯ فـي ⌯» '..title_name(msg.chat_id_)..'\n❗️📛 ⌯ ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد'
 end
 end
 local text = text:gsub('firstname',(msg.content_.members_[0].first_name_ or ''))
