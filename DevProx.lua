@@ -10263,11 +10263,12 @@ DevAbs:set(DevProx..'bot:video:mute'..msg.chat_id_,true)
 DevAbs:set(DevProx..'bot:gifs:mute'..msg.chat_id_,true)
 DevAbs:set(DevProx..'bot:sticker:mute'..msg.chat_id_,true)
 DevAbs:set(DevProx..'farsiban'..msg.chat_id_,true)
+DevAbs:del(DevProx.."fshar"..msg.chat_id_)
+DevAbs:del(DevProx.."taf"..msg.chat_id_)
 DevAbs:del(DevProx.."kaf"..msg.chat_id_)
-DevAbs:del(DevProx.."kfrdil2"..msg.chat_id_)
 DevAbs:set(DevProx..'floodstatus'..msg.chat_id_,'Kicked')
 DevAbs:set('DevProx:id:photo'..msg.chat_id_,true)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تم تفعيل ٱڵحمٱية ٱڵقصوى \n〰️➖〰️➖〰️➖〰️➖〰️ \n❗️🎳 ⌯ تم قفل ٱڵتكرٱر \n❗️🧩 ⌯ تم قفل ٱڵرو ٱبط \n❗️🦠 ⌯ تم قفل ٱڵتوجية \n❗️📮 ⌯ تم قفل ٱڵمڵصقٱت \n❗️🔎 ⌯ تم قفل ٱڵمتحركة \n❗️🎥 ⌯ تم قفل ٱڵفيديو\n❗️📍 ⌯ تم قفل ٱڵكفر \n❗️📌 ⌯ تم وضع ٱڵكفر بٱڵتحذير\n❗️💎 ⌯ تم قفل ٱڵبوتٱت بٱڵطرد \n❗️⚠️ ⌯ تم قفل ٱڵفٱرسية بٱڵطرد \n❗️🚸 ⌯ تم وضع ٱڵتكرٱر بٱڵطرد \n❗️⛑ ⌯ تم وضع ٱلٱيدي بدون صورة \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تم تفعيل ٱڵحمٱية ٱڵقصوى \n〰️➖〰️➖〰️➖〰️➖〰️ \n❗️🎳 ⌯ تم قفل ٱڵتكرٱر \n❗️🧩 ⌯ تم قفل ٱڵرو ٱبط \n❗️🦠 ⌯ تم قفل ٱڵتوجية \n❗️📮 ⌯ تم قفل ٱڵمڵصقٱت \n❗️🔎 ⌯ تم قفل ٱڵمتحركة \n❗️🎥 ⌯ تم قفل ٱڵفيديو\n❗️📌 ⌯ تم قفل ٱڵفشٱر \n❗️📍 ⌯ تم قفل ٱڵكفر \n❗️🧬 ⌯ تم قفل ٱڵطٱئفية \n❗️💎 ⌯ تم قفل ٱڵبوتٱت بٱڵطرد \n❗️⚠️ ⌯ تم قفل ٱڵفٱرسية بٱڵطرد \n❗️🚸 ⌯ تم وضع ٱڵتكرٱر بٱڵطرد \n❗️⛑ ⌯ تم وضع ٱلٱيدي بدون صورة \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ بوٱسـۧطـة : ( '..renk_DevProx(msg)..' ) ', 1, 'md')
 end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
