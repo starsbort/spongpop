@@ -4917,7 +4917,85 @@ resolve_username(username,ABS_PROX)
 end
 --     Source DevProx     --
 
-
+local function hmsa(data)
+    local msg = data.message_
+    redis = (loadfile "./libs/redis.lua")()
+    DevAbs = Redis.connect('127.0.0.1', 6379)
+    sudos = dofile('sudo.lua')
+    JSON = (loadfile  "./libs/dkjson.lua")()
+    bot_id_keko = {string.match(token, "^(%d+)(:)(.*)")}
+    bot_id = tonumber(bot_id_keko[1])
+    local function openChat(chat_id,dl_cb)
+    tdcli_function ({
+    ID = "GetChat",
+    chat_id_ = chat_id
+    }, dl_cb, nil)
+    end
+    function getUser(user_id, cb)
+    tdcli_function ({
+    ID = "GetUser",
+    user_id_ = user_id
+    }, cb, nil)
+    end
+    function is_monsh(msg)
+    user_id = msg.sender_user_id_
+    chat_id = msg.chat_id_
+    local var = false
+    local monsh = DevAbs:sismember('DevProx:'..bot_id..'bot:monsh:'..chat_id, user_id) 
+    local admins = DevAbs:sismember('DevProx:'..bot_id..'bot:admins', user_id)
+    if monsh then var = true end
+    if admins then var = true end
+    for k,v in pairs(sudo_users) do
+    if user_id == v then var = true end end
+    local keko_add_sudo = redis:get('DevProx:'..bot_id..'sudoo'..user_id..'')
+    if keko_add_sudo then var = true end
+    return var
+    end
+    local function getMessage(chat_id, message_id,cb)
+    tdcli_function ({
+    ID = "GetMessage",
+    chat_id_ = chat_id,
+    message_id_ = message_id
+    }, cb, nil)
+    end
+    function getChatId(id)
+    local chat = {}
+    local id = tostring(id)
+    if id:match('^-100') then
+    local channel_id = id:gsub('-100', '')
+    chat = {ID = channel_id, type = 'channel'}
+    else
+    local group_id = id:gsub('-', '')
+    chat = {ID = group_id, type = 'group'}
+    end
+    return chat
+    end
+    local function send(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
+    local TextParseMode = {ID = "TextParseModeMarkdown"}
+    tdcli_function ({
+    ID = "SendMessage",
+    chat_id_ = chat_id,
+    reply_to_message_id_ = reply_to_message_id,
+    disable_notification_ = disable_notification,
+    from_background_ = 1,
+    reply_markup_ = nil,
+    input_message_content_ = {
+    ID = "InputMessageText",
+    text_ = text,
+    disable_web_page_preview_ = disable_web_page_preview,
+    clear_draft_ = 0,
+    entities_ = {},
+    parse_mode_ = TextParseMode,
+    },
+    }, dl_cb, nil)
+    end
+    function resolve_username(username,cb)
+    tdcli_function ({
+    ID = "SearchPublicChat",
+    username_ = username
+    }, cb, nil)
+    end
+	
     local msg = data.message_
     text = msg.content_.text_
     if not DevAbs:get("DevProx:get:hms:gr:"..bot_id..msg.chat_id_) then 
