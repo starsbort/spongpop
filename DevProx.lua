@@ -10252,10 +10252,17 @@ mute_edit = 'مقفڵه'
 else
 mute_edit = 'مفتوحه'
 end
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الروابط$") then
 if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
-mute_links = 'مقفڵه'
+mute_links = 'مـقفۄڵة'
 else
-mute_links = 'مفتوحه'
+mute_links = 'مـفتۄحة'
+end
+local ABS_PROX = "\n"
+.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
 end
 if DevAbs:get(DevProx..'bot:pin:mute'..msg.chat_id_) then
 lock_pin = 'مقفڵه'
@@ -10341,7 +10348,7 @@ end
 local TXTAR = "❗️🎒 ⌯ اعدادات المجموعة :\n〰️➖〰️➖〰️➖〰️➖〰️\n"
 .."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
 .."❗️♟ ⌯ ٱڵمعرف ⌯» "..lock_tag.."\n"
-.."❗️🚸 ⌯ ٱڵبوتٱت "..mute_bots.."\n"
+.."❗️🚸 ⌯ ٱڵبوتٱت ⌯» "..mute_bots.."\n"
 .."❗️🗯 ⌯ ٱڵشٱرحه ⌯» "..mute_cmd.."\n"
 .."❗️🎨 ⌯ ٱڵمتحركه ⌯» "..mute_gifs.."\n"
 .."❗️🎭 ⌯ ٱڵمڵصقٱت ⌯» "..lock_sticker.."\n"
@@ -10500,24 +10507,13 @@ local note = DevAbs:get(DevProx..'owner:note1')
 Dev_Abs(msg.chat_id_, msg.id_, 1, note, 1, nil)
 end
 --     Source DevProx     --
-if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^الروابط$") then
-if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
-mute_links = 'مـقفۄڵة'
-else
-mute_links = 'مـفتۄحة'
-end
-local ABS_PROX = "\n"
-.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
-Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
-end
-end
+
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المعرف$") or text:match("^المعرفات$") then
 if DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) then
-lock_tag = 'مقفڵه'
+lock_tag = 'مـقفۄڵة'
 else
-lock_tag = 'مفتوحه'
+lock_tag = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️♟ ⌯ ٱڵمعرف ⌯» "..lock_tag.."\n"
@@ -10527,21 +10523,21 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^البوتات$") then
 if DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) then
-mute_bots = 'مقفڵه'
+mute_bots = 'مـقفۄڵة'
 else
-mute_bots = 'مفتوحه'
+mute_bots = 'مفتوحة'
 end
 local ABS_PROX = "\n"
-.."❗️🚸 ⌯ ٱڵبوتٱت "..mute_bots.."\n"
+.."❗️🚸 ⌯ ٱڵبوتٱت ⌯» "..mute_bots.."\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الشارحه$") then
 if DevAbs:get(DevProx..'bot:cmds'..msg.chat_id_) then
-mute_cmd = 'مقفڵه'
+mute_cmd = 'مـقفۄڵة'
 else
-mute_cmd = 'مفتوحه'
+mute_cmd = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🗯 ⌯ ٱڵشٱرحه ⌯» "..mute_cmd.."\n"
@@ -10551,9 +10547,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المتحركه$") or text:match("^الملصقات المتحركه$") then
 if DevAbs:get(DevProx..'bot:gifs:mute'..msg.chat_id_) then
-mute_gifs = 'مقفڵه'
+mute_gifs = 'مـقفۄڵة'
 else
-mute_gifs = 'مفتوحه'
+mute_gifs = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🎨 ⌯ ٱڵمتحركه ⌯» "..mute_gifs.."\n"
@@ -10563,9 +10559,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملصقات$") then
 if DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) then
-lock_sticker = 'مقفڵه'
+lock_sticker = 'مقفڵة'
 else
-lock_sticker = 'مفتوحه'
+lock_sticker = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🎭 ⌯ ٱڵمڵصقٱت ⌯» "..lock_sticker.."\n"
@@ -10575,9 +10571,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الملفات$") then
 if DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) then
-lock_file = 'مقفڵه'
+lock_file = 'مقفڵة'
 else
-lock_file = 'مفتوحه'
+lock_file = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🗂 ⌯ ٱڵمڵفٱت ⌯» "..lock_file.."\n"
@@ -10587,9 +10583,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الصور$") then
 if DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) then
-mute_photo = 'مقفڵه'
+mute_photo = 'مـقفۄڵة'
 else
-mute_photo = 'مفتوحه'
+mute_photo = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🔖 ⌯ ٱڵصور ⌯» "..mute_photo.."\n"
@@ -10599,9 +10595,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الفيديو$") or text:match("^الفيديوهات$") then
 if DevAbs:get(DevProx..'bot:video:mute'..msg.chat_id_) then
-mute_video = 'مقفڵه'
+mute_video = 'مـقفۄڵة'
 else
-mute_video = 'مفتوحه'
+mute_video = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🎬 ⌯ ٱڵفيديو ⌯» "..mute_video.."\n"
@@ -10611,9 +10607,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الاونلاين$") then
 if DevAbs:get(DevProx..'bot:inline:mute'..msg.chat_id_) then
-mute_in = 'مقفڵه'
+mute_in = 'مقفڵ'
 else
-mute_in = 'مفتوحه'
+mute_in = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🖲 ⌯ ٱلٱونلٱين ⌯» "..mute_in.."\n"
@@ -10635,9 +10631,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^التوجيه$") or text:match("^اعاده التوجيه$") then
 if DevAbs:get(DevProx..'bot:video:mute'..msg.chat_id_) then
-mute_video = 'مقفڵه'
+mute_video = 'مقفڵ'
 else
-mute_video = 'مفتوحه'
+mute_video = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🧬 ⌯ ٱڵتوجيه ⌯» "..lock_forward.."\n"
@@ -10647,9 +10643,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الاغاني$") then
 if DevAbs:get(DevProx..'bot:music:mute'..msg.chat_id_) then
-mute_music = 'مقفڵه'
+mute_music = 'مـقفۄڵة'
 else
-mute_music = 'مفتوحه'
+mute_music = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️🎧 ⌯ ٱلٱغٱني ⌯» "..mute_music.."\n"
@@ -10659,9 +10655,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الصوت$") or text:match("^الصوتيات$") then
 if DevAbs:get(DevProx..'bot:voice:mute'..msg.chat_id_) then
-mute_voice = 'مقفڵه'
+mute_voice = 'مـقفۄڵ'
 else
-mute_voice = 'مفتوحه'
+mute_voice = 'مفتوح'
 end
 local ABS_PROX = "\n"
 .."❗️🎤 ⌯ ٱڵصوت ⌯» "..mute_voice.."\n"
@@ -10671,9 +10667,9 @@ end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الجهات$") or text:match("^جهات الاتصال$") then
 if DevAbs:get(DevProx..'bot:contact:mute'..msg.chat_id_) then
-lock_contact = 'مقفڵه'
+lock_contact = 'مـقفۄڵة'
 else
-lock_contact = 'مفتوحه'
+lock_contact = 'مفتوحة'
 end
 local ABS_PROX = "\n"
 .."❗️📟 ⌯ ٱڵجهات ⌯» "..lock_contact.."\n"
