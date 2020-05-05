@@ -4915,12 +4915,15 @@ end
 end 
 resolve_username(username,ABS_PROX)
 end
---     Source DevProx     --
 
-local function hmsa(data)
+
+
+
+
+local function keko_tshake(data)
     local msg = data.message_
     redis = (loadfile "./libs/redis.lua")()
-    DevAbs = Redis.connect('127.0.0.1', 6379)
+    database = Redis.connect('127.0.0.1', 6379)
     sudos = dofile('sudo.lua')
     JSON = (loadfile  "./libs/dkjson.lua")()
     bot_id_keko = {string.match(token, "^(%d+)(:)(.*)")}
@@ -4937,17 +4940,17 @@ local function hmsa(data)
     user_id_ = user_id
     }, cb, nil)
     end
-    function is_monsh(msg)
+    function is_creator(msg)
     user_id = msg.sender_user_id_
     chat_id = msg.chat_id_
     local var = false
-    local monsh = DevAbs:sismember('DevProx:'..bot_id..'bot:monsh:'..chat_id, user_id) 
-    local admins = DevAbs:sismember('DevProx:'..bot_id..'bot:admins', user_id)
-    if monsh then var = true end
-    if admins then var = true end
+    local creator = database:sismember('tshake:'..bot_id..'creator:'..chat_id, user_id) 
+    local admin = database:sismember('tshake:'..bot_id..'admins:', user_id)
+    if creator then var = true end
+    if admin then var = true end
     for k,v in pairs(sudo_users) do
     if user_id == v then var = true end end
-    local keko_add_sudo = redis:get('DevProx:'..bot_id..'sudoo'..user_id..'')
+    local keko_add_sudo = redis:get('tshake:'..bot_id..'sudoo'..user_id..'')
     if keko_add_sudo then var = true end
     return var
     end
@@ -4996,19 +4999,19 @@ local function hmsa(data)
     }, cb, nil)
     end
 	
+	
     local msg = data.message_
     text = msg.content_.text_
-	end
-    if not DevAbs:get("DevProx:get:hms:gr:"..bot_id..msg.chat_id_) then 
+    if not database:get("tshake:get:hms:gr:"..bot_id..msg.chat_id_) then 
     if text and text:match("^اهمس (.*) (.*)") then 
     text = text:gsub('@',"")
     keko_ts = {string.match(text, "اهمس (.*) (.*)")}
-    function cb_DevProx(t1,t2)
+    function cb_tshake(t1,t2)
     if not t2.id_ then 
     send(msg.chat_id_, msg.id_, 1, "👤┇لا يوجد هاكذا معرف", 1, 'html')
     return "keko"
     end
-    function DevProx_jd(y1,y2)
+    function tshake_jd(y1,y2)
     if (y2 and ((y2.status_ and y2.status_.ID == "ChatMemberStatusLeft") or y2.ID == "Error")) then 
     send(msg.chat_id_, msg.id_, 1, "👤┇المستخدم ليس في المجموعه", 1, 'html')
     return "keko"
@@ -5019,9 +5022,9 @@ local function hmsa(data)
     message_ids_= {[0] = msg.id_}
     },
     dl_cb, nil)
-    DevAbs:set("DevProx:get:hms:msg:"..bot_id..msg.chat_id_..msg.id_..t2.id_,keko_ts[1])
+    database:set("tshake:get:hms:msg:"..bot_id..msg.chat_id_..msg.id_..t2.id_,keko_ts[1])
     function bot_id_get(t11,t22)
-    bot_username = (t22.username_ or "DevProxbot")
+    bot_username = (t22.username_ or "Tshakebot")
     function kekko(u1,u2)
     local id_send = msg.sender_user_id_
     if u2.username_ then 
@@ -5037,9 +5040,9 @@ local function hmsa(data)
     ID = "GetChatMember",
     chat_id_ = msg.chat_id_,
     user_id_ = t2.id_
-    }, DevProx_jd, nil)
+    }, tshake_jd, nil)
     end
-    resolve_username(keko_ts[2],cb_DevProx)
+    resolve_username(keko_ts[2],cb_tshake)
     end
     end
     if text and text == "اهمس" then 
@@ -5048,7 +5051,7 @@ local function hmsa(data)
     if text and text:match("/start hms(.*)_(%d+)") then 
     keko_ts = {string.match(text, "^/start hms(.*)_(%d+)")}
     if tonumber(msg.sender_user_id_) == tonumber(keko_ts[2]) then 
-    kekol = DevAbs:get("DevProx:get:hms:msg:"..bot_id..keko_ts[1]..keko_ts[2])
+    kekol = database:get("tshake:get:hms:msg:"..bot_id..keko_ts[1]..keko_ts[2])
     if kekol then 
     send(msg.chat_id_, msg.id_, 1, "📥┇الهمسه هيه : ["..kekol.."]", 1, 'html')
     else 
@@ -5059,23 +5062,21 @@ local function hmsa(data)
     end
     end
 
-    if is_monsh(msg) then 
+    if is_creator(msg) then 
     if text and text == "تعطيل اهمس" then 
-    DevAbs:set("DevProx:get:hms:gr:"..bot_id..msg.chat_id_,"DevProx")
+    database:set("tshake:get:hms:gr:"..bot_id..msg.chat_id_,"tshake")
     send(msg.chat_id_, msg.id_, 1, "🔘┇ تم تعطيل اهمس", 1, 'html')
     end 
     if text and text == "تفعيل اهمس" then 
-    DevAbs:del("DevProx:get:hms:gr:"..bot_id..msg.chat_id_)
+    database:del("tshake:get:hms:gr:"..bot_id..msg.chat_id_)
     send(msg.chat_id_, msg.id_, 1, "☑️┇ تم تفعيل اهمس ", 1, 'html')
     end 
     end
 
     end
     return {
-        hmsa = hmsa,
+        keko_tshake = keko_tshake,
     }
-	end 
-	end
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
