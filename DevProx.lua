@@ -12208,13 +12208,9 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱرسـڵ كڵيشة ٱڵـم
 end
 DevAbs:setex(DevProx.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end
-if is_sudo(msg) and (text:match("^[Dd]elnerkh$") or text:match("^حذف كليشه المطور$")) then
-if DevAbs:del(DevProx.."lang:gp:" .. msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ sudo *Information* Deleted ", 1, "md")
-else 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم حـذف كڵيشة ٱڵمطور ", 1, "md")
-end
-DevAbs:del(DevProx.."bot:nerkh")
+if text == 'حذف كليشه المطور' then
+DevAbs:del(DevProx.."bot:nerkh"..msg.chat_id_)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️🚸 ⌯ تـۖم حـذف كڵيشة ٱڵمطور *', 1, 'md')
 end
 --     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
