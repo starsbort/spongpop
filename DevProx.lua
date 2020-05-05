@@ -5073,6 +5073,7 @@ local function hmsa(data)
     return {
         hmsa = hmsa,
     }
+   end
 --     Source DevProx     --
 if text:match("^رفع ادمن بالكروب$") or text:match("^رفع ادمن الكروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
