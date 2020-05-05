@@ -1387,7 +1387,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـم حـذف ٱلصلاحيه", 
 end
 if DevAbs:get(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ تـم ٱڵـغاء ٱلٱمـر", 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️📛 ⌯ تـۖم ٱڵـغـاء ٱلٱمـر", 1, 'html')
 DevAbs:del(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
@@ -12217,23 +12217,23 @@ end end
 --     Source DevProx     --
 if DevAbs:get(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "*📬¦ تم الغاء الامر *\n✓", 1, "md") 
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️📛 ⌯ تـۖم ٱڵغاء ٱلٱمر", 1, "md") 
 DevAbs:del(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  end 
 DevAbs:del(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local texxt = string.match(text, "(.*)") 
 DevAbs:set(DevProx..'bot:textch:user',texxt)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '*📮¦ تم تغيير رسالة الاشتراك بنجاح *\n✓', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تغيير كڵيشة ٱلٱشترٱك ٱلٱجبٱري', 1, 'md')
 end
 
-if text and text:match("^تغير رساله الاشتراك$") and is_leader(msg) then  
+if text and text:match("^تغيير رساله الاشتراك$") or text:match("^تغيير كليشه الاشتراك$") and is_leader(msg) then  
 DevAbs:setex(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
-local t = '*📮¦ حسنآ ارسل لي النص الذي تريده*\n💥'  
+local t = '❗️🚸 ⌯ حسنٱ ٱرسڵ كڵيشة ٱلٱشترٱك ٱڵجديدة'  
 Dev_Abs(msg.chat_id_, msg.id_, 1,t, 1, 'md') 
 end
-if text == "حذف رساله الاشتراك" and is_leader(msg) then  
-DevAbs:del(DevProx..'text:ch:user')
-textt = "*📮¦ تم مسح رساله الاشتراك*\n✓"
+if text == "حذف رساله الاشتراك" or text == "حذف كليشه الاشتراك" and is_leader(msg) then  
+DevAbs:del(DevProx..'bot:textch:user')
+textt = "❗️🚸 ⌯ تـۖم حذف كڵيشة ٱلٱشترٱك ٱلٱجبٱري"
 Dev_Abs(msg.chat_id_, msg.id_, 1,textt, 1, 'md') 
 end
 --     Source DevProx     --
