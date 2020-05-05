@@ -2456,7 +2456,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \ntفي '..title_name(msg.chat_id_)..'\n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
@@ -2497,7 +2497,7 @@ else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = 'Hi ( firstname )\nWelcome To Group '
 else
-text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
+text = '❗️☻ أهـلاً بِـك [firstname](https://telegram.me/username) \ntفي '..title_name(msg.chat_id_)..'\n❗️📛 ٱڵـتـزم بٱڵـقوانين ڵـتجنب ٱڵـطرد '
 end
 end
 local text = text:gsub('firstname',(msg.content_.members_[0].first_name_ or ''))
@@ -4611,7 +4611,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 --     Source DevProx     --
 if text:match("^ايديي$") then 
-Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ ٱيـۧډيک : *( '..msg.sender_user_id_..' )*', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ ٱيـۧډيک : ( '..msg.sender_user_id_..' )', 1, 'md') 
 end
 --     Source DevProx     --
 if text:match("^[Mm]y username$") or text:match("^معرفي$")  then
@@ -10500,7 +10500,18 @@ local note = DevAbs:get(DevProx..'owner:note1')
 Dev_Abs(msg.chat_id_, msg.id_, 1, note, 1, nil)
 end
 --     Source DevProx     --
-
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الروابط$") then
+if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
+mute_links = 'مقفڵه'
+else
+mute_links = 'مفتوحه'
+end
+local ABS_PROX = "\n"
+.."❗️🧩 ⌯ ٱڵروٱبط ⌯» "..mute_links.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^المعرف$") or text:match("^المعرفات$") then
 if DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) then
@@ -11210,7 +11221,7 @@ end
 getUser(msg.sender_user_id_,adding)
 end
 --     Source DevProx     --
-if text == 'نسخه ملف السورس' or text == 'النسخه الاحتياطيه' then
+if text == 'نسخه ملف السورس' then
 if not is_leader(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطور ٱلٱسٱسي فقط ', 1, 'md')
 else
@@ -11978,7 +11989,7 @@ local text =  [[
 ♻️ ⌯ تحديث السورس
 ⚠️ ⌯ اسم البوت + غادر
 🏆 ⌯ ضع كليشه المطور
-📥 ⌯ النسخه الاحتياطيه
+📥 ⌯ نسخه ملف السورس
 🧾 ⌯ معلومات المجموعه
 〰️➖〰️➖〰️➖〰️➖〰️
 ❗️📮 ⌯ اوامر العام للمطورين
