@@ -3120,7 +3120,7 @@ local msgs = { [0] = id}
 local chat = msg.chat_id_
 if DevAbs:get(DevProx..'far'..msg.chat_id_) == 'zhfdil1' then
 delete_msg(chat, msgs)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ممنوع ٱڵتكڵم بٱڵحب هنا ', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '*❗️📛 ⌯ ممنوع ٱڵزحف هنا *', 1, 'md') 
 elseif DevAbs:get(DevProx..'far'..msg.chat_id_) == 'zhfdil2' then
 delete_msg(chat, msgs)
 end
