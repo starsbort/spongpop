@@ -8601,12 +8601,15 @@ if wel then
 Dev_Abs(msg.chat_id_, msg.id_, 1, wel, 1, 'md')
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Welcome text not found ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ Welcome text not found \n❗️🔑 ⌯ Send (Get Welcome) to save', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ڵم يتم وضع ٱڵترحيب \n❗️🔑 ⌯ ٱرسل ( ضع ترحيب ) ڵڵحفظ ', 1, 'md')
 end
 end
 end
+end
+if text:match("^ضع ترحيب$") or text:match("^وضع ترحيب$") then 
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ ضع ترحيب + الكليشة \n❗️🔑 ⌯ ٱستخدم ٱڵدوٱڵ ٱلٱتية ڵڵطبع \n〰️➖〰️➖〰️➖〰️➖〰️\nusername ⇝ ڵطبع ٱڵمعرف \nfirstname ⇝ ڵطبع ٱلٱسم ٱلٱوڵ \nlastname ⇝ ڵطبع ٱلٱسم ٱلٱخير ', 1, 'md') 
 end
 --     Source DevProx     --
 if is_sudo(msg) then
