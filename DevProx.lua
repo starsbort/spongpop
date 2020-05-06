@@ -4203,6 +4203,11 @@ else
 DevAbs:setex(DevProx..'DevAbs4'..msg.sender_user_id_,300,true)
 Dev_Abs(msg.chat_id_,msg.id_, 1, "*❗️🚸 ⌯ ٱرسڵ ڵي معرف قنٱة ٱلٱشترٱك ٱلٱن*\n", 1 , "md")
 end end
+if text == "حذف قناة الاشتراك" or text == "حذف قناه الاشتراك" and is_leader(msg) then  
+DevAbs:del(DevProx..'DevAbs3')
+text = "❗️🚸 ⌯ تـۖم حذف قنٱة ٱلٱشترٱك ٱلٱجبٱري"
+Dev_Abs(msg.chat_id_, msg.id_, 1,text, 1, 'md') 
+end
 if text == 'تفعيل الاشتراك الاجباري' then
 if not is_leader(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️📛 ⌯ ڵڵمطور ٱلٱسٱسي فقط ', 1, 'md')
