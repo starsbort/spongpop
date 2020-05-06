@@ -12245,7 +12245,7 @@ local chtext = DevAbs:get(DevProx.."bot:textch:user")
 if chtext then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ كڵيشة ٱلٱشترٱك ٱلٱجبٱري : \n〰️➖〰️➖〰️➖〰️➖〰️\n['..chtext..']', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '\n❗️☻ عُـذراً لايُمكِنك ٱستخدام ٱڵـبوت \nلانك لم تشترك فيۧ قناة ٱڵـبوت \n❗️🚸 رجائاً ٱشترك  بٱڵـقناة ڵـتتمكن من ٱستخدٱمة. \n❗️📍 قناة ٱڵـبوت : { ['..channel..'] }', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "\n❗️☻ عُـذراً لايُمكِنك ٱستخدام ٱڵـبوت \nلانك لم تشترك فيۧ قناة ٱڵـبوت \n❗️🚸 رجائاً ٱشترك  بٱڵـقناة ڵـتتمكن من ٱستخدٱمة. \n❗️📍 قناة ٱڵـبوت : { ["..channel.."] }", 1, "md")
 end end end
 --     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
