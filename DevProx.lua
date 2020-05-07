@@ -11664,7 +11664,10 @@ DevAbs:del(DevProx..'bot:help2', text)
 DevAbs:del(DevProx..'bot:help3', text) 
 DevAbs:del(DevProx..'bot:help4', text)
 DevAbs:del(DevProx..'bot:help5', text) 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم ٱستعـٱدة ٱڵـكـلٱيش ٱلٱصڵيه" ,  1, "md") 
+DevAbs:del(DevProx..'bot:help6', text) 
+DevAbs:del(DevProx..'bot:help7', text)
+DevAbs:del(DevProx..'bot:help8', text) 
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم ٱستعٱدة ٱڵـكـلٱيش ٱلٱصڵيه" ,  1, "md") 
 end
 if is_leader(msg) and text:match("^تعيين الاوامر$") or text:match("^تعيين امر الاوامر$") then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ ⌯ ٱرسـڵ كڵيشة (الاوامر) ٱلٱن " ,  1, "md")
@@ -12035,7 +12038,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
 if text:match("^م٦$") or text:match("^م6$") or text:match("^اوامر6$") or text:match("^اوامر٦$") then
-local help = DevAbs:get(DevProx..'bot:help4')
+local help = DevAbs:get(DevProx..'bot:help6')
 local text =  [[
 ❗️🎒 ⌯ Activation and deactivation
 ❗️🎒  ⌯ اوامر التفعيل والتعطيل
@@ -12083,7 +12086,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
 if text:match("^م٧$") or text:match("^م7$") or text:match("^اوامر7$") or text:match("^اوامر٧$") then
-local help = DevAbs:get(DevProx..'bot:help4')
+local help = DevAbs:get(DevProx..'bot:help7')
 local text =  [[
 ❗️🎒 ⌯ Orders to delete liste
 ❗️🎒  ⌯ اوامر حذف القوائم
@@ -12131,7 +12134,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
 if text:match("^م٨$") or text:match("^م8$") or text:match("^اوامر8$") or text:match("^اوامر٨$") then
-local help = DevAbs:get(DevProx..'bot:help4')
+local help = DevAbs:get(DevProx..'bot:help8')
 local text =  [[
 ❗️🎒 ⌯ Developers orders
 ❗️🎒  ⌯ اوامر المطورين
@@ -12274,7 +12277,6 @@ local texxt = string.match(text, "(.*)")
 DevAbs:set(DevProx..'bot:textch:user',texxt)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تغيير كڵيشة ٱلٱشترٱك ٱلٱجبٱري', 1, 'md')
 end
---     Source DevProx     --
 if text and text:match("^تغيير كليشه الاشتراك الاجباري$") or text:match("^تغيير كليشه الاشتراك$") and is_leader(msg) then  
 DevAbs:setex(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
 local t = '❗️🚸 ⌯ حسنٱ ٱرسڵ كڵيشة ٱلٱشترٱك ٱڵجديدة'  
