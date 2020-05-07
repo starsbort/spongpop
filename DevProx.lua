@@ -1,9 +1,9 @@
-----------------------------------------------
--- This Source Was Developed By (ABS) @IQ_ABS.
---   This Is The Source Channel @Dev_Prox .
---                - DevProx -
---         -- https://t.me/Dev_Prox --
-----------------------------------------------
+------------------------------------------------
+-- This Source Was Developed By (ABS) @IQ_ABS.--
+--   This Is The Source Channel @Dev_Prox .   --
+--                - DevProx -                 --
+--        -- https://t.me/Dev_Prox --         --
+------------------------------------------------ 
  redis = require('redis')
  URL = require('socket.url')  
  HTTPS = require ("ssl.https")  
@@ -10099,6 +10099,23 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Cc]lean (.*)$") or text:match("^حذف (.*)$") then
 local txt = {string.match(text, "^([Cc]lean) (.*)$")}
 local txts = {string.match(text, "^(حذف) (.*)$")}
+if is_leaderid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_sudoid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_admin(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_onall(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_moall(msg.sender_user_id_) then
+tar = 'ٱلٱدمـۧن'
+elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧنشئ'
+elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱلٱدمـۧن'          
+end
 if txt[2] == 'banlist' or txts[2] == 'المحظورين' then
 DevAbs:del(DevProx..'bot:banned:'..msg.chat_id_)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
@@ -10197,6 +10214,23 @@ if is_admin(msg.sender_user_id_, msg.chat_id_) then
 if text:match("^[Cc]lean (.*)$") or text:match("^حذف (.*)$") then
 local txt = {string.match(text, "^([Cc]lean) (.*)$")}
 local txts = {string.match(text, "^(حذف) (.*)$")}
+if is_leaderid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_sudoid(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_admin(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧطۄر'
+elseif is_onall(msg.sender_user_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_moall(msg.sender_user_id_) then
+tar = 'ٱلٱدمـۧن'
+elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧنشئ'
+elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱڵـۧمـۧدير'
+elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
+tar = 'ٱلٱدمـۧن'          
+end
 if txts[2] == 'freelist' or txts[2] == 'قائمه المنع العام' then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Freelist has been cleared ', 1, 'md')
@@ -12340,9 +12374,9 @@ tdcli_function ({ID="GetChats", offset_order_="9223372036854775807", offset_chat
 end
 --     Source DevProx     --
 end 
-----------------------------------------------
--- This Source Was Developed By (abs) @IQ_ABS.
---   This Is The Source Channel @Dev_Prox .
---                - DevProx -
---         -- https://t.me/Dev_Prox --
-----------------------------------------------
+------------------------------------------------
+-- This Source Was Developed By (ABS) @IQ_ABS.--
+--   This Is The Source Channel @Dev_Prox .   --
+--                - DevProx -                 --
+--        -- https://t.me/Dev_Prox --         --
+------------------------------------------------ 
