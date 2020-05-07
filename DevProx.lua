@@ -4275,7 +4275,52 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم مغٱدرة ٱڵمج
 end
 end
 --     Source DevProx     --
-if (text:match("^موقعي$") or text:match("^رتبتي$") or text:match("^معلوماتي$")) and Abbas_Abs(msg) then
+if text ==('موقعي')  then
+tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
+if da.status_.ID == "ChatMemberStatusCreator" then
+rtpa = 'ٱڵـۧمـۧنشئ'
+elseif da.status_.ID == "ChatMemberStatusEditor" then
+rtpa = 'ٱلٱدمـۧن'
+elseif da.status_.ID == "ChatMemberStatusMember" then
+rtpa = 'عضو'
+end
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ موقعک ⌯» '..rtpa..'', 1, 'md')
+end,nil)
+end
+--     Source DevProx     --
+if text:match("^رتبتي$") and Abbas_Abs(msg) then
+function get_rtba(extra,result,success)
+if tonumber(result.id_) == tonumber(bot_owner) then
+t = 'ٱڵمطۄر ٱلٱسٱسي'
+elseif is_sudoid(result.id_) then
+t = 'ٱڵمطۄر ٱڵثٱنوي'
+elseif is_admin(result.id_) then
+t = 'ٱڵمطۄر ٱلثٱڵث'
+elseif is_monsh(result.id_, msg.chat_id_) then
+t = 'ٱڵـۧمـۧنشئ'
+elseif is_onall(result.id_) then
+t = 'ٱڵمدير ٱڵعٱم'
+elseif is_moall(result.id_) then
+t = 'ٱلٱدمن ٱڵعٱم'
+elseif is_vpall(result.id_) then
+t = 'ٱڵمميز ٱڵعٱم'
+elseif is_donky(result.id_, msg.chat_id_) then
+t = 'مطي مرتب 😹💔'
+elseif is_owner(result.id_, msg.chat_id_) then
+t = 'ٱڵـۧمـۧدير'
+elseif is_momod(result.id_, msg.chat_id_) then
+t = 'ٱلٱدمـۧن'
+elseif result.id_ == bot_id then
+t = 'هذٱ ٱنٱ ٱڵبۄت'
+else
+t = 'فقط عضو'
+end
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ رتـبتک ⌯» '..t, 1, 'html')
+end
+getUser(msg.sender_user_id_,get_rtba)
+end
+--     Source DevProx     --
+if text:match("^معلوماتي$") and Abbas_Abs(msg) then
 function get_me(extra,result,success)
 local Dev_Abss = (DevAbs:get('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
 local ABS_PROX = DevAbs:get(DevProx..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
@@ -4625,7 +4670,7 @@ local users = DevAbs:scard(DevProx.."bot:userss")
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ *Groups :*  '..gps..'', 1, 'md')
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱعضٱء ٱڵخٱص : *('..users..')*\n❗️📮 ⌯ عدد ٱڵكروبٱت : *('..ABS_PROX..')*\n❗️🔑 ⌯ ٱڵكروبٱت ٱڵمفعڵة : *('..abbs..')*\n❗️🎗 ⌯ ٱڵغير مفعڵة : *('..(ABS_PROX - abbs)..')* \n ', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱعضٱء ٱڵخٱص ⌯» *('..users..')*\n❗️📮 ⌯ عدد ٱڵكروبٱت ⌯» *('..ABS_PROX..')*\n❗️🔑 ⌯ ٱڵكروبٱت ٱڵمفعڵة ⌯» *('..abbs..')*\n❗️🎗 ⌯ ٱڵغير مفعڵة ⌯» *('..(ABS_PROX - abbs)..')* \n ', 1, 'md')
 end
 end  
 if  text:match("^[Mm]sg$") or text:match("^رسائلي$") and msg.reply_to_message_id_ == 0  then
@@ -4635,28 +4680,28 @@ local Dev_Abss = (DevAbs:get('ABS_PROX:'..bot_id..'nummsg'..msg.chat_id_..msg.se
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ welcome my dear \n❗️🚸 ⌯ you have {*"..(user_msgs + Dev_Abss).." }* msg \n❗️🎗 ⌯ in group ", 1, 'md')
 else 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ رسٱئڵك ٱڵحقيقية :  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵمضٱفة :  *("..Dev_Abss..")* \n❗️🎗 ⌯ رسٱئڵك ٱڵيوم : *("..(ABS_PROX)..")*\n❗️🔅 ⌯ مجموع رسٱئڵك : *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🎒 ⌯ قٱئمة رسٱئڵك في ٱڵمجموعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ رسٱئڵك ٱڵحقيقية ⌯»  *("..user_msgs..")* \n❗️🔑 ⌯ رسٱئڵك ٱڵمضٱفة ⌯»  *("..Dev_Abss..")* \n❗️🎗 ⌯ رسٱئڵك ٱڵيوم ⌯» *("..(ABS_PROX)..")*\n❗️🔅 ⌯ مجموع رسٱئڵك ⌯» *("..(user_msgs + Dev_Abss)..")* \n ", 1, 'md')
 end
 end
 if text:match("^[Gg]p id$") or text:match("^ايدي المجموعه$") then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-texts = "❗️🚸 ⌯ Group ID : "..msg.chat_id_
+texts = "❗️🚸 ⌯ Group ID ⌯» "..msg.chat_id_
 else
-texts = "❗️🚸 ⌯ ٱيـۧډي ٱڵمجموعة : "..msg.chat_id_
+texts = "❗️🚸 ⌯ ٱيـۧډي ٱڵمجموعة ⌯» "..msg.chat_id_
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 --     Source DevProx     --
 if text:match("^ايديي$") then 
-Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ ٱيـۧډيک : ( '..msg.sender_user_id_..' )', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1,'❗️🚸 ⌯ ٱيـۧډيک ⌯» ( '..msg.sender_user_id_..' )', 1, 'md') 
 end
 --     Source DevProx     --
 if text:match("^[Mm]y username$") or text:match("^معرفي$")  then
 function get_username(extra,result,success)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '❗️🚸 ⌯ Your Username : ( User )'
+text = '❗️🚸 ⌯ Your Username ⌯» ( User )'
 else
-text = '❗️🚸 ⌯ مۘعرفک : (User)'
+text = '❗️🚸 ⌯ مۘعرفک ⌯» (User)'
 end
 local text = text:gsub('User',('@'..result.username_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -4667,9 +4712,9 @@ end
 if text:match("^[Mm]y name$") or text:match("^اسمي$") then
 function get_firstname(extra,result,success)
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-text = '❗️🚸 ⌯ your name : (firstname)'
+text = '❗️🚸 ⌯ your name ⌯» (firstname)'
 else
-text = '❗️🚸 ⌯ ٱسـمـك : (firstname)'
+text = '❗️🚸 ⌯ ٱسـمـك ⌯» (firstname)'
 end
 local text = text:gsub('firstname',(result.first_name_ or ''))
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
@@ -4695,11 +4740,11 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 if text:match("^جهاتي$") or text:match("^اضافاتي$") then
 add = (tonumber(DevAbs:get(DevProx..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ عدد جهٱتك ٱڵمضٱفة : *( "..add.." )* ", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ عدد جهٱتك ٱڵمضٱفة ⌯» *( "..add.." )* ", 1, 'md')
 end
 if text:match("^رسائلي اليوم$") then 
 local ABS_PROX = DevAbs:get(DevProx..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ رسٱئڵك ٱڵيوم : *( "..(ABS_PROX).." )* ", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ رسٱئڵك ٱڵيوم ⌯» *( "..(ABS_PROX).." )* ", 1, 'md')
 end
 --     Source DevProx     --
 if (msg.sender_user_id_) then
@@ -8724,7 +8769,7 @@ DevAbs:del(DevProx.."bot:groups")
 end
 --     Source DevProx     --
 if text:match("^[Nn]amegp$") or text:match("^اسم المجموعه$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️☻ ٱسم ٱڵمجموعة {"..title_name(msg.chat_id_).."}", 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱسم ٱڵمجموعة ⌯» ("..title_name(msg.chat_id_)..")", 1, 'md')
 end 
 --     Source DevProx     --
 if text:match("^[Rr]esmsg$") or text:match("^تنظيف الرسائل$") and is_sudo(msg) then
@@ -8738,7 +8783,7 @@ end
 --     Source DevProx     --
 if text:match("^[Ss]etlang (.*)$") or text:match("^ضع اللغه (.*)$") or text:match("^وضع اللغه (.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 local langs = {string.match(text, "^(.*) (.*)$")}
-if langs[2] == "ar" or langs[2] == "العربيه" then
+if langs[2] == "arabic" or langs[2] == "العربية" then
 if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ ٱڵڵغة ٱڵـعربية بٱڵفعـل مۧوضوعة  فيۧ ٱڵمجـمۄعة ', 1, 'md')
 else
@@ -8746,7 +8791,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم وضع ٱڵڵغة ٱڵـع
 DevAbs:del(DevProx..'lang:gp:'..msg.chat_id_)
 end
 end
-if langs[2] == "en" or langs[2] == "الانكليزيه" then
+if langs[2] == "english" or langs[2] == "الانكليزية" then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Language Bot is already English* ', 1, 'md')
 else
