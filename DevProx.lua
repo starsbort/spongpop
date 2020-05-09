@@ -7243,15 +7243,15 @@ t = 'ٱلٱدمن ٱڵعٱم'
 elseif is_vpall(result.id_) then
 t = 'ٱڵمميز ٱڵعٱم'
 elseif is_donky(result.id_, msg.chat_id_) then
-t = 'مطي مرتب 😹💔'
+t = 'ٱڵمطي'
 elseif is_owner(result.id_, msg.chat_id_) then
 t = 'ٱڵـۧمـۧدير'
 elseif is_momod(result.id_, msg.chat_id_) then
 t = 'ٱلٱدمـۧن'
 elseif result.id_ == bot_id then
-t = 'هذٱ ٱنٱ ٱڵبۄت'
+t = 'ٱڵبۄت'
 else
-t = 'فقط عضو'
+t = 'ٱڵعضو'
 end
 end
 local gpid = tostring(result.id_)
@@ -7259,7 +7259,7 @@ if gpid:match('^(%d+)') then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 text = '❗️🚸 ⌯ user : ( @'..ap[2]..' )\n❗️📮 ⌯ id : ( '..result.id_..' )\n❗️💎 ⌯ rank : '..t
 else
-text = '❗️🚸 ⌯ مُعرِفه : ( @'..ap[2]..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️💎 ⌯ رتـۧبتـۧه : '..t
+text = '❗️🚸 ⌯ '..t..' ⌯» ◝ @'..ap[2]..' ◟ \n❗️🔑 ⌯ ٱيـۧديـۧه ⌯» ◝ '..result.id_..' ◟ '
 end
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
