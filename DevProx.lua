@@ -5733,7 +5733,7 @@ DevAbs:srem(DevProx..'bot:momod:'..msg.chat_id_, result.id_)
 DevAbs:srem(DevProx..'bot:vipmem:'..msg.chat_id_, result.id_)
 end
 Fsend = '❗️📛 ⌯ ٱڵمعرف غير صحيح*'
-send(msg.chat_id_, msg.id_, 1, Fsend, 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, Fsend, 1, 'md')
 end
 end
 resolve_username(rem[2],remm)
@@ -11521,7 +11521,7 @@ pm = '❗️☻ Please use a number greater than 1 and less than 100 '
 else
 pm = '❗️🚸 ⌯ ٱختر رقم ٱكثر من 1 وٱقڵ من 100'
 end
-send(msg.chat_id_,0, 1, pm, 1, 'html')
+Dev_Abs(msg.chat_id_,0, 1, pm, 1, 'html')
 else
 tdcli_function ({
 ID = "GetChatHistory",
@@ -11555,7 +11555,7 @@ pm = '❗️☻ Please use a number greater than 1 and less than 100 '
 else
 pm = '❗️🚸 ⌯ ٱختر رقم ٱكثر من 1 وٱقڵ من 100'
 end
-send(msg.chat_id_,0, 1, pm, 1, 'html')
+Dev_Abs(msg.chat_id_,0, 1, pm, 1, 'html')
 else
 tdcli_function ({
 ID = "GetChatHistory",
