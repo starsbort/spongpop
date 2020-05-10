@@ -7384,11 +7384,11 @@ end
 ---
 if text:match("^تعيين الايدي$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ رجٱئٱ ٱتبع ٱڵتعڵيمٱت ڵڵتعيين \n❗️🔑 ⌯ ڵطبع كڵيشة ٱلٱيدي ٱرسڵ كڵيشة تحتوي عڵى ٱڵنصوص ٱڵتي بٱڵڵغة ٱلٱنجڵيزية ٱدنٱه \n〰️➖〰️➖〰️➖〰️➖〰️\n username  ⇝ ڵطبع ٱڵمعرف •\n id  ⇝ ڵطبع ٱلٱيدي • \n photos  ⇝ ڵطبع عدد ٱڵصور • \n rank  ⇝ ڵطبع ٱڵـُرتب • \n msgs  ⇝ ڵطبع عدد ٱڵرسٱئڵ • \n formsg  ⇝ ڵطبع ٱڵتفٱعڵ • \n nkat  ⇝ ڵطبع عدد ٱڵنقٱط • \n cont  ⇝ ڵطبع عدد ٱڵجهٱت • \n sticker  ⇝ ڵطبع عدد ٱڵمڵصقٱت • \n〰️➖〰️➖〰️➖〰️➖〰️', 1, 'md')
-DevAbs:set("DevProx:now:id:"..bot_id..msg.chat_id_..msg.sender_user_id_,'ABS_PROX')
+DevAbs:set("DevProx:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_,'ABS_PROX')
 return "ABS_PROX"
 end
-if text and is_owner(msg.sender_user_id_, msg.chat_id_)  and DevAbs:get("DevProx:now:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
-DevAbs:del("DevProx:now:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
+if text and is_owner(msg.sender_user_id_, msg.chat_id_)  and DevAbs:get("DevProx:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
+DevAbs:del("DevProx:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تـۖم حفـۨظ ٱڵكڵيشة ٱڵجډيډة', 1, 'md')
 DevAbs:set("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_,text)
 end
@@ -7494,6 +7494,7 @@ local new_id = DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('username',(username or 'لا يوجد'))
 local new_id = new_id:gsub('photos',(result.total_count_ or 'لا يوجد')) 
 local new_id = new_id:gsub('nkat',(user_nkt or 'لا يوجد'))
+local new_id = new_id:gsub('edit',(message_edit or 'لا يوجد'))
 local new_id = new_id:gsub('cont',(cont or 'لا يوجد'))
 local new_id = new_id:gsub('sticker',(sticker or 'لا يوجد'))
 local new_id = new_id:gsub('msgs',(user_msgs + Dev_Abss / ABS_PROX or 'لا يوجد'))
@@ -7583,6 +7584,7 @@ local new_id = DevAbs:get("DevProx:ABS_PROX:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('username',(username or 'لا يوجد'))
 local new_id = new_id:gsub('photos',(result.total_count_ or 'لا يوجد')) 
 local new_id = new_id:gsub('nkat',(user_nkt or 'لا يوجد'))
+local new_id = new_id:gsub('edit',(message_edit or 'لا يوجد'))
 local new_id = new_id:gsub('cont',(cont or 'لا يوجد'))
 local new_id = new_id:gsub('sticker',(sticker or 'لا يوجد'))
 local new_id = new_id:gsub('msgs',(user_msgs + Dev_Abss / ABS_PROX or 'لا يوجد'))
