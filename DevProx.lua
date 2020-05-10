@@ -9013,43 +9013,15 @@ elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
 tar = 'ٱلٱدمـۧن'
 end
 local mutepts = {string.match(text, "^(قفل) (.*)$")}
-if mutept[2] == "all" or mutepts[2] == "الكل" then 
-if not DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:inline:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:spam:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:video:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:gifs:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:music:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:voice:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:location:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:strict'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:abstag:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:contact:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:webpage:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:arabic:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:english:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'markdown:lock'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:forward:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'editmsg'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:cmds'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:bots:mute'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) and not DevAbs:get(DevProx..'keed_bots'..msg.chat_id_) and not DevAbs:get(DevProx..'anti-flood:'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:pin:mute'..msg.chat_id_) then
+if mutept[2] == "all" or mutepts[2] == "الكل" then
+if not DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Has been lock all ', 1, 'md')
 else
 local ABS_PROX = '❗️☻ تـۖم قفـڵ جـمـيع ٱڵـوسـآئط \n❗️🚸 ⌯ بوٱسـۧطـة : '..tar..' \n❗️📮 ⌯ ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
-absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 61, string.len(msg.sender_user_id_))
-end 
+absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
+end
 DevAbs:set(DevProx..'bot:muteall'..msg.chat_id_,true)
-DevAbs:set(DevProx..'editmsg'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:cmds'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:bots:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:bots:ban'..msg.chat_id_,true)
-DevAbs:set(DevProx..'keed_bots'..msg.chat_id_,true)
-DevAbs:set(DevProx..'anti-flood:'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:pin:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:text:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:inline:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:photo:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:spam:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:video:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:gifs:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:music:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:voice:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:links:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:location:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'tags:lock'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:strict'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:document:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:abstag:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:contact:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:webpage:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:arabic:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:english:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:sticker:mute'..msg.chat_id_,true)
-DevAbs:set(DevProx..'markdown:lock'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:forward:mute'..msg.chat_id_,true)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ all is already locked ', 1, 'md')
@@ -9632,43 +9604,15 @@ elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
 tar = 'ٱلٱدمـۧن'          
 end
 local unmutepts = {string.match(text, "^(فتح) (.*)$")}
-if unmutept[2] == "all" or unmutepts[2] == "الكل" or unmutepts[2] == "الكل بالساعات" then
-if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) and DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:inline:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:photo:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:spam:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:video:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:gifs:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:music:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:voice:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:links:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:location:mute'..msg.chat_id_) and DevAbs:get(DevProx..'tags:lock'..msg.chat_id_) and DevAbs:get(DevProx..'bot:strict'..msg.chat_id_) and DevAbs:get(DevProx..'bot:document:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:abstag:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:contact:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:webpage:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:arabic:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:english:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:sticker:mute'..msg.chat_id_) and DevAbs:get(DevProx..'markdown:lock'..msg.chat_id_) and DevAbs:get(DevProx..'bot:forward:mute'..msg.chat_id_) and DevAbs:get(DevProx..'editmsg'..msg.chat_id_) and DevAbs:get(DevProx..'bot:cmds'..msg.chat_id_) and DevAbs:get(DevProx..'bot:bots:mute'..msg.chat_id_) and DevAbs:get(DevProx..'bot:bots:ban'..msg.chat_id_) and DevAbs:get(DevProx..'keed_bots'..msg.chat_id_) and DevAbs:get(DevProx..'anti-flood:'..msg.chat_id_) and DevAbs:get(DevProx..'bot:pin:mute'..msg.chat_id_) then
+if unmutept[2] == "all" or unmutepts[2] == "الكل" then
+if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Has been unlock all ', 1, 'md')
 else
 local ABS_PROX = '❗️☻ تـۖم فـتـۧح جـمـيع ٱڵـوسـآئط \n❗️🚸 ⌯ بوٱسـۧطـة : '..tar..' \n❗️📮 ⌯ ٱيـۧديـۧه : ('..msg.sender_user_id_..') \n '
-absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 62, string.len(msg.sender_user_id_))
+absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 59, string.len(msg.sender_user_id_))
 end
 DevAbs:del(DevProx..'bot:muteall'..msg.chat_id_)
-DevAbs:del(DevProx..'editmsg'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:cmds'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:bots:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:bots:ban'..msg.chat_id_)
-DevAbs:del(DevProx..'keed_bots'..msg.chat_id_)
-DevAbs:del(DevProx..'anti-flood:'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:pin:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:text:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:photo:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:spam:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:video:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:document:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:inline:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'markdown:lock'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:gifs:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:music:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:voice:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:links:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:location:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'tags:lock'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:strict'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:abstag:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:contact:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:webpage:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:arabic:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:english:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:sticker:mute'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:forward:mute'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ all is already unocked ', 1, 'md')
