@@ -1881,7 +1881,7 @@ if result.id_ then
 local abbs = DevAbs:get("ABS_PROX:Userr"..result.id_)
 if not result.username_ then 
 if abbs then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, "حذف معرفه خمطو بسرعه 😹💔 \nهذٱ معرفه : @"..abbs, 1, 'html')
+Dev_Abs(msg.chat_id_, msg.id_, 1, "حذف معرفه خمطو بسرعه 😹💔 \nهذٱ معرفه : [@"..abbs.."]", 1, 'html')
 DevAbs:del("ABS_PROX:Userr"..result.id_) 
 end
 end
@@ -1947,6 +1947,9 @@ end
 function title_name(GroupID)
 tdcli_function({ID ="GetChat",chat_id_=GroupID},function(arg,data)---title_name
 DevAbs:set(DevProx..'group:name'..GroupID,data.title_) end,nil) return DevAbs:get(DevProx..'group:name'..GroupID) end
+--     Source DevProx     --
+if msg.content_.ID == "MessageChatAddMembers" then  
+DevAbs:set(DevProx.."bot:Who:Added:Me"..msg.chat_id_..":"..msg.content_.members_[0].id_,msg.sender_user_id_)
 --     Source DevProx     --
 function string:split(sep)
 local sep, fields = sep or ":", {}
@@ -12231,6 +12234,44 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🔅 ⌯ هذه معٱينه ڵكڵيش
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ڵم يتم تعيين قنٱة ٱلٱشترٱك ٱلٱجبٱري \n❗️🔑 ⌯ ٱرسڵ (تعيين قناة الاشتراك) ڵڵتعيين ', 1, 'md')
 end end end end
+--     Source DevProx     --
+
+
+
+
+if text == 'تفعيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+DevAbs:del(DevProx..'bot:Lock:Added:Me'..msg.chat_id_)  
+Dev_Abs(msg.chat_id_, msg.id_,'☑┇تم تفعيل امر منو ضافني') 
+return false
+end
+if text == 'تعطيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+DevAbs:set(DevProx..'bot:Lock:Added:Me'..msg.chat_id_,true)  
+Dev_Abs(msg.chat_id_, msg.id_,'☑┇تم تعطيل امر منو ضافني') 
+return false
+end
+
+if text and text:match("(.*)(ضافني)(.*)") then
+if not DevAbs:get(DevProx..'bot:Lock:Added:Me'..msg.chat_id_) then
+tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
+if da and da.status_.ID == "ChatMemberStatusCreator" then
+Dev_Abs(msg.chat_id_, msg.id_,'📛┇انت منشئ المجموعه ') 
+return false
+end
+local Added_Me = DevAbs:get(DevProx.."bot:Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
+if Added_Me then 
+tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,success)
+local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
+Text = '👤┇الشخص الذي قام باضافتك هو » '..Name
+Dev_Abs(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
+end,nil)
+else
+Dev_Abs(msg.chat_id_, msg.id_,'🔰┇انت دخلت عبر الرابط') 
+end
+end,nil)
+else
+Dev_Abs(msg.chat_id_, msg.id_,'⚠┇امر منو ضافني تم تعطيله من قبل المدراء ') 
+end
+end
 --     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
 Dev_Abs(msg.chat_id_, msg.id_, 1, 'Ξ ❗️🚸 • قـنـاة الـسـورس • \nΞ ❕🚸 • @Dev_Prox • \n ', 1, 'md')    
