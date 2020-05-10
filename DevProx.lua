@@ -12259,6 +12259,7 @@ tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,succe
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 Text = '👤┇الشخص الذي قام باضافتك هو » '..Name
 Dev_Abs(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
+end
 end,nil)
 else
 Dev_Abs(msg.chat_id_, msg.id_,'🔰┇انت دخلت عبر الرابط') 
