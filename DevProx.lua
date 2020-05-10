@@ -4857,26 +4857,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱمـر 
 end
 end
 --     Source DevProx     --
-if text:match("(.*)(ضافني)(.*)") then
-if not DevAbs:get(DevProx..'lock:Added:Me'..msg.chat_id_) then
-tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da)
-if da and da.status_.ID == "ChatMemberStatusCreator" then
-Dev_Abs(msg.chat_id_, msg.id_, 1, 'انت منشئ المجموعه ', 1, 'md')
-end
-end
-local Added_Me = DevAbs:get(DevProx.."bot:Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
-if Added_Me then 
-tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,success)
-local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
-Text = 'الشخص الذي قام باضافتك هو » '..Name
-Dev_Abs(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
-end
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, 'انت دخلت عبر الرابط', 1, 'md')
-end,nil)
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, 'امر منو ضافني تم تعطيله من قبل المدراء ', 1, 'md')
-end
+
 --     Source DevProx     --
 if text == 'تفعيل منو ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
 if DevAbs:get(DevProx.."lock:Added:Me"..msg.chat_id_) then
