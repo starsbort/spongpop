@@ -4470,7 +4470,7 @@ resolve_username(for_abs[2],hamss)
 end
 end
 if text and text == "اهمس" or text and text == "همسه" or text and text == "اريد بوت الهمسه" or text and text == "دزلي بوت الهمسه" or  text and text == "دزولي بوت الهمسه" then  
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تستطيع ٱرسٱڵ ٱڵهمسه بسريه تٱمه ٱڵى ٱلٱعضٱء عن طريق بوت ٱڵحمٱيه \n❗️🔑 ⌯ ٱستخدم ٱلٱمر كٱلٱتي ⌯» ⤈ \n( اهمس مرحبا @[IQ_ABS] )', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ تستطيع ٱرسٱڵ ٱڵهمسه بسريه تٱمه ٱڵى ٱلٱعضٱء عن طريق بوت ٱڵحمٱيه \n❗️🔑 ⌯ ٱستخدم ٱلٱمر كٱلٱتي ⌯» ⤈ \n( اهمس + الهمسه + المعرف )\n❗️🔅 ⌯ مثٱڵ ٱوضح ⌯» ⤈ \n( اهمس مرحبا @IQ_ABS )', 1, 'md')
 end
 if text and text:match("/start hms(.*)_(%d+)") then 
 for_abs = {string.match(text, "^/start hms(.*)_(%d+)")}
