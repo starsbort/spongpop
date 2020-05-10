@@ -1950,6 +1950,7 @@ DevAbs:set(DevProx..'group:name'..GroupID,data.title_) end,nil) return DevAbs:ge
 --     Source DevProx     --
 if msg.content_.ID == "MessageChatAddMembers" then  
 DevAbs:set(DevProx.."bot:Who:Added:Me"..msg.chat_id_..":"..msg.content_.members_[0].id_,msg.sender_user_id_)
+end
 --     Source DevProx     --
 function string:split(sep)
 local sep, fields = sep or ":", {}
