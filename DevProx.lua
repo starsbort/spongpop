@@ -4857,7 +4857,49 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ ٱمـر 
 end
 end
 --     Source DevProx     --
-
+if text then
+if text == 'تفعيل تنبيه الاشعار' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+Dev_Abs(msg.chat_id_, msg.id_,'🔖┇ تم تفعيل التنبيه عل شعار  !')
+DevAbs:set(DevProx..'Tshake:SH:BOT'..msg.chat_id_,true)
+return false
+end
+if text == 'تعطيل تنبيه الاشعار' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+Dev_Abs(msg.chat_id_, msg.id_,'📮┇ تم تعطيل التنبيه عل شعار  !')
+DevAbs:del(DevProx..'Tshake:SH:BOT'..msg.chat_id_)
+return false
+end
+if text and text:match('^وضع الشعار (.*)$') and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+local SHGP = text:match('^وضع الشعار (.*)$')
+DevAbs:set(DevProx..'Tshake:SH:BOT:GP'..msg.chat_id_,SHGP)
+Dev_Abs(msg.chat_id_, msg.id_,'📮┇تم حفظ شعار المجموعه \n')
+end
+end
+if text and DevAbs:get(DevProx..'Tshake:SH:BOT'..msg.chat_id_) and is_owner(msg.sender_user_id_, msg.chat_id_) then 
+if tonumber(DevAbs:get(DevProx..'Tshake:SH:NUM'..msg.chat_id_..msg.sender_user_id_) or 0) > 3 then
+Kick_Group(msg.chat_id_,msg.sender_user_id_) 
+Dev_Abs(msg.chat_id_, msg.id_,'📮┇ تم طردك من المجموعة لعدم احترام قوانين المجموعة')
+DevAbs:del(DevProx..'Tshake:SH:NUM'..msg.chat_id_..msg.sender_user_id_)
+else
+tdcli_function ({ID = 'GetUser',user_id_ = msg.sender_user_id_},function(arg,data) 
+local last_ = data.last_name_ or ''
+local first_ = data.first_name_ or ''
+local taha = (first_..''..last_)
+local taha1 = (DevAbs:get(DevProx..'Tshake:SH:BOT:GP'..msg.chat_id_) or '')
+if string.find(taha,taha1) == nil then
+local taha = tonumber((DevAbs:get(DevProx..'Tshake:SH:NUM'..msg.chat_id_..msg.sender_user_id_) or 0))
+if taha == 1 then
+Dev_Abs(msg.chat_id_, msg.id_,'\n♨┇ عليك وضع شعار المجموعه لديك {3} محاولات وعند انتهاء المحاولات سيتم طردك الشعار {`'..taha1..'`}')
+elseif taha == 2 then
+Dev_Abs(msg.chat_id_, msg.id_,'\n♨┇ عليك وضع شعار المجموعه لديك {2} محاولات وعند انتهاء المحاولات سيتم طردك الشعار {`'..taha1..'`}')
+elseif taha == 3 then
+Dev_Abs(msg.chat_id_, msg.id_,'\n♨┇ عليك وضع شعار المجموعه لديك اخر محاولات لوضع الشعار {`'..taha1..'`}')
+end
+DevAbs:incrby(DevProx..'Tshake:SH:NUM'..msg.chat_id_..msg.sender_user_id_,1)
+end
+end,nil)  
+return false
+end
+end
 --     Source DevProx     --
 if text == 'تفعيل منو ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
 if DevAbs:get(DevProx.."lock:Added:Me"..msg.chat_id_) then
