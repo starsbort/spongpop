@@ -7062,6 +7062,93 @@ end
 resolve_username(ap[2],id_by_username)
 end
 --     Source DevProx     --
+if is_momod(msg.sender_user_id_, msg.chat_id_) then
+if text:match("^[Ii]d @(.*)$") then
+local ap = {string.match(text, "^([Ii]d) @(.*)$")}
+function id_by_username(extra, result, success)
+if result.id_ then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+if tonumber(result.id_) == tonumber(bot_owner) then
+t = 'Sudo all'
+elseif is_sudoid(result.id_) then
+t = 'Sudo 2'
+elseif is_admin(result.id_) then
+t = 'sudo 3'
+elseif is_monsh(result.id_, msg.chat_id_) then
+t = 'monsh'
+elseif is_onall(result.id_) then
+t = 'owner all'
+elseif is_moall(result.id_) then
+t = 'modod all'
+elseif is_vpall(result.id_) then
+t = 'vip all'
+elseif is_donky(result.id_, msg.chat_id_) then
+t = 'Full donky'
+elseif is_owner(result.id_, msg.chat_id_) then
+t = 'Owner'
+elseif is_momod(result.id_, msg.chat_id_) then
+t = 'Bot Admin'
+elseif result.id_ == bot_id then
+t = 'Myself'
+else
+t = 'Member'
+end
+end
+if not DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'مبرمج ٱڵسورس'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
+t = 'ٱڵمطۄر ٱلٱسٱسي'
+elseif is_sudoid(result.id_) then
+t = 'ٱڵمطۄر ٱڵثٱنوي'
+elseif is_admin(result.id_) then
+t = 'ٱڵمطۄر ٱلثٱڵث'
+elseif is_monsh(result.id_, msg.chat_id_) then
+t = 'ٱڵـۧمـۧنشئ'
+elseif is_onall(result.id_) then
+t = 'ٱڵمدير ٱڵعٱم'
+elseif is_moall(result.id_) then
+t = 'ٱلٱدمن ٱڵعٱم'
+elseif is_vpall(result.id_) then
+t = 'ٱڵمميز ٱڵعٱم'
+elseif is_donky(result.id_, msg.chat_id_) then
+t = 'مطي مرتب 😹💔'
+elseif is_owner(result.id_, msg.chat_id_) then
+t = 'ٱڵـۧمـۧدير'
+elseif is_momod(result.id_, msg.chat_id_) then
+t = 'ٱلٱدمـۧن'
+elseif result.id_ == bot_id then
+t = 'هذٱ ٱنٱ ٱڵبۄت'
+else
+t = 'فقط عضو'
+end
+end
+local gpid = tostring(result.id_)
+if gpid:match('^(%d+)') then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+text = '❗️🚸 ⌯ user : ( @'..ap[2]..' )\n❗️📮 ⌯ id : ( '..result.id_..' )\n❗️💎 ⌯ rank : '..t
+else
+text = '❗️🚸 ⌯ مُعرِفه : ( @'..ap[2]..' )\n❗️📮 ⌯ ٱيـۧديـۧه : ( '..result.id_..' )\n❗️💎 ⌯ رتـۧبتـۧه : '..t
+end
+else
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+text = '❗️🚸 ⌯ Channel : ( @'..ap[2]..' )\n❗️📮 ⌯ id : ( '..result.id_..' )'
+else
+text = '❗️🚸 ⌯ ٱڵقنٱة : ( @'..ap[2]..' )\n❗️📮 ⌯ ٱيديهٱ : ( '..result.id_..' )'
+end
+end
+end
+if not result.id_ then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+text = '❗️📛 ⌯ Username is not correct'
+else
+text = '❗️📛 ⌯ ٱڵمعرف غير صحيح'
+end
+end
+Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+end
+resolve_username(ap[2],id_by_username)
+end
 if text:match("^ايدي @(.*)$") then
 local ap = {string.match(text, "^(ايدي) @(.*)$")}
 function id_by_username(extra, result, success)
