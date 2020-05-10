@@ -12235,10 +12235,6 @@ else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ڵم يتم تعيين قنٱة ٱلٱشترٱك ٱلٱجبٱري \n❗️🔑 ⌯ ٱرسڵ (تعيين قناة الاشتراك) ڵڵتعيين ', 1, 'md')
 end end end end
 --     Source DevProx     --
-
-
-
-
 if text == 'تفعيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) then 
 DevAbs:del(DevProx..'bot:Lock:Added:Me'..msg.chat_id_)  
 Dev_Abs(msg.chat_id_, msg.id_,'☑┇تم تفعيل امر منو ضافني') 
@@ -12270,7 +12266,6 @@ end
 end,nil)
 else
 Dev_Abs(msg.chat_id_, msg.id_,'⚠┇امر منو ضافني تم تعطيله من قبل المدراء ') 
-end
 end
 --     Source DevProx     --
 if text:match("^القناة$") or text:match("^قناة السورس$") or text:match("^قنات السورس$") then
