@@ -1738,7 +1738,7 @@ end
 if Chat_Type == 'pv' then 
 if text and text:match("/start hms(.*)_(%d+)") then 
 function adding(extra,result,success)
-Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هذٱ دزوله همسه وديشوفهٱ \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟" , 1, 'html') 
+Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هذٱ دز ستٱرت ڵڵبوت عن طريق ٱڵهمسه \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟" , 1, 'html') 
 end 
 getUser(msg.sender_user_id_,adding) 
 end 
