@@ -1746,6 +1746,256 @@ end
 if is_leader(msg) then
 if text == 'تعيين كليشة ستارت' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تعيين كڵيشة ٱڵترحيب : \n〰️➖〰️➖〰️➖〰️➖〰️\nضع رد الخاص + الكليشة \n❗️🔑 ⌯ مثال : ضع رد الخاص مرحبا \n❗️🚸 ⌯ بعد ذڵك ٱرسڵ ٱمـر : \n{ رد الخاص تفعيل } \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end
 if text == 'اوامر الاذاعه' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ آوآمر آلآذآعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️📥 ⌯ اذاعه + الكليشه \n❗️📬 ⌯ توجيه للكل + بالرد على الرسالة \n❗️📯 ⌯ نشر • الاذاعه بالخاص + الكليشه  \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end end
+
+if DevAbs:get(DevProx.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
+if text and text:match("^الغاء$") or text and text:match("^الغاء ✖$") then   
+Dev_Abs(msg.chat_id_, msg.id_, 1, "*📬¦ تم الغاء الامر *\n✓", 1, "md") 
+DevAbs:del(DevProx.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_) 
+return false  end 
+DevAbs:del(DevProx.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_) 
+local pvstart = text:match("(.*)") 
+DevAbs:set(DevProx.."pvstart", pvstart)  
+Dev_Abs(msg.chat_id_, msg.id_, 1,'\n*📛¦* تم وضع الرد في التواصل \n', 1, 'md')  
+end
+
+if text and text:match('(.*)') and not text:match('/start')  and not is_leader(msg) or  msg.content_.ID == "MessageUnsupported" or msg.content_.ID == 'MessagePhoto' or msg.content_.ID == 'MessageDocument' or msg.content_.photo_ or msg.content_.ID == 'MessageSticker' or msg.content_.ID == 'MessageAudio' or msg.content_.audio_ or msg.content_.ID == 'MessageAnimation' or msg.content_.ID == 'MessageVideo' or msg.content_.video_  or msg.content_.ID == 'MessageContact' or msg.content_.ID == 'MessageVoice' then     
+if text  or msg.content_.ID == 'MessageVoice' or msg.content_.ID == 'MessageAudio' or msg.content_.ID == 'MessagePhoto' or msg.content_.ID == 'MessageDocument' or msg.content_.photo_ or msg.content_.ID == 'MessageSticker' or msg.content_.ID == 'MessageAudio' or msg.content_.ID == 'MessageAnimation' or msg.content_.ID == 'MessageVideo' or msg.content_.ID == 'MessageContact' or msg.content_.ID == 'MessageVoice'  then  
+if tonumber(DevAbs:get('numlocktextpv'..bot_id..msg.sender_user_id_) or 1) >= 100 then      
+return false  end   
+end  
+if not is_leader(msg) then
+if msg.forward_info_ and  DevAbs:get(DevProx..'lock:fwd'..bot_id) then     
+return false  end    
+if  msg.content_.ID == 'MessagePhoto' and DevAbs:get(DevProx..'lock:photo'..bot_id) then      
+return false  end     
+if msg.content_.ID == 'MessageDocument' and  DevAbs:get(DevProx..'lock:file'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageSticker' and  DevAbs:get(DevProx..'lock:ste'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageVoice' and  DevAbs:get(DevProx..'lock:musec'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageContact' and  DevAbs:get(DevProx..'lock:phon'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageVideo' and  DevAbs:get(DevProx..'lock:ved'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageAnimation' and  DevAbs:get(DevProx..'lock:gif'..bot_id) then     
+return false  end    
+if msg.content_.ID == 'MessageAudio' and  DevAbs:get(DevProx..'lock:vico'..bot_id) then     
+return false  end    
+if text and text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or text and text:match("[Hh][Tt][Tt][Pp][Ss]://") or text and text:match("[Hh][Tt][Tt][Pp]://") or text and text:match("[Ww][Ww][Ww].") or text and text:match(".[Cc][Oo][Mm]") or text and text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or text and text:match(".[Pp][Ee]") or text and text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/") or text and text:match("[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/") or text and text:match("[Tt].[Mm][Ee]/") then 
+if DevAbs:get(DevProx..'lock:links'..bot_id) then      
+return false  end  
+end
+end  
+if not DevAbs:get(DevProx..'lock:botl'..bot_id) then    
+if not is_leader(msg) then     
+local pvstart = DevAbs:get(DevProx.."pvstart")    
+if pvstart then    
+Dev_Abs(msg.sender_user_id_, 0, 1, ''..check_markdown(pvstart)..'', 1, "md")    
+else    
+Dev_Abs(msg.sender_user_id_, msg.id_, 1, '📬*¦* تم ارسال رسالتك الى المطور\n*📛¦* اشترك في قناة المطور \n*🚸¦* [اضغط هنا للدخول الى قناة](https://t.me/th3victory) \n', 1, "md")    
+end     
+if not DevAbs:sismember(DevProx.."bot:userss",msg.chat_id_) then    
+DevAbs:sadd(DevProx.."bot:userss",msg.chat_id_)    
+local pvstart = DevAbs:get(DevProx.."pvstart")    
+end    
+tdcli_function ({ID = "ForwardMessages",    chat_id_ = SUDO,    from_chat_id_ = msg.sender_user_id_,    message_ids_ = {[0] = msg.id_},    disable_notification_ = 1,    from_background_ = 1 },function(arg,data) 
+tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,ta) 
+if data.messages_[0].content_.sticker_ then
+if ta.username_ == false then
+local text = '📬¦ تم ارسال الملصق \n📮¦ من ↫ ❪ '..CatchName(ta.first_name_,20)..' ❫\n✓'
+absmoned(SUDO, msg.sender_user_id_, 0, text, 32, utf8.len(ta.first_name_)) 
+else
+zo = '📬¦ تم ارسال الملصق \n*📮¦ من ↫ ❪ *[@'..ta.username_..'] ❫\n✓'
+Dev_Abs(SUDO, 0, 1, zo, 1, "md") 
+end end end,nil) end,nil)
+end end end    
+if is_leader(msg) and msg.reply_to_message_id_ ~= 0  then     
+function bot_in_daerct(extra, result, success)    
+if result.forward_info_.sender_user_id_ then     
+id_user = result.forward_info_.sender_user_id_    
+end     
+if text =='حظر' then
+tdcli_function ({ID = "GetUser",user_id_ = id_user
+},function(arg,data) 
+if not DevAbs:sismember(DevProx..'pv:ban'..msg.chat_id_,id_user) then
+if data.username_ == false then
+local text = '📮¦ العضــو ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n📬¦ تم حظره من التواصل\n✓'
+DevAbs:incrby('numlocktextpv'..bot_id..id_user,10000000)    DevAbs:sadd(DevProx..'pv:ban'..msg.chat_id_,id_user) 
+absmoned(msg.chat_id_, id_user, msg.id_, text, 16, utf8.len(CatchName(data.first_name_,15)))  
+else
+zo = '*📮¦ العضــو ↫ ❪ *[@'..data.username_..'] ❫\n*📬¦ تم حظره من التواصل\n✓*'
+DevAbs:incrby('numlocktextpv'..bot_id..id_user,10000000)    DevAbs:sadd(DevProx..'pv:ban'..msg.chat_id_,id_user) 
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+else
+if data.username_ == false then
+local text = '📮¦ العضــو ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n📬¦ بالتأكيد تم حظره من التواصل\n✓'
+DevAbs:incrby('numlocktextpv'..bot_id..id_user,10000000)    DevAbs:sadd(DevProx..'pv:ban'..msg.chat_id_,id_user) 
+absmoned(msg.chat_id_, id_user, msg.id_, text, 16, utf8.len(CatchName(data.first_name_,15)))  
+else
+zo = '*📮¦ العضــو ↫ ❪ *[@'..data.username_..'] ❫\n*📬¦ بالتأكيد تم حظره من التواصل\n✓*'
+DevAbs:incrby('numlocktextpv'..bot_id..id_user,10000000)    DevAbs:sadd(DevProx..'pv:ban'..msg.chat_id_,id_user) 
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end
+end,nil)
+return false  end 
+if text =='الغاء الحظر' then
+tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data) 
+if DevAbs:sismember(DevProx..'pv:ban'..msg.chat_id_,id_user) then
+if data.username_ == false then
+local text = '📮¦ العضــو ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n📬¦ تم الغاء حظره من التواصل\n✓'
+DevAbs:del('numlocktextpv'..bot_id..id_user)    DevAbs:srem(DevProx..'pv:ban'..msg.chat_id_,id_user)
+absmoned(msg.chat_id_, id_user, msg.id_, text, 16, utf8.len(CatchName(data.first_name_,15)))  
+else
+zo = '*📮¦ العضــو ↫ ❪ *[@'..data.username_..'] ❫\n*📬¦ تم الغاء حظره من التواصل\n✓*'
+DevAbs:del('numlocktextpv'..bot_id..id_user)    DevAbs:srem(DevProx..'pv:ban'..msg.chat_id_,id_user)
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+else
+if data.username_ == false then
+local text = '📮¦ العضــو ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n📬¦ بالتأكيد تم الغاء حظره من التواصل\n✓'
+DevAbs:del('numlocktextpv'..bot_id..id_user)    DevAbs:srem(DevProx..'pv:ban'..msg.chat_id_,id_user)
+absmoned(msg.chat_id_, id_user, msg.id_, text, 16, utf8.len(CatchName(data.first_name_,15)))  
+else
+zo = '*📮¦ العضــو ↫ ❪ *[@'..data.username_..'] ❫\n*📬¦ بالتأكيد تم الغاء حظره من التواصل\n✓*'
+DevAbs:del('numlocktextpv'..bot_id..id_user)    DevAbs:srem(DevProx..'pv:ban'..msg.chat_id_,id_user)
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end
+end,nil)
+return false  end 
+tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data) 
+tdcli_function({ID='GetChat',chat_id_ = id_user},function(arg,dataq)
+tdcli_function ({ ID = "SendChatAction",chat_id_ = id_user, action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,ta) 
+if ta.code_ == 400 or ta.code_ == 5 then
+local ABS_PROX = '\n📬¦ فشل ارسال رسالتك لان العضو قام بحظر البوت'
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md") 
+return false  end 
+if text then    
+Dev_Abs(id_user,msg.id_,  1,  text, 1, 'html')    
+if data.username_ == false then
+local text = '📬¦ تم ارسال رسالتك \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 33, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end    
+if msg.content_.ID == 'MessageSticker' then    
+sendSticker(id_user, msg.id_, 0, 1, nil, msg.content_.sticker_.sticker_.persistent_id_)   
+if data.username_ == false then
+local text = '📬¦ تم ارسال رسالتك \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 33, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end      
+if msg.content_.ID == 'MessagePhoto' then    
+if msg.content_.photo_.sizes_[0] then    
+end    
+sendPhoto(id_user, msg.id_, 0, 1, nil,msg.content_.photo_.sizes_[0].photo_.persistent_id_,(msg.content_.caption_ or ''))    
+if data.username_ == false then
+local text = '📬¦ تم ارسال الصوره \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 33, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end     
+if msg.content_.ID == 'MessageAnimation' then    
+sendDocument(id_user, msg.id_, 0, 1,nil, msg.content_.animation_.animation_.persistent_id_)    
+if data.username_ == false then
+local text = '📬¦ تم ارسال المتحركه \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 35, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end     
+if msg.content_.ID == 'MessageVoice' then    
+sendVoice(id_user, msg.id_, 0, 1, nil, msg.content_.voice_.voice_.persistent_id_)    
+if data.username_ == false then
+local text = '📬¦ تم ارسال الصوت \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 32, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end     
+if msg.content_.ID == 'MessageContact' then   
+sendContact(id_user, msg.id_, 0, 1, nil,msg.content_.contact_.phone_number_, msg.content_.contact_.first_name_,'', bot_id)       
+if data.username_ == false then
+local text = '📬¦ تم ارسال جهة الاتصال \n📮¦ الى ↫ ❪ '..CatchName(data.first_name_,15)..' ❫\n✓'
+absmoned(msg.chat_id_, id_user, msg.id_, text, 38, utf8.len(CatchName(data.first_name_,15))) 
+else
+zo = '📬¦ تم ارسال رسالتك \n*📮¦ الى ↫ ❪ *[@'..data.username_..'] ❫\n✓'
+Dev_Abs(msg.chat_id_, msg.id_, 1, zo, 1, "md") 
+end
+end     
+end,nil)
+end,nil)
+end,nil)
+end    
+getMessage(msg.chat_id_, msg.reply_to_message_id_,bot_in_daerct)    
+end 
+if text == 'فتح الكل' and is_leader(msg) then   ABS_PROX = '*🚸¦* تم فتح جميع الاوامر   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")      DevAbs:del(DevProx..'lock:photo'..bot_id)    DevAbs:del(DevProx..'lock:vico'..bot_id)    DevAbs:del(DevProx..'lock:ste'..bot_id)    DevAbs:del(DevProx..'lock:file'..bot_id)    DevAbs:del(DevProx..'lock:phon'..bot_id)    DevAbs:del(DevProx..'lock:links'..bot_id)    DevAbs:del(DevProx..'lock:ved'..bot_id)    DevAbs:del(DevProx..'lock:fwd'..bot_id)    DevAbs:del(DevProx..'lock:gif'..bot_id)    DevAbs:del(DevProx..'lock:musec'..bot_id)    end      
+if text == 'قفل الكل' and is_leader(msg) then   ABS_PROX = '*📛¦* تم قفل جميع الاوامر  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")      DevAbs:set(DevProx..'lock:photo'..bot_id,true)    DevAbs:set(DevProx..'lock:vico'..bot_id,true)    DevAbs:set(DevProx..'lock:ste'..bot_id,true)    DevAbs:set(DevProx..'lock:file'..bot_id,true)    DevAbs:set(DevProx..'lock:phon'..bot_id,true)    DevAbs:set(DevProx..'lock:links'..bot_id,true)    DevAbs:set(DevProx..'lock:ved'..bot_id,true)    DevAbs:set(DevProx..'lock:fwd'..bot_id,true)    DevAbs:set(DevProx..'lock:gif'..bot_id,true)    DevAbs:set(DevProx..'lock:musec'..bot_id,true)     end   
+if text == 'فتح الصور' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الصور   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:photo'..bot_id) end  
+if text == 'قفل الصور' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الصور  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:photo'..bot_id,true) end 
+if text == 'فتح الصوت' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الصوت   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:vico'..bot_id) end  
+if text == 'قفل الصوت' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الصوت  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:vico'..bot_id,true) end 
+if text == 'فتح الاغاني' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الاغاني   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:musec'..bot_id) end  
+if text == 'قفل الاغاني' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الاغاني  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:musec'..bot_id,true) end 
+if text == 'فتح المتحركه' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح المتحركه   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:gif'..bot_id) end  
+if text == 'قفل المتحركه' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل المتحركه  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:gif'..bot_id,true) end 
+if text == 'فتح التوجيه' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح التوجيه   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:fwd'..bot_id) end  
+if text == 'قفل التوجيه' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل التوحيه  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:fwd'..bot_id,true) end 
+if text == 'فتح الفيديو' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الفيديو   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:ved'..bot_id) end  
+if text == 'قفل الفيديو' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الفيديو  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:ved'..bot_id,true) end 
+if text == 'فتح الروابط' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الروابط   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:links'..bot_id) end  
+if text == 'قفل الروابط' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الروابط  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:links'..bot_id,true) end 
+if text == 'فتح الجهات' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الجهات   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:phon'..bot_id) end  
+if text == 'قفل الجهات' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الجهات  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:phon'..bot_id,true) end 
+if text == 'فتح الملفات' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الملفات   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:file'..bot_id) end  
+if text == 'قفل الملفات' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الملفات  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:file'..bot_id,true) end 
+if text == 'فتح الملصقات' and is_leader(msg) then  ABS_PROX = '*🚸¦* تم فتح الملصقات   ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:del(DevProx..'lock:ste'..bot_id) end  
+if text == 'قفل الملصقات' and is_leader(msg) then  ABS_PROX = '*📛¦* تم قفل الملصقات  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md")  DevAbs:set(DevProx..'lock:ste'..bot_id,true) end 
+if text == 'الاعدادات 🔏' and is_leader(msg) then  if DevAbs:get(DevProx..'lock:photo'..bot_id) then    lock_photo = '* مقفل ✓ *'      else     lock_photo = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:vico'..bot_id) then    lockvic = '* مقفل ✓ *'      else     lockvic = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:ste'..bot_id) then    lockste = '* مقفل ✓ *'      else     lockste = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:file'..bot_id) then    lockfile = '* مقفل ✓ *'     else     lockfile = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:phon'..bot_id) then    lockphon = '* مقفل ✓ *'      else     lockphon = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:links'..bot_id) then    lock_link = '* مقفل ✓ *'      else     lock_link = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:ved'..bot_id) then    lock_vid = '* مقفل ✓ *'      else     lock_vid = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:fwd'..bot_id) then    lock_fwd = '* مقفل ✓ *'      else     lock_fwd = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:gif'..bot_id) then    lock_gif = '* مقفل ✓ *'      else     lock_gif = '*مفتوح ✘*'    end    if DevAbs:get(DevProx..'lock:musec'..bot_id) then    lock_muse = '* مقفل ✓ *'      else     lock_muse = '*مفتوح ✘*'    end    local text = '*📛¦* اهلا بك في اعدادات الخاص 🍃'..'\n*ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*\n'..    '\n*📬¦* الروابط '..lock_link..    '\n'..'*📬¦* الصور '..lock_photo..    '\n'..'*📬¦* الاغاني '..lockvic..    '\n'..'*📬¦* الملصقات '..lockste..    '\n'..'*📬¦* الملفات '..lockfile..    '\n'..'*📬¦* الجهات '..lockphon..    '\n'..'*📬¦* الفيديو '..lock_vid..    '\n'..'*📬¦* التوجيه '..lock_fwd..    '\n'..'*📬¦* المتحركه '..lock_gif..    '\n'..'*📬¦* الصوت '..lock_muse..    '\n\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n🚨*¦* اضافه الى ذالك تستطيع قفل وفتح الكل\n🚸*¦* قفل الكل \n🚸*¦* فتح الكل'    Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')     end     
+if text =='اوامر التواصل' then
+if not is_leader(msg) then
+else 
+local text = [[* 
+💁🏻‍♂¦ اهلآ بك، عزيزي ... 🍃
+📮¦ في اوامـر التواصل 
+📬¦ قڤل – فتح + الامر ↓
+ٴ━━━━━━━━━━
+📬¦ الروابطہَ — الصور
+📬¦ الاغانيہَ — الملصقات
+📬¦ الملفات — الجهات
+📬¦ الفيديو — التوجيهہَ
+📬¦ الصوت — المتحركۃ
+📬¦ الكلَ { لـ؛قڤل چميع الاوآمر } 
+ٴ━━━━━━━━━━
+📨¦ لحظَر والغَاء الحظر ڤي التواصل
+📨¦ حظر » بالرد ؏َ الشخص
+📨¦ الغاء الحظر » بالرد ؏َ الشخص
+📨¦ الاعدادات 
+ٴ━━━━━━━━━━
+..
+*]] 
+Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')  
+end
+end  
+
+if text == 'تفعيل التواصل' and is_leader(msg) then local  ABS_PROX = '*📛¦*تم تفعيل بوت التواصل  ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md") DevAbs:del(DevProx..'lock:botl'..bot_id) end 
+if text == 'تعطيل التواصل' and is_leader(msg) then ABS_PROX = '*📛¦*تم تعطيل التواصل  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md") DevAbs:set(DevProx..'lock:botl'..bot_id,true) end
+ 
+ if text and text:match("^ضع رد التواصل$") and is_devABS_PROX(msg) then   devrambo:setex(DEVRMBO.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  rambo_sendMsg(msg.chat_id_, msg.id_, 1,'📬*¦* ارسل لي النص الذي تريده ', 1, 'md') end 
+if text == "حذف رد التواصل" and is_devABS_PROX(msg) then  devrambo:del(DEVRMBO.."pvstart") rambo_sendMsg( msg.chat_id_, msg.id_, 1, '*📛¦*تم حذف رد التوصل', 1, "md") end 
+
 --     Source DevProx     --
 DevAbs:sadd(DevProx.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
 DevAbs:incr(DevProx.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_.."")--save msgs gp
