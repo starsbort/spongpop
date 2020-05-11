@@ -3784,9 +3784,17 @@ end
 end
 end 
 --     Source DevProx     --
+if text == 'عبس' or text == 'abs' then 
+if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
+ABS_PROX =  "ٲلمبرمج ماڵتي فديتهہ 😻💙 @[IQ_ABS]"
+else 
+ABS_PROX = ''
+end
+Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
+end
 if text == 'دي' or text == 'ديي' or text == 'دي بابه' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "ٱخلٱقك يٱڵعٱر 😾💔"
+ABS_PROX =  "آخـلُِآقٌڪڪ لُِڪڪ 𖠙 😒🔪"
 else 
 ABS_PROX = ''
 end
@@ -3794,15 +3802,15 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'سلام' or text == 'السلام عليكم' or text == 'سلام عليكم' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "ٱطلق سلام 😻❤"
+ABS_PROX =  "يٱھَہّلْـٱٱ ۅﻋ̝̚لْـيڪْم ٱلْـﺳ̭͠ لْـٱم 𖠙 🤤♥️"
 else 
 ABS_PROX = ''
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
-if text == '😭💔' or text == '😭😭' or text == '😭😭😭' or text == '😿💔' or text == '😭' or text == '😭😭😭' or text == '😭😭😭😭' then      
+if text == '😭💔' or text == '😭😭' or text == '😭😭😭' or text == '😿💔' or text == '😭😭😭' or text == '😭😭😭😭' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "وفف جعڵني ٱڵدموع 😻❤"
+ABS_PROX =  "مآآعٍآشُ آلُِي يزعٍلُِڪڪ 𖠙 😏♥️"
 else 
 ABS_PROX = ''
 end 
@@ -3810,7 +3818,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == '🌚💔' or text == '💔🌚' or text == '🚶‍♂💔' or text == '💔' or text == '😔💔' or text == '🚶‍♀💔' or text == '😭' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "شبي ٱڵحلو 😿💔"
+ABS_PROX =  "شبّـيي ٱﻟ̣̣ـפﻟ̣̣ـو 𖠙 😿💔"
 else 
 ABS_PROX = ''
 end 
@@ -3818,7 +3826,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'باي' or text == 'بااي' or text == 'اروح' or text == 'اروح احسن' or text == 'اولي احسن' or text == 'راح اروح' or text == 'باي انام' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "  ✾ ٱڵـڵـه ✾ ٱڵـڵـه ✾ ٱڵـڵـه وياك 🕊","روحه بلا رده"
+ABS_PROX =  "أُرٌجُعُ عٍيدِهـآآ مٍوو تنِْسةه 𖠙 🤤♥️",
 else 
 ABS_PROX = ''
 end
@@ -3826,7 +3834,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'هلو' or text == 'هلاو' or text == 'هلا' or text == 'هلاوو' or text == 'هيلاو' or text == 'هيلاوو' or text == 'هلاا' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "ٱطلق هللاو 😻❤"
+ABS_PROX =  "اࠗط็ـلق֯ق֯ هٞللاࠗ୨و 𖠙 🤤♥️"
 else 
 ABS_PROX = ''
 end 
@@ -3834,7 +3842,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'شونك' or text == 'شونج' or text == 'شلونك' or text == 'شلونج' or text == 'شونكم' or text == 'شلونكم' or text == 'شلخبار' or text == 'شلون الاخبار' or text == 'شخبارك' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "ماشيهه يعمري ونتا"
+ABS_PROX =  "مٱﺷ͠ يةھَہّ يـﻋ̝̚مريي ۅٱﻧـﺗ̲ـت 𖠙 🤤♥️"
 else 
 ABS_PROX = ''
 end 
@@ -3842,7 +3850,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'وينك' or text == 'وينج' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "موجود يمك يحڵو 😽❤️"
+ABS_PROX =  "مْوٌجہوٌدِ يہمْگُ يحڵوُ 𖠙 😉♥️"
 else 
 ABS_PROX = ''
 end 
@@ -3850,15 +3858,15 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'نايمين' or text == 'ميتين' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "طامسينن وعيونككۦ"
+ABS_PROX =  "طُآمسين ووعٍيوونڪ 𖠙 😪🖤ۦ"
 else 
 ABS_PROX = ''
 end 
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
-if text == 'اكلك' or text == 'اكلج' then 
+if text == 'اكلك' or text == 'اكلج' or text == 'اكلكم' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "كٰہٰٖوٰلہٰٖ مٰہٰٖاٰكٰہٰٖوٰلہٰٖ لہٰٖاٰحٰہٰٖدٰ😴🌸✿⇣"
+ABS_PROX =  "ڪوولُِ مآڪوولُِ لُِآحٍدِ 𖠙 😉♥️"
 else 
 ABS_PROX = ''
 end 
@@ -3866,20 +3874,21 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'ها' or text == 'هاا' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "هٰہٰٖاٰ رٰدٰيٰہٰٖنٰہٰٖاٰ لہٰٖوَٰ لہٰٖاٰ⁞❉💥┋♩"
+ABS_PROX =  "هـْٳ ڒٍدِيہنٳ لہوٌ لاِا 𖠙 😹♥️"
 else 
 ABS_PROX = ''
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
-if text == 'سورس عبس' or text == 'سورس بروكس' then 
+if text == 'سورس عبس' or text == 'سورس بروكس' or text == 'سورس ديف بروكس' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "لہٰٖاٰ سٰہٰٖوَٰرٰسٰہٰٖ خٰہٰٖاٰلہٰٖتٰہٰٖكٰہٰٖ دٰيٰہٰٖ لہٰٖكٰہٰٖ•|• 〄💖‘"
+ABS_PROX =  "لُِآ سوورس خـآلُِتڪ دِي لُِڪ 𖠙 😒🔪"
 else 
 ABS_PROX = ''
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end 
+--     Source DevProx     --
 if text == 'بوت' or text == 'بوتت' then 
 name_bot = (DevAbs:get('ABS_PROX:'..bot_id..'name_bot') or 'بروكس') 
 local ABS_PROX = {
