@@ -1729,56 +1729,20 @@ end end end
 if Chat_Type == 'pv' then 
 if text == '/start' then  
 function adding(extra,result,success)
-if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 local users = DevAbs:scard(DevProx.."bot:userss")
 Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هنٱك مشترك جديد في ٱڵبوت \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟\n❗️🔅 ⌯ عدد مشتركين ٱڵبوت ⌯» ◝ "..users.." ◟" , 1, 'html') 
 end 
 getUser(msg.sender_user_id_,adding) 
 end
-end 
 end
 if Chat_Type == 'pv' then 
 if text and text:match("/start hms(.*)_(%d+)") then 
 function adding(extra,result,success)
-if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هذٱ دزوله همسه وديشوفهٱ \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟" , 1, 'html') 
 end 
 getUser(msg.sender_user_id_,adding) 
 end 
 end 
-end
-if (text and text == 'enable reply pv') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تفعيل تنبيه الخاص') and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
-if not DevAbs:get(DevProx..'bot:leader:pv'..msg.chat_id_) then
-if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot is already enabled*️ ', 1, 'html')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تنبيه ٱڵخٱص ،بٱڵتاكيد ،مۧفعڵ ', 1, 'html')
-end
-else
-if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been enable*️ ', 1, 'html')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟ ', 1, 'html')
-DevAbs:del(DevProx..'bot:leader:pv'..msg.chat_id_)
-end
-end
-end
-if (text and text == 'disable reply pv') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تعطيل تنبيه الخاص') and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
-if DevAbs:get(DevProx..'bot:leader:pv'..msg.chat_id_) then
-if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot is already disabled*️ ', 1, 'html')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تنبيه ٱڵخٱص ،بٱڵتاكيد ،مۧعطڵ ', 1, 'html')
-end
-else
-if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been disabled*️ ', 1, 'html')
-else
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟ ', 1, 'html')
-DevAbs:set(DevProx..'bot:leader:pv'..msg.chat_id_,true)
-end
-end
-end
 if is_leader(msg) then
 if text == 'تعيين كليشة ستارت' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تعيين كڵيشة ٱڵترحيب : \n〰️➖〰️➖〰️➖〰️➖〰️\nضع رد الخاص + الكليشة \n❗️🔑 ⌯ مثال : ضع رد الخاص مرحبا \n❗️🚸 ⌯ بعد ذڵك ٱرسڵ ٱمـر : \n{ رد الخاص تفعيل } \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end
 if text == 'اوامر الاذاعه' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ آوآمر آلآذآعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️📥 ⌯ اذاعه + الكليشه \n❗️📬 ⌯ توجيه للكل + بالرد على الرسالة \n❗️📯 ⌯ نشر • الاذاعه بالخاص + الكليشه  \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end end
