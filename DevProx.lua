@@ -3767,9 +3767,9 @@ if not DevAbs:get(DevProx.."bot:tt:link:"..msg.chat_id_) then
 local link = DevAbs:get(DevProx.."bot:group:link"..msg.chat_id_)
 if link then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "⚜️ ⌯ ٱسـم ٱڵمجـمۄعة : \n• "..title_name(msg.chat_id_).." •\n🔱 ⌯ رآبــط ٱڵمجـمۄعة : \n🧩 ⌯ " .. link, 1, "html")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱسـم ٱڵمجـمۄعة ⌯» ⤈ \n• "..title_name(msg.chat_id_).." •\n❗️🔑 ⌯ رآبــط ٱڵمجـمۄعة ⌯» ⤈ \n• " .. link.." •", 1, "html")
 else
-Dev_Abs(msg.chat_id_, msg.id_, 1, "⚜️ ⌯ ٱسـم ٱڵمجـمۄعة : \n• "..title_name(msg.chat_id_).." •\n🔱 ⌯ رآبــط ٱڵمجـمۄعة : \n🧩 ⌯ " .. link, 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱسـم ٱڵمجـمۄعة ⌯» ⤈ \n• "..title_name(msg.chat_id_).." •\n❗️🔑 ⌯ رآبــط ٱڵمجـمۄعة ⌯» ⤈ \n• " .. link.." •", 1, "md")
 end
 else 
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
