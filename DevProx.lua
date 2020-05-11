@@ -3402,7 +3402,7 @@ end
 end
 end
 --     Source DevProx     --
-if text == 'جلب نسخه الكروبات' or text == 'جلب نسخة الكروبات' or text == 'نسخة الكروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
+if text == 'جلب نسخه الكروبات' or text == 'النسخه الاحتياطيه' or text == 'نسخه الكروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
 local list = DevAbs:smembers(DevProx..'bot:groups')  
 local t = '{"BOT_ID": '..DevProx..',"GP_BOT":{'  
 for k,v in pairs(list) do   
@@ -3880,7 +3880,7 @@ ABS_PROX = ''
 end
 Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
-if text == 'سورس عبس' or text == 'سورس بروكس' or text == 'سورس ديف بروكس' then 
+if text == 'سورس عبس' or text == 'سورس بروكس' or text == 'سورس ديف بروكس' or text == 'سورس زربه' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
 ABS_PROX =  "لُِآ سوورس خـآلُِتڪ دِي لُِڪ 𖠙 😒🔪"
 else 
@@ -12171,13 +12171,12 @@ print("\27[31;47m\n          ( تم تحديث البوت )          \n\27[0;34;
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ تـۖم تـۧـحـډيـث ٱڵـبـۄت", 1, "md")
 end 
 --     Source DevProx     --
-if text and text:match("^اضف رسائل (%d+)$") or text:match('^اضف رسائل @(.*)$') and is_monsh(msg.sender_user_id_, msg.chat_id_) then  
+if text and text:match("^اضف رسائل (%d+)$") and is_monsh(msg.sender_user_id_, msg.chat_id_) then  
 DevAbs0 = text:match("^اضف رسائل (%d+)$")
-DevAbs0 = text:match('^اضف رسائل @(.*)$')
 DevAbs:set('ABS_PROX:'..bot_id..'id:user'..msg.chat_id_,DevAbs0)  
 DevAbs:setex('ABS_PROX:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
 Dev_Abs(msg.chat_id_, msg.id_, 1, "❗️🚸 ⌯ ٱرسـڵ عـدد ٱڵـرسٱئـڵ ٱلٱن \n❗️🔑 ⌯ ٱرسـڵ ٱڵغٱء لٱڵغٱء ٱلٱمر ", 1, "md")
-Dev_Abs(msg.chat_id_, msg.id_, 1,Anwar, 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1,numd, 1, 'md') 
 end 
 --     Source DevProx     --
 if is_leader(msg) then
