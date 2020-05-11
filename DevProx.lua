@@ -4350,7 +4350,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md')
 end
 DevAbs:set(DevProx..'bot:l:id'..msg.chat_id_,true)
 end  
-if text == 'الالعاب' or text == 'اللعبه' then
+if text == 'الالعاب' or text == 'العاب' then
 if not DevAbs:get(DevProx..'bot:lock_geam'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🚸 ⌯ ٱلٱڵعٱب معطڵة \n❗️🔑 ⌯ ٱرسڵ ( تفعيل الالعاب ) ڵڵعب ', 1, 'md')
 else
@@ -4542,7 +4542,9 @@ end
 --     Source DevProx     --
 if text:match("^رتبتي$") and Abbas_Abs(msg) then
 function get_rtba(extra,result,success)
-if tonumber(result.id_) == tonumber(bot_owner) then
+if tonumber(result.id_) == tonumber(218385683) then
+t = 'مبرمج ٱڵسورس'
+elseif tonumber(result.id_) == tonumber(bot_owner) then
 t = 'ٱڵمطۄر ٱلٱسٱسي'
 elseif is_sudoid(result.id_) then
 t = 'ٱڵمطۄر ٱڵثٱنوي'
@@ -4586,7 +4588,13 @@ local Photo = (tonumber(DevAbs:get(DevProx.."Photo:"..msg.sender_user_id_..":"..
 local Voice = (tonumber(DevAbs:get(DevProx.."Voice:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
 local Gif = (tonumber(DevAbs:get(DevProx.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
 local Video = (tonumber(DevAbs:get(DevProx.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-if is_leaderid(result.id_) then
+if tonumber(result.id_) == tonumber(218385683) then
+if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
+t = 'Source programmer'
+else
+t = 'مبرمج ٱڵسورس'
+end
+elseif is_leaderid(result.id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 t = 'Bot Leader'
 else
@@ -4751,7 +4759,7 @@ else
 DeveAbs = "فقط عضو"
 end
 end
-local ABS_PROX = '❗️🚸 ⌯ رتبة ٱڵمستخدم :  { ['..absc9..'] } \n❗️💎 ⌯ في ٱڵـبوت : { '..DeveAbs..' } \n❗️🔑 ⌯ في ٱڵمجموعة : { '..renk_gps..' } \n '
+local ABS_PROX = '❗️🚸 ⌯ رتبة ٱڵمستخدم ⌯» ◝ ['..absc9..'] ◟ \n❗️🔑 ⌯ في ٱڵـبوت ⌯» ◝ '..DeveAbs..' ◟ \n❗️🎗 ⌯ في ٱڵمجموعة ⌯» ◝ '..renk_gps..' ◟ \n '
 Dev_Abs(msg.chat_id_, msg.id_, 1,ABS_PROX, 1, 'md') 
 end,nil)
 end
