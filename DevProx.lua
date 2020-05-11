@@ -1747,13 +1747,13 @@ getUser(msg.sender_user_id_,adding)
 end 
 end 
 end
-if text == 'تعطيل تنبيه الخاص' and is_leader(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تعطيل تنبيه الخاص' and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
 if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 DevAbs:set(DevProx.."bot:leader:pv"..msg.chat_id_, true)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟', 1, 'md')
 end
 end
-if text == 'تفعيل تنبيه الخاص' and is_leader(msg.sender_user_id_, msg.chat_id_) then
+if text == 'تفعيل تنبيه الخاص' and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
 if DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 DevAbs:del(DevProx.."bot:leader:pv"..msg.chat_id_)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟', 1, 'md')
