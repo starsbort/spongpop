@@ -1780,7 +1780,8 @@ if DevAbs:get(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_us
 if text and text:match("^الغاء$") or text and text:match("^الغاء ✖$") then   
 Dev_Abs(msg.chat_id_, msg.id_, 1, "*📬¦ تم الغاء الامر *\n✓", 1, "md") 
 DevAbs:del(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
-return false  end 
+return false
+end
 DevAbs:del(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 local msgofstart = text:match("(.*)")  
 DevAbs:set(DevProx.."start:msgofstart1", msgofstart)  
@@ -1794,6 +1795,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,''..check_markdown(start)..'', 1, 'md')
 else 
 Dev_Abs(msg.chat_id_, msg.id_, 1,'*✉¦ لا توجد كليشه في ستارت \n📮¦* ارسل `ضع كليشه ستارت`\n🍃', 1, 'md') 
 end 
+end
 end
 if text == "حذف كليشه ستارت" and is_devrami(msg) then  
 DevAbs:del(DevProx.."start:msgofstart1") 
