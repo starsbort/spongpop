@@ -3784,7 +3784,7 @@ end
 end
 end 
 --     Source DevProx     --
-if text == 'دي' or text == 'دي لك' or text == 'دي بابه' then 
+if text == 'دي' or text == 'ديي' or text == 'دي بابه' then 
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
 ABS_PROX =  "ٱخلٱقك يٱڵعٱر 😾💔"
 else 
@@ -3818,7 +3818,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, ABS_PROX, 1, 'md')
 end
 if text == 'باي' or text == 'بااي' or text == 'اروح' or text == 'اروح احسن' or text == 'اولي احسن' or text == 'راح اروح' or text == 'باي انام' then      
 if not DevAbs:get(DevProx..'bot:rep:mute'..msg.chat_id_) then
-ABS_PROX =  "  ✾ ٱڵـڵـه ✾ ٱڵـڵـه ✾ ٱڵـڵـه وياك 🕊"
+ABS_PROX =  "  ✾ ٱڵـڵـه ✾ ٱڵـڵـه ✾ ٱڵـڵـه وياك 🕊","روحه بلا رده"
 else 
 ABS_PROX = ''
 end
