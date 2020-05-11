@@ -1775,32 +1775,6 @@ end
 if is_leader(msg) then
 if text == 'تعيين كليشة ستارت' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ تعيين كڵيشة ٱڵترحيب : \n〰️➖〰️➖〰️➖〰️➖〰️\nضع رد الخاص + الكليشة \n❗️🔑 ⌯ مثال : ضع رد الخاص مرحبا \n❗️🚸 ⌯ بعد ذڵك ٱرسڵ ٱمـر : \n{ رد الخاص تفعيل } \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end
 if text == 'اوامر الاذاعه' then Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️🎒 ⌯ آوآمر آلآذآعة : \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️📥 ⌯ اذاعه + الكليشه \n❗️📬 ⌯ توجيه للكل + بالرد على الرسالة \n❗️📯 ⌯ نشر • الاذاعه بالخاص + الكليشه  \n〰️➖〰️➖〰️➖〰️➖〰️ \n ', 1, 'md') end end
-
-if DevAbs:get(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
-if text and text:match("^الغاء$") or text and text:match("^الغاء ✖$") then   
-Dev_Abs(msg.chat_id_, msg.id_, 1, "*📬¦ تم الغاء الامر *\n✓", 1, "md") 
-DevAbs:del(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
-return false
-end
-DevAbs:del(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-local msgofstart = text:match("(.*)")  
-DevAbs:set(DevProx.."start:msgofstart1", msgofstart)  
-Dev_Abs(msg.chat_id_, msg.id_, 1,'*📛¦* تم وضع كليشه ستارت \n', 1, 'md')   
-end
-if text and text:match("^ضع كليشه ستارت$") and is_devrami(msg) then DevAbs:setex(DevProx.."start:msgofstart" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  rambo_sendMsg(msg.chat_id_, msg.id_, 1,'📬*¦* ارسل لي النص الذي تريده ', 1, 'md') end 
-if text == "جلب كليشه ستارت" and is_devrami(msg) then  
-local start = DevAbs:get(DevProx.."start:msgofstart1")  
-if start then 
-Dev_Abs(msg.chat_id_, msg.id_, 1,''..check_markdown(start)..'', 1, 'md') 
-else 
-Dev_Abs(msg.chat_id_, msg.id_, 1,'*✉¦ لا توجد كليشه في ستارت \n📮¦* ارسل `ضع كليشه ستارت`\n🍃', 1, 'md') 
-end 
-end
-end
-if text == "حذف كليشه ستارت" and is_devrami(msg) then  
-DevAbs:del(DevProx.."start:msgofstart1") 
-Dev_Abs( msg.chat_id_, msg.id_, 1, '*📛¦*تم حذف كليشه ستارت', 1, "md") 
-end 
 --     Source DevProx     --
 DevAbs:sadd(DevProx.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
 DevAbs:incr(DevProx.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_.."")--save msgs gp
