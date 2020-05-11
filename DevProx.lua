@@ -1747,16 +1747,36 @@ getUser(msg.sender_user_id_,adding)
 end 
 end 
 end
-if text == 'تعطيل تنبيه الخاص' and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
-if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
-DevAbs:set(DevProx.."bot:leader:pv"..msg.chat_id_, true)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟', 1, 'md')
+if (text and text == 'enable reply bot') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Enable Reply Bot') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تفعيل تنبيه الخاص') and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
+if not DevAbs:get(DevProx..'bot:leader:pv'..msg.chat_id_) then
+if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot is already enabled*️ ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تنبيه ٱڵخٱص ،بٱڵتاكيد ،مۧفعڵ ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been enable*️ ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟ ', 1, 'md')
+DevAbs:del(DevProx..'bot:leader:pv'..msg.chat_id_)
 end
 end
-if text == 'تفعيل تنبيه الخاص' and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
-if DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
-DevAbs:del(DevProx.."bot:leader:pv"..msg.chat_id_)
-Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـفعيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟', 1, 'md')
+end
+if (text and text == 'disable reply bot') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'Disable Reply Bot') and is_leaderid(msg.sender_user_id_, msg.chat_id_) or (text and text == 'تعطيل تنبيه الخاص') and is_leaderid(msg.sender_user_id_, msg.chat_id_) then
+if DevAbs:get(DevProx..'bot:leader:pv'..msg.chat_id_) then
+if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot is already disabled*️ ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تنبيه ٱڵخٱص ،بٱڵتاكيد ،مۧعطڵ ', 1, 'md')
+end
+else
+if DevAbs:get(DevProx..'bot:lang:'..msg.chat_id_) then
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ *Reply bot has been disabled*️ ', 1, 'md')
+else
+Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ تـۖم تـعطيـۧڵ تنبيه ٱڵخٱص \n❗️🚸 ⌯ بوٱسـۧطة ⌯» ◝ '..msg.sender_user_id_..' ◟ ', 1, 'md')
+DevAbs:set(DevProx..'bot:leader:pv'..msg.chat_id_,true)
+end
 end
 end
 if is_leader(msg) then
