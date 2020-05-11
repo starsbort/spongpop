@@ -1727,8 +1727,8 @@ send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end end
 if Chat_Type == 'pv' then 
-if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 if text == '/start' then  
+if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 function adding(extra,result,success)
 local users = DevAbs:scard(DevProx.."bot:userss")
 Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هنٱك مشترك جديد في ٱڵبوت \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟\n❗️🔅 ⌯ عدد مشتركين ٱڵبوت ⌯» ◝ "..users.." ◟" , 1, 'html') 
@@ -1738,8 +1738,8 @@ end
 end 
 end
 if Chat_Type == 'pv' then 
-if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 if text and text:match("/start hms(.*)_(%d+)") then 
+if not DevAbs:get(DevProx.."bot:leader:pv"..msg.chat_id_) then
 function adding(extra,result,success)
 Dev_Abs(tostring((DevAbs:get(DevProx.."bot:leader:gr") or bot_owner)), 0, 1, "❗️🎒 ⌯ هذٱ دزوله همسه وديشوفهٱ \n〰️➖〰️➖〰️➖〰️➖〰️\n❗️🚸 ⌯ معرفه ⌯» ◝ @"..(result.username_ or "لا يوجد").." ◟\n❗️🔑 ⌯ ٱيديه ⌯» ◝ "..msg.sender_user_id_.." ◟" , 1, 'html') 
 end 
