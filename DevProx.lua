@@ -4893,22 +4893,25 @@ tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).I
 end
 end
 --     Source DevProx     --
-if text:match("^source$") or text:match("^Source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") or text:match("^ياسورس$") then 
+if text:match("^source$") or text:match("^Source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^ال $") or text:match("^سورس$") or text:match("^ياسورس$") then 
 local text =  [[
-❗️🎒 ⌯ [Source DevProx](t.me/Dev_Prox)
-❗️🎒 ⌯ [سورس ديف بروكس](t.me/Dev_Prox) 
+❗️🎗 ⌯ ◟ [Source DevProx](https://t.me/Dev_Prox) ◝
+❗️🎗 ⌯ ◝ [سورس ديف بروكس](https://t.me/Dev_Prox) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
-❗️🚸 ⌯ [Source developer](t.me/IQ_ABS)
-❗️🚸 ⌯ [مطور السورس](t.me/IQ_ABS)
+❗️📣 ⌯ ◟ [Source Channel](https://t.me/Dev_Prox) ◝
+❗️📣 ⌯ ◝ [قناة السورس](https://t.me/Dev_Prox) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
-❗️🧬 ⌯ [Blocked connection](t.me/IQA_bot)
-❗️🧬 ⌯ [تواصل المحظورين](t.me/IQA_bot)
+❗️🚸 ⌯ ◟ [Source developer](http://t.me/IQ_ABS) ◝
+❗️🚸 ⌯ ◝ [مطور السورس](http://t.me/IQ_ABS) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
-❗️🧩 ⌯ [Source Channel](t.me/Dev_Prox)
-❗️🧩 ⌯ [قناة السورس](t.me/Dev_Prox)
+❗️📯 ⌯ ◟ [Blocked connection](http://t.me/IQA_bot) ◝
+❗️📯 ⌯ ◝ [تواصل المحظورين](http://t.me/IQA_bot) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
-❗️🔑 ⌯ [Click here to install](t.me/Dev_Prox)
-❗️🔑 ⌯ [اضغط هنا لتنصيب السورس](t.me/Dev_Prox)
+❗️🔅 ⌯ ◟ [Explanation Source](https://t.me/Exp_Dev) ◝
+❗️🔅 ⌯ ◝ [شروحات السورس](https://t.me/Exp_Dev) ◟
+〰️➖〰️➖〰️➖〰️➖〰️
+❗️🔑 ⌯ ◟ [Click here to install](http://t.me/Dev_Prox) ◝
+❗️🔑 ⌯ [اضغط هنا لتنصيب السورس](http://t.me/Dev_Prox) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
