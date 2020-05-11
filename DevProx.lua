@@ -1993,8 +1993,8 @@ end
 if text == 'تفعيل التواصل' and is_leader(msg) then local  ABS_PROX = '*📛¦*تم تفعيل بوت التواصل  ✔' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md") DevAbs:del(DevProx..'lock:botl'..bot_id) end 
 if text == 'تعطيل التواصل' and is_leader(msg) then ABS_PROX = '*📛¦*تم تعطيل التواصل  ❌' Dev_Abs( msg.chat_id_, msg.id_, 1, ABS_PROX, 1, "md") DevAbs:set(DevProx..'lock:botl'..bot_id,true) end
  
- if text and text:match("^ضع رد التواصل$") and is_devABS_PROX(msg) then   devrambo:setex(DEVRMBO.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  rambo_sendMsg(msg.chat_id_, msg.id_, 1,'📬*¦* ارسل لي النص الذي تريده ', 1, 'md') end 
-if text == "حذف رد التواصل" and is_devABS_PROX(msg) then  devrambo:del(DEVRMBO.."pvstart") rambo_sendMsg( msg.chat_id_, msg.id_, 1, '*📛¦*تم حذف رد التوصل', 1, "md") end 
+ if text and text:match("^ضع رد التواصل$") and is_leader(msg) then   DevAbs:setex(DevProx.."sudo:pv" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  Dev_Abs(msg.chat_id_, msg.id_, 1,'📬*¦* ارسل لي النص الذي تريده ', 1, 'md') end 
+if text == "حذف رد التواصل" and is_leader(msg) then  DevAbs:del(DevProx.."pvstart") Dev_Abs( msg.chat_id_, msg.id_, 1, '*📛¦*تم حذف رد التوصل', 1, "md") end 
 
 --     Source DevProx     --
 DevAbs:sadd(DevProx.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
