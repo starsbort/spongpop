@@ -4901,7 +4901,7 @@ tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).I
 end
 end
 --     Source DevProx     --
-if text:match("^source$") or text:match("^Source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^ال $") or text:match("^سورس$") or text:match("^ياسورس$") then 
+if text:match("^source$") or text:match("^Source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") or text:match("^ياسورس$") then 
 local text =  [[
 ❗️🎗 ⌯ ◟ [Source DevProx](https://t.me/Dev_Prox) ◝
 ❗️🎗 ⌯ ◝ [سورس ديف بروكس](https://t.me/Dev_Prox) ◟
@@ -4918,8 +4918,8 @@ local text =  [[
 ❗️🔅 ⌯ ◟ [Explanation Source](https://t.me/Exp_Dev) ◝
 ❗️🔅 ⌯ ◝ [شروحات السورس](https://t.me/Exp_Dev) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
-❗️🔑 ⌯ ◟ [Click here to install](http://t.me/Dev_Prox) ◝
-❗️🔑 ⌯ [اضغط هنا لتنصيب السورس](http://t.me/Dev_Prox) ◟
+❗️🔑 ⌯ ◟ [Click here to install](https://t.me/Dev_Prox/573) ◝
+❗️🔑 ⌯ [اضغط هنا لتنصيب السورس](https://t.me/Dev_Prox/573) ◟
 〰️➖〰️➖〰️➖〰️➖〰️
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, text, 1, 'md')
@@ -8996,7 +8996,7 @@ tar = 'ٱلٱدمـۧن'
 end
 local mutepts = {string.match(text, "^(قفل) (.*)$")}
 if mutept[2] == "all" or mutepts[2] == "الكل" then
-if not DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) and not DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) then
+if not DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Has been lock all ', 1, 'md')
 else
@@ -9004,7 +9004,6 @@ local ABS_PROX = '❗️☻ تـۖم قفـڵ جـمـيع ٱڵـوسـآئط \n
 absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 58, string.len(msg.sender_user_id_))
 end
 DevAbs:set(DevProx..'bot:muteall'..msg.chat_id_,true)
-DevAbs:set(DevProx..'bot:text:mute'..msg.chat_id_,true)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ all is already locked ', 1, 'md')
@@ -9588,7 +9587,7 @@ tar = 'ٱلٱدمـۧن'
 end
 local unmutepts = {string.match(text, "^(فتح) (.*)$")}
 if unmutept[2] == "all" or unmutepts[2] == "الكل" then
-if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) and DevAbs:get(DevProx..'bot:text:mute'..msg.chat_id_) then
+if DevAbs:get(DevProx..'bot:muteall'..msg.chat_id_) then
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ Has been unlock all ', 1, 'md')
 else
@@ -9596,7 +9595,6 @@ local ABS_PROX = '❗️☻ تـۖم فـتـۧح جـمـيع ٱڵـوسـآئ�
 absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, ABS_PROX, 59, string.len(msg.sender_user_id_))
 end
 DevAbs:del(DevProx..'bot:muteall'..msg.chat_id_)
-DevAbs:del(DevProx..'bot:text:mute'..msg.chat_id_)
 else
 if DevAbs:get(DevProx..'lang:gp:'..msg.chat_id_) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '❗️☻ all is already unocked ', 1, 'md')
